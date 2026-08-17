@@ -58,16 +58,14 @@
 
         <label>Meal Categories</label>
         <div id="meal-categories" class="checkbox-group">
-            <label><input type="checkbox" value="Main" checked> Main</label>
-            <label><input type="checkbox" value="Pasta" checked> Pasta</label>
-            <label><input type="checkbox" value="Curry" checked> Curry</label>
-            <label><input type="checkbox" value="Comfort food" checked> Comfort food</label>
-            <label><input type="checkbox" value="Soup"> Soup</label>
-            <label><input type="checkbox" value="Salad"> Salad</label>
-            <label><input type="checkbox" value="Fish & seafood" checked> Fish & seafood</label>
-            <label><input type="checkbox" value="Roast" checked> Roast</label>
-            <label><input type="checkbox" value="Breakfast"> Breakfast</label>
-            <label><input type="checkbox" value="Dessert"> Dessert</label>
+            <label><input type="checkbox" value="Main Meals" checked> Main Meals</label>
+            <label><input type="checkbox" value="Pasta & Rice" checked> Pasta & Rice</label>
+            <label><input type="checkbox" value="Curries" checked> Curries</label>
+            <label><input type="checkbox" value="Comfort Food" checked> Comfort Food</label>
+            <label><input type="checkbox" value="Soups"> Soups</label>
+            <label><input type="checkbox" value="Salads"> Salads</label>
+            <label><input type="checkbox" value="Fish & Seafood" checked> Fish & Seafood</label>
+            <label><input type="checkbox" value="Baking & Desserts"> Baking & Desserts</label>
         </div>
         
         <button onclick="startPlanning()">Start Swiping</button>
@@ -163,7 +161,7 @@
                 const parsedIngredients = (source.ingredients || []).map(ing => ({ name: ing, qty: 1 }));
                 
                 recipes.push({
-                    id: source.bbc_url,
+                    id: source.bbc_url || source.title,
                     title: source.title || "BBC Recipe",
                     image: source.image || "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/bbc-good-food-logo-b171f11.jpg",
                     time: source.cook_time ? source.cook_time.replace(/\D/g, '') : "45",
