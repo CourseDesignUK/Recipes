@@ -56,9 +56,9 @@
         
         <div id="recipe-card" class="card">
             <img id="recipe-image" src="" alt="Recipe Image">
-            <h3 id="recipe-title">Recipe Title</h3>
+            <h3 id="recipe-title">Loading...</h3>
             <p id="recipe-cost">Cost: £0.00</p>
-            <p id="recipe-time">Time: 30 mins</p>
+            <p id="recipe-time">Time: -- mins</p>
         </div>
         
         <div class="swipe-controls">
@@ -82,7 +82,8 @@
 </div>
 
 <script>
-    const recipes = [
+    // Mock backend data representing scraped BBC Good Food recipes mapped to supermarket SKUs
+    const mockDatabase = [
         { id: 1, title: "Classic Cottage Pie", cost: 8.50, time: "1 hr 15 mins", image: "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Beef Mince", qty: 1}, {name: "Potatoes", qty: 4}, {name: "Carrots", qty: 2}, {name: "Beef Stock", qty: 1}] },
         { id: 2, title: "Easy Chicken Fajitas", cost: 9.20, time: "20 mins", image: "https://images.unsplash.com/photo-1534353436294-0dcbf42028ab?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Chicken Breast", qty: 2}, {name: "Peppers", qty: 2}, {name: "Fajita Mix", qty: 1}, {name: "Tortillas", qty: 1}] },
         { id: 3, title: "Creamy Tomato Risotto", cost: 6.40, time: "40 mins", image: "https://images.unsplash.com/photo-1633337474564-9d040854c8ee?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Risotto Rice", qty: 1}, {name: "Cherry Tomatoes", qty: 2}, {name: "Vegetable Stock", qty: 1}, {name: "Parmesan", qty: 1}] },
@@ -93,6 +94,7 @@
         { id: 8, title: "Vegetarian Chili", cost: 6.20, time: "35 mins", image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Kidney Beans", qty: 2}, {name: "Chopped Tomatoes", qty: 2}, {name: "Red Onion", qty: 1}, {name: "Chili Powder", qty: 1}] }
     ];
 
+    let recipes = [];
     let config = { budget: 0, days: 0, supermarket: '' };
     let state = { currentRecipeIndex: 0, acceptedMeals: 0, currentSpent: 0, ingredientsList: [] };
 
@@ -101,14 +103,15 @@
         document.getElementById(screenId).classList.add('active');
     }
 
-    function startPlanning() {
+    async function startPlanning() {
         config.budget = parseFloat(document.getElementById('budget').value);
         config.days = parseInt(document.getElementById('days').value);
         config.supermarket = document.getElementById('supermarket').value;
         
         state = { currentRecipeIndex: 0, acceptedMeals: 0, currentSpent: 0, ingredientsList: [] };
         
-        recipes.sort(() => Math.random() - 0.5);
+        // Placeholder for actual backend fetch call (e.g., fetch('/api/recipes?supermarket=' + config.supermarket))
+        recipes = [...mockDatabase].sort(() => Math.random() - 0.5);
         
         updateStatusBar();
         loadRecipe();
