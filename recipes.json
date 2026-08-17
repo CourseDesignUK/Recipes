@@ -1,0 +1,3422 @@
+{
+  "dataset_name": "100 BBC Good Food-inspired recipes",
+  "version": "1.0",
+  "description": "100 app-ready recipe records based on popular dish names/categories. Ingredient lists and methods are original summaries rather than copied BBC Good Food text. Calories and image URLs are left null where not verified.",
+  "source": "BBC Good Food recipe collections and categories",
+  "source_home": "https://www.bbcgoodfood.com/recipes",
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Chicken Tikka Masala",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-tikka-masala",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 2,
+      "title": "The Best Spaghetti Bolognese",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/the-best-spaghetti-bolognese",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 3,
+      "title": "Easy Chicken Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/easy-chicken-curry",
+      "category": "Curry",
+      "tags": [
+        "chicken",
+        "curry",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 4,
+      "title": "Home-style Chicken Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/home-style-chicken-curry",
+      "category": "Curry",
+      "tags": [
+        "chicken",
+        "curry",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 5,
+      "title": "Chicken Korma",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-korma",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 6,
+      "title": "Chicken Jalfrezi",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-jalfrezi",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 7,
+      "title": "Chicken Madras",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-madras",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 8,
+      "title": "Slow-cooker Chicken Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/slow-cooker-chicken-curry",
+      "category": "Curry",
+      "tags": [
+        "chicken",
+        "curry",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 9,
+      "title": "Chicken & Vegetable Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-and-vegetable-curry",
+      "category": "Curry",
+      "tags": [
+        "chicken",
+        "curry",
+        "family",
+        "home cooking",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 10,
+      "title": "Creamy Chicken Pasta",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/creamy-chicken-pasta",
+      "category": "Pasta",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 11,
+      "title": "Chicken Pasta Bake",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-pasta-bake",
+      "category": "Pasta",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 12,
+      "title": "Chicken & Chorizo Ragu",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-and-chorizo-ragu",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 13,
+      "title": "Chicken & Bacon Pasta",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-and-bacon-pasta",
+      "category": "Pasta",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 14,
+      "title": "Chicken Alfredo Pasta Bake",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-alfredo-pasta-bake",
+      "category": "Pasta",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 15,
+      "title": "Honey-mustard Chicken Pasta",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/honey-mustard-chicken-pasta",
+      "category": "Pasta",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 16,
+      "title": "Chicken Arrabbiata",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-arrabbiata",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 17,
+      "title": "Chicken Pasta Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-pasta-salad",
+      "category": "Salad",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 18,
+      "title": "Chicken Cacciatore One-pot with Orzo",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-cacciatore-one-pot-with-orzo",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 19,
+      "title": "Healthy Chicken Pasta Bake",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/healthy-chicken-pasta-bake",
+      "category": "Pasta",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 20,
+      "title": "Leftover Roast Chicken Pasta",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/leftover-roast-chicken-pasta",
+      "category": "Pasta",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 21,
+      "title": "Chilli Con Carne",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chilli-con-carne",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 22,
+      "title": "Classic Chilli",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/classic-chilli",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 23,
+      "title": "Beef Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/beef-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 24,
+      "title": "Lamb Vindaloo",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/lamb-vindaloo",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 25,
+      "title": "Thai Pork & Peanut Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/thai-pork-and-peanut-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 26,
+      "title": "Sweet Potato & Peanut Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/sweet-potato-and-peanut-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 27,
+      "title": "Chickpea Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chickpea-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 28,
+      "title": "Spicy Root & Lentil Casserole",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/spicy-root-and-lentil-casserole",
+      "category": "Comfort food",
+      "tags": [
+        "comfort food",
+        "family",
+        "home cooking",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 29,
+      "title": "Vegetable Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/vegetable-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 30,
+      "title": "Cauliflower Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/cauliflower-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 31,
+      "title": "Vegan Thai Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/vegan-thai-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking",
+        "vegan"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 32,
+      "title": "Chana Masala",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chana-masala",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 33,
+      "title": "Paneer Makhani",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/paneer-makhani",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 34,
+      "title": "Lentil & Sweet Potato Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/lentil-and-sweet-potato-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 35,
+      "title": "Spinach, Sweet Potato & Lentil Dhal",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/spinach-sweet-potato-and-lentil-dhal",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 36,
+      "title": "Easy Vegetable Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/easy-vegetable-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 37,
+      "title": "Vegetarian Lasagne",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/vegetarian-lasagne",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 38,
+      "title": "Vegetarian Bolognese",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/vegetarian-bolognese",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 39,
+      "title": "Tomato Penne with Avocado",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/tomato-penne-with-avocado",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 40,
+      "title": "Pasta Primavera",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/pasta-primavera",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 41,
+      "title": "Macaroni Cheese",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/macaroni-cheese",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 42,
+      "title": "Spaghetti Carbonara",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/spaghetti-carbonara",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 43,
+      "title": "Pesto Pasta",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/pesto-pasta",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 44,
+      "title": "Lasagne",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/lasagne",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 45,
+      "title": "Mushroom Risotto",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/mushroom-risotto",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 46,
+      "title": "Tomato & Basil Risotto",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/tomato-and-basil-risotto",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 47,
+      "title": "Sausage & Fennel Risotto",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/sausage-and-fennel-risotto",
+      "category": "Pasta",
+      "tags": [
+        "family",
+        "home cooking",
+        "pasta"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare the pasta or rice according to the dish.",
+        "Cook the onion, garlic and main ingredients until tender.",
+        "Combine with the sauce or cooking liquid and simmer until cohesive.",
+        "Finish with herbs and cheese if using."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 48,
+      "title": "Chicken & Rice",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-and-rice",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 49,
+      "title": "Chicken Fried Rice",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-fried-rice",
+      "category": "Main",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 50,
+      "title": "Vegetable Fried Rice",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/vegetable-fried-rice",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 51,
+      "title": "Egg Fried Rice",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/egg-fried-rice",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 52,
+      "title": "Chicken Biryani",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-biryani",
+      "category": "Curry",
+      "tags": [
+        "chicken",
+        "curry",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 53,
+      "title": "Vegetable Biryani",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/vegetable-biryani",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 54,
+      "title": "Fish Pie",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/fish-pie",
+      "category": "Comfort food",
+      "tags": [
+        "comfort food",
+        "family",
+        "home cooking",
+        "seafood"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fish or seafood",
+        "lemon",
+        "garlic",
+        "olive oil",
+        "herbs",
+        "vegetables",
+        "rice or potatoes"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 55,
+      "title": "Cottage Pie",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/cottage-pie",
+      "category": "Comfort food",
+      "tags": [
+        "comfort food",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 56,
+      "title": "Shepherd's Pie",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/shepherds-pie",
+      "category": "Comfort food",
+      "tags": [
+        "comfort food",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 57,
+      "title": "Chicken Pot Pie",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-pot-pie",
+      "category": "Comfort food",
+      "tags": [
+        "chicken",
+        "comfort food",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 58,
+      "title": "Sausage Casserole",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/sausage-casserole",
+      "category": "Comfort food",
+      "tags": [
+        "comfort food",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 59,
+      "title": "Beef Stew",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/beef-stew",
+      "category": "Comfort food",
+      "tags": [
+        "comfort food",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 60,
+      "title": "Chicken Casserole",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-casserole",
+      "category": "Comfort food",
+      "tags": [
+        "chicken",
+        "comfort food",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 61,
+      "title": "Vegetable Stew",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/vegetable-stew",
+      "category": "Comfort food",
+      "tags": [
+        "comfort food",
+        "family",
+        "home cooking",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 62,
+      "title": "Lentil Soup",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/lentil-soup",
+      "category": "Soup",
+      "tags": [
+        "family",
+        "home cooking",
+        "soup",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "onion",
+        "garlic",
+        "main vegetables or pulses",
+        "vegetable stock",
+        "herbs or spices",
+        "olive oil"
+      ],
+      "method": [
+        "Soften the onion and garlic in oil.",
+        "Add the main vegetables or pulses and seasonings.",
+        "Pour in the stock and simmer until tender.",
+        "Blend if desired and adjust the seasoning."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 63,
+      "title": "Tomato Soup",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/tomato-soup",
+      "category": "Soup",
+      "tags": [
+        "family",
+        "home cooking",
+        "soup"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "onion",
+        "garlic",
+        "main vegetables or pulses",
+        "vegetable stock",
+        "herbs or spices",
+        "olive oil"
+      ],
+      "method": [
+        "Soften the onion and garlic in oil.",
+        "Add the main vegetables or pulses and seasonings.",
+        "Pour in the stock and simmer until tender.",
+        "Blend if desired and adjust the seasoning."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 64,
+      "title": "Leek & Potato Soup",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/leek-and-potato-soup",
+      "category": "Soup",
+      "tags": [
+        "family",
+        "home cooking",
+        "soup"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "onion",
+        "garlic",
+        "main vegetables or pulses",
+        "vegetable stock",
+        "herbs or spices",
+        "olive oil"
+      ],
+      "method": [
+        "Soften the onion and garlic in oil.",
+        "Add the main vegetables or pulses and seasonings.",
+        "Pour in the stock and simmer until tender.",
+        "Blend if desired and adjust the seasoning."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 65,
+      "title": "Minestrone Soup",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/minestrone-soup",
+      "category": "Soup",
+      "tags": [
+        "family",
+        "home cooking",
+        "soup"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "onion",
+        "garlic",
+        "main vegetables or pulses",
+        "vegetable stock",
+        "herbs or spices",
+        "olive oil"
+      ],
+      "method": [
+        "Soften the onion and garlic in oil.",
+        "Add the main vegetables or pulses and seasonings.",
+        "Pour in the stock and simmer until tender.",
+        "Blend if desired and adjust the seasoning."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 66,
+      "title": "Butternut Squash Soup",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/butternut-squash-soup",
+      "category": "Soup",
+      "tags": [
+        "family",
+        "home cooking",
+        "soup"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "onion",
+        "garlic",
+        "main vegetables or pulses",
+        "vegetable stock",
+        "herbs or spices",
+        "olive oil"
+      ],
+      "method": [
+        "Soften the onion and garlic in oil.",
+        "Add the main vegetables or pulses and seasonings.",
+        "Pour in the stock and simmer until tender.",
+        "Blend if desired and adjust the seasoning."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 67,
+      "title": "Carrot & Coriander Soup",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/carrot-and-coriander-soup",
+      "category": "Soup",
+      "tags": [
+        "family",
+        "home cooking",
+        "soup"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "onion",
+        "garlic",
+        "main vegetables or pulses",
+        "vegetable stock",
+        "herbs or spices",
+        "olive oil"
+      ],
+      "method": [
+        "Soften the onion and garlic in oil.",
+        "Add the main vegetables or pulses and seasonings.",
+        "Pour in the stock and simmer until tender.",
+        "Blend if desired and adjust the seasoning."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 68,
+      "title": "French Onion Soup",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/french-onion-soup",
+      "category": "Soup",
+      "tags": [
+        "family",
+        "home cooking",
+        "soup"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "onion",
+        "garlic",
+        "main vegetables or pulses",
+        "vegetable stock",
+        "herbs or spices",
+        "olive oil"
+      ],
+      "method": [
+        "Soften the onion and garlic in oil.",
+        "Add the main vegetables or pulses and seasonings.",
+        "Pour in the stock and simmer until tender.",
+        "Blend if desired and adjust the seasoning."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 69,
+      "title": "Greek Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/greek-salad",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fresh vegetables",
+        "salad leaves or cabbage",
+        "protein or pulses if desired",
+        "olive oil",
+        "lemon or vinegar",
+        "seasoning"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 70,
+      "title": "Caesar Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/caesar-salad",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fresh vegetables",
+        "salad leaves or cabbage",
+        "protein or pulses if desired",
+        "olive oil",
+        "lemon or vinegar",
+        "seasoning"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 71,
+      "title": "Chicken Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chicken-salad",
+      "category": "Salad",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fresh vegetables",
+        "salad leaves or cabbage",
+        "protein or pulses if desired",
+        "olive oil",
+        "lemon or vinegar",
+        "seasoning"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 72,
+      "title": "Pasta Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/pasta-salad",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 73,
+      "title": "Potato Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/potato-salad",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fresh vegetables",
+        "salad leaves or cabbage",
+        "protein or pulses if desired",
+        "olive oil",
+        "lemon or vinegar",
+        "seasoning"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 74,
+      "title": "Coleslaw",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/coleslaw",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fresh vegetables",
+        "salad leaves or cabbage",
+        "protein or pulses if desired",
+        "olive oil",
+        "lemon or vinegar",
+        "seasoning"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 75,
+      "title": "Quinoa Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/quinoa-salad",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fresh vegetables",
+        "salad leaves or cabbage",
+        "protein or pulses if desired",
+        "olive oil",
+        "lemon or vinegar",
+        "seasoning"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 76,
+      "title": "Roasted Vegetable Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/roasted-vegetable-salad",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad",
+        "vegetarian"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fresh vegetables",
+        "salad leaves or cabbage",
+        "protein or pulses if desired",
+        "olive oil",
+        "lemon or vinegar",
+        "seasoning"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 77,
+      "title": "Tuna Pasta Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/tuna-pasta-salad",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "pasta or risotto rice",
+        "olive oil",
+        "onion",
+        "garlic",
+        "vegetables of choice",
+        "herbs",
+        "grated cheese if suitable"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 78,
+      "title": "Salmon Salad",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/salmon-salad",
+      "category": "Salad",
+      "tags": [
+        "family",
+        "home cooking",
+        "salad",
+        "seafood"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fresh vegetables",
+        "salad leaves or cabbage",
+        "protein or pulses if desired",
+        "olive oil",
+        "lemon or vinegar",
+        "seasoning"
+      ],
+      "method": [
+        "Prepare and chop the vegetables.",
+        "Cook any protein or grains and cool slightly.",
+        "Whisk the dressing ingredients together.",
+        "Toss everything together just before serving."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 79,
+      "title": "Fish & Chips",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/fish-and-chips",
+      "category": "Fish & seafood",
+      "tags": [
+        "family",
+        "fish & seafood",
+        "home cooking",
+        "seafood"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fish or seafood",
+        "lemon",
+        "garlic",
+        "olive oil",
+        "herbs",
+        "vegetables",
+        "rice or potatoes"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 80,
+      "title": "Salmon Traybake",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/salmon-traybake",
+      "category": "Fish & seafood",
+      "tags": [
+        "family",
+        "fish & seafood",
+        "home cooking",
+        "seafood"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fish or seafood",
+        "lemon",
+        "garlic",
+        "olive oil",
+        "herbs",
+        "vegetables",
+        "rice or potatoes"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 81,
+      "title": "Teriyaki Salmon",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/teriyaki-salmon",
+      "category": "Fish & seafood",
+      "tags": [
+        "family",
+        "fish & seafood",
+        "home cooking",
+        "seafood"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fish or seafood",
+        "lemon",
+        "garlic",
+        "olive oil",
+        "herbs",
+        "vegetables",
+        "rice or potatoes"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 82,
+      "title": "Garlic Butter Prawns",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/garlic-butter-prawns",
+      "category": "Fish & seafood",
+      "tags": [
+        "family",
+        "fish & seafood",
+        "home cooking",
+        "seafood"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "fish or seafood",
+        "lemon",
+        "garlic",
+        "olive oil",
+        "herbs",
+        "vegetables",
+        "rice or potatoes"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 83,
+      "title": "Thai Fish Curry",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/thai-fish-curry",
+      "category": "Curry",
+      "tags": [
+        "curry",
+        "family",
+        "home cooking",
+        "seafood"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "protein or vegetables",
+        "onion",
+        "garlic",
+        "ginger",
+        "curry spices or curry paste",
+        "tomatoes",
+        "coconut milk or yogurt",
+        "rice or naan"
+      ],
+      "method": [
+        "Soften the onion, garlic and ginger in oil.",
+        "Add the spices or curry paste and cook briefly.",
+        "Add the main ingredients and sauce, then simmer until cooked and flavoursome.",
+        "Serve with rice, naan or suitable accompaniments."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 84,
+      "title": "Roast Chicken",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/roast-chicken",
+      "category": "Roast",
+      "tags": [
+        "chicken",
+        "family",
+        "home cooking",
+        "roast"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Heat the oven and season the main ingredient.",
+        "Roast until cooked through and well browned, resting before carving.",
+        "Prepare the vegetables and gravy or sauce while it rests.",
+        "Serve hot with the chosen sides."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 85,
+      "title": "Classic Roast Beef",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/classic-roast-beef",
+      "category": "Roast",
+      "tags": [
+        "family",
+        "home cooking",
+        "roast"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Heat the oven and season the main ingredient.",
+        "Roast until cooked through and well browned, resting before carving.",
+        "Prepare the vegetables and gravy or sauce while it rests.",
+        "Serve hot with the chosen sides."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 86,
+      "title": "Roast Pork",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/roast-pork",
+      "category": "Roast",
+      "tags": [
+        "family",
+        "home cooking",
+        "roast"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Heat the oven and season the main ingredient.",
+        "Roast until cooked through and well browned, resting before carving.",
+        "Prepare the vegetables and gravy or sauce while it rests.",
+        "Serve hot with the chosen sides."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 87,
+      "title": "Roast Lamb",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/roast-lamb",
+      "category": "Roast",
+      "tags": [
+        "family",
+        "home cooking",
+        "roast"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Heat the oven and season the main ingredient.",
+        "Roast until cooked through and well browned, resting before carving.",
+        "Prepare the vegetables and gravy or sauce while it rests.",
+        "Serve hot with the chosen sides."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 88,
+      "title": "Sausage & Mash",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/sausage-and-mash",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 89,
+      "title": "Toad in the Hole",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/toad-in-the-hole",
+      "category": "Comfort food",
+      "tags": [
+        "comfort food",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 90,
+      "title": "Full English Breakfast",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/full-english-breakfast",
+      "category": "Breakfast",
+      "tags": [
+        "breakfast",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 91,
+      "title": "American Pancakes",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/american-pancakes",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Heat the oven and prepare a lined or greased tin.",
+        "Mix the wet ingredients, then combine with the dry ingredients.",
+        "Transfer to the tin and bake until risen and set.",
+        "Cool before slicing or decorating."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 92,
+      "title": "French Toast",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/french-toast",
+      "category": "Breakfast",
+      "tags": [
+        "breakfast",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 93,
+      "title": "Overnight Oats",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/overnight-oats",
+      "category": "Breakfast",
+      "tags": [
+        "breakfast",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 94,
+      "title": "Banana Bread",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/banana-bread",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Heat the oven and prepare a lined or greased tin.",
+        "Mix the wet ingredients, then combine with the dry ingredients.",
+        "Transfer to the tin and bake until risen and set.",
+        "Cool before slicing or decorating."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 95,
+      "title": "Victoria Sponge",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/victoria-sponge",
+      "category": "Main",
+      "tags": [
+        "family",
+        "home cooking",
+        "main"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "main protein or vegetables",
+        "onion",
+        "garlic",
+        "olive oil",
+        "stock or tomatoes",
+        "herbs and spices",
+        "vegetables",
+        "rice, potatoes or bread"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 96,
+      "title": "Chocolate Cake",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chocolate-cake",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Heat the oven and prepare a lined or greased tin.",
+        "Mix the wet ingredients, then combine with the dry ingredients.",
+        "Transfer to the tin and bake until risen and set.",
+        "Cool before slicing or decorating."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 97,
+      "title": "Carrot Cake",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/carrot-cake",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Heat the oven and prepare a lined or greased tin.",
+        "Mix the wet ingredients, then combine with the dry ingredients.",
+        "Transfer to the tin and bake until risen and set.",
+        "Cool before slicing or decorating."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 98,
+      "title": "Lemon Drizzle Cake",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/lemon-drizzle-cake",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Heat the oven and prepare a lined or greased tin.",
+        "Mix the wet ingredients, then combine with the dry ingredients.",
+        "Transfer to the tin and bake until risen and set.",
+        "Cool before slicing or decorating."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 99,
+      "title": "Chocolate Brownies",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/chocolate-brownies",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Heat the oven and prepare a lined or greased tin.",
+        "Mix the wet ingredients, then combine with the dry ingredients.",
+        "Transfer to the tin and bake until risen and set.",
+        "Cool before slicing or decorating."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 100,
+      "title": "Apple Crumble",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/apple-crumble",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 101,
+      "title": "Sticky Toffee Pudding",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/sticky-toffee-pudding",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 102,
+      "title": "Cheesecake",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/cheesecake",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Heat the oven and prepare a lined or greased tin.",
+        "Mix the wet ingredients, then combine with the dry ingredients.",
+        "Transfer to the tin and bake until risen and set.",
+        "Cool before slicing or decorating."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    },
+    {
+      "id": 103,
+      "title": "Eton Mess",
+      "image": null,
+      "bbc_url": "https://www.bbcgoodfood.com/recipes/eton-mess",
+      "category": "Dessert",
+      "tags": [
+        "dessert",
+        "family",
+        "home cooking"
+      ],
+      "servings": 4,
+      "prep_time": "15 mins",
+      "cook_time": "30 mins",
+      "calories": null,
+      "ingredients": [
+        "plain flour",
+        "caster sugar",
+        "eggs",
+        "butter or neutral oil",
+        "baking powder",
+        "vanilla or suitable flavouring"
+      ],
+      "method": [
+        "Prepare and season the main ingredients.",
+        "Cook the onion and garlic until softened.",
+        "Add the main ingredients, vegetables and sauce or stock.",
+        "Simmer or bake until everything is tender and cooked through.",
+        "Taste, adjust the seasoning and serve."
+      ],
+      "source_note": "Original app-friendly summary; not copied from BBC Good Food."
+    }
+  ]
+}
