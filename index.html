@@ -56,7 +56,7 @@
         
         <div id="recipe-card" class="card">
             <img id="recipe-image" src="" alt="Recipe Image">
-            <h3 id="recipe-title">Loading...</h3>
+            <h3 id="recipe-title">Initializing API Call...</h3>
             <p id="recipe-cost">Cost: £0.00</p>
             <p id="recipe-time">Time: -- mins</p>
         </div>
@@ -82,40 +82,36 @@
 </div>
 
 <script>
-    // Mock backend data representing scraped BBC Good Food recipes mapped to supermarket SKUs
-    const mockDatabase = [
-        { id: 1, title: "Classic Cottage Pie", cost: 8.50, time: "1 hr 15 mins", image: "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Beef Mince", qty: 1}, {name: "Potatoes", qty: 4}, {name: "Carrots", qty: 2}, {name: "Beef Stock", qty: 1}] },
-        { id: 2, title: "Easy Chicken Fajitas", cost: 9.20, time: "20 mins", image: "https://images.unsplash.com/photo-1534353436294-0dcbf42028ab?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Chicken Breast", qty: 2}, {name: "Peppers", qty: 2}, {name: "Fajita Mix", qty: 1}, {name: "Tortillas", qty: 1}] },
-        { id: 3, title: "Creamy Tomato Risotto", cost: 6.40, time: "40 mins", image: "https://images.unsplash.com/photo-1633337474564-9d040854c8ee?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Risotto Rice", qty: 1}, {name: "Cherry Tomatoes", qty: 2}, {name: "Vegetable Stock", qty: 1}, {name: "Parmesan", qty: 1}] },
-        { id: 4, title: "Spicy Root & Lentil Casserole", cost: 5.80, time: "45 mins", image: "https://images.unsplash.com/photo-1548943487-a2e4b43b5930?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Red Lentils", qty: 1}, {name: "Parsnips", qty: 2}, {name: "Carrots", qty: 2}, {name: "Curry Paste", qty: 1}] },
-        { id: 5, title: "Teriyaki Salmon", cost: 11.50, time: "25 mins", image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Salmon Fillets", qty: 2}, {name: "Teriyaki Sauce", qty: 1}, {name: "Broccoli", qty: 1}, {name: "Rice", qty: 1}] },
-        { id: 6, title: "Sausage & Mash with Onion Gravy", cost: 7.00, time: "40 mins", image: "https://images.unsplash.com/photo-1627308595229-7830b5c96668?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Pork Sausages", qty: 6}, {name: "Maris Piper Potatoes", qty: 4}, {name: "Onions", qty: 2}, {name: "Beef Gravy", qty: 1}] },
-        { id: 7, title: "One-Pan Spaghetti", cost: 5.50, time: "15 mins", image: "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Spaghetti", qty: 1}, {name: "Chopped Tomatoes", qty: 1}, {name: "Garlic", qty: 1}, {name: "Fresh Basil", qty: 1}] },
-        { id: 8, title: "Vegetarian Chili", cost: 6.20, time: "35 mins", image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=400&q=80", ingredients: [{name: "Kidney Beans", qty: 2}, {name: "Chopped Tomatoes", qty: 2}, {name: "Red Onion", qty: 1}, {name: "Chili Powder", qty: 1}] }
+    const bbcRecipeUrls = [
+        "https://www.bbcgoodfood.com/recipes/classic-cottage-pie",
+        "https://www.bbcgoodfood.com/recipes/chicken-tikka-masala",
+        "https://www.bbcgoodfood.com/recipes/easy-chicken-fajitas",
+        "https://www.bbcgoodfood.com/recipes/creamy-tomato-risotto",
+        "https://www.bbcgoodfood.com/recipes/teriyaki-salmon",
+        "https://www.bbcgoodfood.com/recipes/sausage-mash-with-onion-gravy",
+        "https://www.bbcgoodfood.com/recipes/vegetarian-chili",
+        "https://www.bbcgoodfood.com/recipes/one-pan-spaghetti"
     ];
 
-    let recipes = [];
     let config = { budget: 0, days: 0, supermarket: '' };
-    let state = { currentRecipeIndex: 0, acceptedMeals: 0, currentSpent: 0, ingredientsList: [] };
+    let state = { currentUrlIndex: 0, acceptedMeals: 0, currentSpent: 0, ingredientsList: [], currentRecipeData: null };
 
     function switchScreen(screenId) {
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById(screenId).classList.add('active');
     }
 
-    async function startPlanning() {
+    function startPlanning() {
         config.budget = parseFloat(document.getElementById('budget').value);
         config.days = parseInt(document.getElementById('days').value);
         config.supermarket = document.getElementById('supermarket').value;
         
-        state = { currentRecipeIndex: 0, acceptedMeals: 0, currentSpent: 0, ingredientsList: [] };
-        
-        // Placeholder for actual backend fetch call (e.g., fetch('/api/recipes?supermarket=' + config.supermarket))
-        recipes = [...mockDatabase].sort(() => Math.random() - 0.5);
+        bbcRecipeUrls.sort(() => Math.random() - 0.5);
+        state = { currentUrlIndex: 0, acceptedMeals: 0, currentSpent: 0, ingredientsList: [], currentRecipeData: null };
         
         updateStatusBar();
-        loadRecipe();
         switchScreen('swipe-screen');
+        loadRecipe();
     }
 
     function updateStatusBar() {
@@ -123,31 +119,50 @@
         document.getElementById('meal-status').innerText = `Meals: ${state.acceptedMeals} / ${config.days}`;
     }
 
-    function loadRecipe() {
-        if (state.currentRecipeIndex >= recipes.length) {
+    async function loadRecipe() {
+        if (state.currentUrlIndex >= bbcRecipeUrls.length || state.acceptedMeals >= config.days) {
             finalizePlan();
             return;
         }
-        
-        const recipe = recipes[state.currentRecipeIndex];
-        document.getElementById('recipe-image').src = recipe.image;
-        document.getElementById('recipe-title').innerText = recipe.title;
-        document.getElementById('recipe-cost').innerText = `Cost: £${recipe.cost.toFixed(2)}`;
-        document.getElementById('recipe-time').innerText = `Time: ${recipe.time}`;
+
+        document.getElementById('recipe-title').innerText = "Fetching external data...";
+        document.getElementById('recipe-image').src = "";
+        document.getElementById('recipe-cost').innerText = "Cost: £--.--";
+        document.getElementById('recipe-time').innerText = "Time: -- mins";
+
+        const targetUrl = bbcRecipeUrls[state.currentUrlIndex];
+        const apiUrl = `http://localhost:8000/api/recipe?url=${encodeURIComponent(targetUrl)}`;
+
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new Error("API response error");
+            const recipeData = await response.json();
+
+            recipeData.cost = Math.floor(Math.random() * (9.00 - 4.50 + 1)) + 4.50;
+            state.currentRecipeData = recipeData;
+
+            document.getElementById('recipe-image').src = recipeData.image || "https://via.placeholder.com/400x200?text=No+Image+Available";
+            document.getElementById('recipe-title').innerText = recipeData.title;
+            document.getElementById('recipe-cost').innerText = `Cost: £${recipeData.cost.toFixed(2)} (Simulated)`;
+            document.getElementById('recipe-time').innerText = `Time: ${recipeData.time}`;
+        } catch (error) {
+            console.error("Fetch failed:", error);
+            document.getElementById('recipe-title').innerText = "Error loading data. Reject to continue.";
+            state.currentRecipeData = null;
+        }
     }
 
     function handleSwipe(accepted) {
-        const recipe = recipes[state.currentRecipeIndex];
-        
-        if (accepted) {
-            if (state.currentSpent + recipe.cost > config.budget) {
+        if (accepted && state.currentRecipeData) {
+            if (state.currentSpent + state.currentRecipeData.cost > config.budget) {
+                alert("Budget exceeded. Cannot accept this meal.");
                 return;
             }
             
-            state.currentSpent += recipe.cost;
+            state.currentSpent += state.currentRecipeData.cost;
             state.acceptedMeals++;
             
-            recipe.ingredients.forEach(ing => {
+            state.currentRecipeData.ingredients.forEach(ing => {
                 const existing = state.ingredientsList.find(i => i.name === ing.name);
                 if (existing) {
                     existing.qty += ing.qty;
@@ -157,7 +172,7 @@
             });
         }
         
-        state.currentRecipeIndex++;
+        state.currentUrlIndex++;
         updateStatusBar();
         
         if (state.acceptedMeals >= config.days) {
