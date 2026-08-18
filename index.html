@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Meal Planner Prototype</title>
 <style>
-    body { font-family: sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; margin: 0; padding: 20px; }
+    body { font-family: sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; margin: 0; padding: 20px; touch-action: pan-y; }
     #app-container { width: 100%; max-width: 400px; background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 20px; box-sizing: border-box; position: relative; }
     .screen { display: none; }
     .screen.active { display: block; }
@@ -20,12 +20,12 @@
     
     button { width: 100%; padding: 12px; margin-top: 15px; border: none; border-radius: 4px; background: #0056b3; color: white; font-size: 16px; cursor: pointer; }
     button.secondary { background: #6c757d; margin-top: 10px; }
-    .card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 20px; min-height: 350px; display: flex; flex-direction: column; justify-content: flex-start; position: relative; }
-    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; background: #ddd; }
+    .card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 20px; min-height: 350px; display: flex; flex-direction: column; justify-content: flex-start; position: relative; touch-action: pan-y; user-select: none; }
+    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; background: #ddd; pointer-events: none; }
     .card h3.recipe-title { margin: 0 0 10px 0; font-size: 18px; border: none; padding: 0; }
     .card p { color: #666; margin: 5px 0; font-size: 14px; }
     .meal-tag { position: absolute; top: 30px; left: 30px; background: rgba(0,0,0,0.7); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-    .info-btn { position: absolute; top: 30px; right: 30px; background: rgba(0,123,255,0.9); color: white; border: none; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; text-transform: uppercase; margin: 0; width: auto; }
+    .info-btn { position: absolute; top: 30px; right: 30px; background: rgba(0,123,255,0.9); color: white; border: none; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; text-transform: uppercase; margin: 0; width: auto; z-index: 10; }
     .swipe-controls { display: flex; gap: 10px; }
     .swipe-controls button { margin-top: 0; }
     .btn-left { background: #dc3545; flex: 1; }
@@ -63,6 +63,318 @@
             <label><input type="checkbox" value="Curries" checked> Curries</label>
             <label><input type="checkbox" value="Comfort Food" checked> Comfort Food</label>
             <label><input type="checkbox" value="Soups"> Soups</label>
+            <label><input type="checkbox" value="Salads"> Salads</label>
+            <label><input type="checkbox" value="Fish & Seafood" checked> Fish & Seafood</label>
+            <label><input type="checkbox" value="Baking & Desserts"> Baking & Desserts</label>
+        </div>
+        
+        <button onclick="startPlanning()">Start Swiping</button>
+        <button class="secondary" onclick="viewFavorites()">View Favorites</button>
+    </div>
+
+    <div id="swipe-screen" class="screen">
+        <div class="status-bar">
+            <span id="meal-status">Meals: 0 / 5</span>
+        </div>
+        
+        <div id="recipe-card" class="card">
+            <span id="recipe-tag" class="meal-tag">Loading</span>
+            <button class="info-btn" onclick="showRecipeInfo(event)">Info</button>
+            <img id="recipe-image" src="" alt="Recipe Image">
+            <h3 id="recipe-title" class="recipe-title">Loading recipes...</h3>
+            <p id="recipe-time">Time: -- mins</p>
+        </div>
+        
+        <div class="swipe-controls">
+            <button class="btn-left" id="btn-reject" onclick="handleSwipe('reject')">Reject</button>
+            <button class="btn-mid" id="btn-fav" onclick="handleSwipe('favorite')">Favorite</button>
+            <button class="btn-right" id="btn-accept" onclick="handleSwipe('accept')">Accept</button>
+        </div>
+    </div>
+
+    <div id="summary-screen" class="screen">
+        <h2>Weekly Plan Complete</h2>
+        
+        <h3>Meal Agenda</h3>
+        <ul id="meal-agenda"></ul>
+        
+        <h3>Shopping List</h3>
+        <ul id="shopping-list"></ul>
+        
+        <button onclick="savePlan()">Save Plan</button>
+        <button class="secondary" onclick="resetApp()">Start Over</button>
+    </div>
+
+    <div id="favorites-screen" class="screen">
+        <h2>Favorite Recipes</h2>
+        <ul id="favorites-list"></ul>
+        <button class="secondary" onclick="resetApp()">Back to Setup</button>
+    </div>
+</div>
+
+<div id="info-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeRecipeInfo()">&times;</span>
+        <h3 id="modal-title">Recipe Details</h3>
+        <h4>Ingredients</h4>
+        <ul id="modal-ingredients"></ul>
+        <h4>Method</h4>
+        <ol id="modal-method"></ol>
+    </div>
+</div>
+
+<script>
+    let recipes = [];
+    let config = { days: 0, categories: [] };
+    let state = { currentRecipeIndex: 0, acceptedMeals: 0, acceptedRecipes: [], ingredientsList: [] };
+    let favorites = JSON.parse(localStorage.getItem('bbcMealPlannerFavorites')) || [];
+    
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50;
+
+    const recipeCard = document.getElementById('recipe-card');
+
+    recipeCard.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    recipeCard.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+    }, { passive: true });
+
+    function handleGesture() {
+        if (state.currentRecipeIndex >= recipes.length) return;
+        
+        if (touchEndX < touchStartX - swipeThreshold) {
+            handleSwipe('reject');
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            handleSwipe('accept');
+        }
+    }
+
+    function switchScreen(screenId) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(screenId).classList.add('active');
+    }
+
+    async function startPlanning() {
+        config.days = parseInt(document.getElementById('days').value);
+        config.categories = Array.from(document.querySelectorAll('#meal-categories input:checked')).map(cb => cb.value);
+        
+        if (config.categories.length === 0) {
+            alert("Select at least one meal category.");
+            return;
+        }
+
+        switchScreen('swipe-screen');
+        setControlsState(true);
+        document.getElementById('recipe-title').innerText = "Loading recipes.json...";
+
+        try {
+            const response = await fetch('recipes.json');
+            if (!response.ok) throw new Error("Failed to load recipes.json");
+            const recipeData = await response.json();
+
+            let filteredSources = recipeData.recipes.filter(r => config.categories.includes(r.category));
+            
+            filteredSources.sort(() => Math.random() - 0.5);
+            recipes = [];
+
+            for (const source of filteredSources) {
+                const parsedIngredients = (source.ingredients || []).map(ing => ({ name: ing, qty: 1 }));
+                
+                recipes.push({
+                    id: source.bbc_url || source.title,
+                    title: source.title || "BBC Recipe",
+                    image: source.image || "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/bbc-good-food-logo-b171f11.jpg",
+                    time: source.cook_time ? source.cook_time.replace(/\D/g, '') : "45",
+                    type: source.category,
+                    ingredients: parsedIngredients,
+                    rawIngredients: source.ingredients || [],
+                    method: source.method || []
+                });
+            }
+
+            if (recipes.length === 0) {
+                document.getElementById('recipe-title').innerText = "No matching recipes found.";
+                setControlsState(true);
+                return;
+            }
+
+            state = { currentRecipeIndex: 0, acceptedMeals: 0, acceptedRecipes: [], ingredientsList: [] };
+            setControlsState(false);
+            updateStatusBar();
+            loadRecipe();
+            
+        } catch (error) {
+            document.getElementById('recipe-title').innerText = "Error reading recipes.json. Ensure file is served via HTTP.";
+            console.error(error);
+        }
+    }
+
+    function setControlsState(disabled) {
+        document.getElementById('btn-reject').disabled = disabled;
+        document.getElementById('btn-accept').disabled = disabled;
+        document.getElementById('btn-fav').disabled = disabled;
+        document.querySelector('.info-btn').disabled = disabled;
+    }
+
+    function updateStatusBar() {
+        document.getElementById('meal-status').innerText = `Meals: ${state.acceptedMeals} / ${config.days}`;
+    }
+
+    function loadRecipe() {
+        if (state.currentRecipeIndex >= recipes.length) {
+            document.getElementById('recipe-title').innerText = "Out of recipes.";
+            document.getElementById('recipe-image').src = "";
+            setControlsState(true);
+            return;
+        }
+        
+        const recipe = recipes[state.currentRecipeIndex];
+        document.getElementById('recipe-image').src = recipe.image;
+        document.getElementById('recipe-title').innerText = recipe.title;
+        document.getElementById('recipe-tag').innerText = recipe.type;
+        document.getElementById('recipe-time').innerText = `Time: ${recipe.time} mins`;
+    }
+
+    function handleSwipe(action) {
+        if (state.currentRecipeIndex >= recipes.length) return;
+        
+        const recipe = recipes[state.currentRecipeIndex];
+        
+        if (action === 'favorite') {
+            if (!favorites.find(f => f.id === recipe.id)) {
+                favorites.push(recipe);
+                localStorage.setItem('bbcMealPlannerFavorites', JSON.stringify(favorites));
+            }
+            state.currentRecipeIndex++;
+            loadRecipe();
+            return;
+        }
+
+        if (action === 'accept') {
+            state.acceptedMeals++;
+            state.acceptedRecipes.push(recipe);
+            
+            recipe.ingredients.forEach(ing => {
+                const existing = state.ingredientsList.find(i => i.name === ing.name);
+                if (existing) {
+                    existing.qty += ing.qty;
+                } else {
+                    state.ingredientsList.push({ name: ing.name, qty: ing.qty });
+                }
+            });
+        }
+        
+        state.currentRecipeIndex++;
+        updateStatusBar();
+        
+        if (state.acceptedMeals >= config.days) {
+            finalizePlan();
+        } else {
+            loadRecipe();
+        }
+    }
+
+    function finalizePlan() {
+        const agendaContainer = document.getElementById('meal-agenda');
+        agendaContainer.innerHTML = '';
+        
+        state.acceptedRecipes.forEach(recipe => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span><strong>${recipe.title}</strong></span> <span style="color:#666; font-size:12px;">${recipe.type}</span>`;
+            agendaContainer.appendChild(li);
+        });
+
+        const listContainer = document.getElementById('shopping-list');
+        listContainer.innerHTML = '';
+        
+        state.ingredientsList.sort((a, b) => a.name.localeCompare(b.name)).forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${item.name}</span> <span>x${item.qty}</span>`;
+            listContainer.appendChild(li);
+        });
+        
+        switchScreen('summary-screen');
+    }
+
+    function savePlan() {
+        const plan = {
+            date: new Date().toISOString(),
+            agenda: state.acceptedRecipes,
+            shoppingList: state.ingredientsList
+        };
+        
+        let savedPlans = JSON.parse(localStorage.getItem('bbcMealPlannerSavedPlans')) || [];
+        savedPlans.push(plan);
+        localStorage.setItem('bbcMealPlannerSavedPlans', JSON.stringify(savedPlans));
+        
+        alert("Weekly plan saved successfully!");
+    }
+
+    function viewFavorites() {
+        const listContainer = document.getElementById('favorites-list');
+        listContainer.innerHTML = '';
+
+        if (favorites.length === 0) {
+            listContainer.innerHTML = '<li>No favorites saved.</li>';
+        } else {
+            favorites.forEach(fav => {
+                const li = document.createElement('li');
+                li.className = 'favorite-item';
+                li.innerHTML = `
+                    <div>
+                        <img src="${fav.image}" alt="img">
+                        <span>${fav.title}</span>
+                    </div>
+                `;
+                listContainer.appendChild(li);
+            });
+        }
+        
+        switchScreen('favorites-screen');
+    }
+
+    function resetApp() {
+        switchScreen('setup-screen');
+    }
+
+    function showRecipeInfo(event) {
+        if (event) event.stopPropagation();
+        if (state.currentRecipeIndex >= recipes.length) return;
+        const recipe = recipes[state.currentRecipeIndex];
+        
+        document.getElementById('modal-title').innerText = recipe.title;
+        
+        const ingList = document.getElementById('modal-ingredients');
+        ingList.innerHTML = '';
+        recipe.rawIngredients.forEach(ing => {
+            const li = document.createElement('li');
+            li.innerText = ing;
+            ingList.appendChild(li);
+        });
+
+        const methodList = document.getElementById('modal-method');
+        methodList.innerHTML = '';
+        recipe.method.forEach(step => {
+            const li = document.createElement('li');
+            li.innerText = step;
+            methodList.appendChild(li);
+        });
+
+        document.getElementById('info-modal').style.display = 'block';
+    }
+
+    function closeRecipeInfo() {
+        document.getElementById('info-modal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>            <label><input type="checkbox" value="Soups"> Soups</label>
             <label><input type="checkbox" value="Salads"> Salads</label>
             <label><input type="checkbox" value="Fish & Seafood" checked> Fish & Seafood</label>
             <label><input type="checkbox" value="Baking & Desserts"> Baking & Desserts</label>
