@@ -2,33 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
 <title>Meal Planner Prototype</title>
 <style>
+    html {
+        overflow: hidden;
+        height: 100%;
+        touch-action: pan-y;
+        -webkit-text-size-adjust: 100%;
+    }
+
     body { 
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
         background-color: #f4f4f9; 
         display: flex; 
         justify-content: center; 
         margin: 0; 
-        padding: 20px; 
-        padding-bottom: env(safe-area-inset-bottom, 20px);
-        padding-top: env(safe-area-inset-top, 20px);
+        padding: 0;
+        width: 100vw;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
         touch-action: pan-y; 
         -webkit-tap-highlight-color: transparent;
-        overflow-x: hidden;
+        -webkit-user-select: none;
+        user-select: none;
     }
     
+    #portrait-warning {
+        display: none;
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 600px) {
+        #portrait-warning {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #1a1a1a;
+            color: #ffffff;
+            z-index: 999999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+        #portrait-warning svg {
+            width: 48px;
+            height: 48px;
+            fill: #ffffff;
+            margin-bottom: 12px;
+        }
+    }
+
     #app-container { 
         width: 100%; 
         max-width: 400px; 
+        height: 100%;
+        max-height: 100dvh;
         background: #fff; 
-        border-radius: 12px; 
         box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
         box-sizing: border-box; 
         position: relative; 
         overflow: hidden; 
-        min-height: 580px;
         display: flex;
         flex-direction: column;
     }
@@ -36,8 +78,20 @@
     .screen { flex: 1; display: none; flex-direction: column; position: relative; }
     .screen.active { display: flex; }
     
-    #setup-screen, #summary-screen, #favorites-screen { padding: 20px; overflow-y: auto; }
-    #swipe-screen { position: relative; overflow: hidden; background: #e9ecef; }
+    #setup-screen, #summary-screen, #favorites-screen { 
+        padding: 20px; 
+        padding-top: max(20px, env(safe-area-inset-top));
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+        overflow-y: auto; 
+        -webkit-overflow-scrolling: touch;
+    }
+    #swipe-screen { 
+        position: relative; 
+        overflow: hidden; 
+        background: #e9ecef; 
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 
     h2 { margin-top: 0; color: #333; }
     h3 { margin-top: 15px; margin-bottom: 10px; color: #444; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
@@ -58,6 +112,8 @@
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
         padding: 20px;
+        padding-top: max(20px, env(safe-area-inset-top));
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
         box-sizing: border-box;
         background: #fff;
         display: flex;
@@ -134,7 +190,6 @@
         background: #198754;
     }
 
-    /* Print Formatting Optimized for Single Page A4 */
     @media print {
         @page {
             size: A4 portrait;
@@ -146,6 +201,8 @@
             padding: 0 !important;
             margin: 0 !important;
             display: block !important;
+            position: static !important;
+            overflow: visible !important;
         }
 
         #app-container {
@@ -155,6 +212,7 @@
             border: none !important;
             border-radius: 0 !important;
             min-height: auto !important;
+            max-height: none !important;
             overflow: visible !important;
         }
 
@@ -208,16 +266,22 @@
             word-break: break-word;
         }
 
-        /* Hide all UI controls and modals during print */
         button,
         #info-modal,
-        .modal {
+        .modal,
+        #portrait-warning {
             display: none !important;
         }
     }
 </style>
 </head>
 <body>
+
+<div id="portrait-warning">
+    <svg viewBox="0 0 24 24"><path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm1 18H7V5h10v14z"/></svg>
+    <div style="font-weight: 600; font-size: 16px;">Portrait Mode Only</div>
+    <div style="font-size: 13px; color: #aaa; margin-top: 4px;">Rotate device back to portrait orientation.</div>
+</div>
 
 <div id="app-container">
     <div id="setup-screen" class="screen active">
@@ -318,6 +382,29 @@
 </div>
 
 <script>
+    // Prevent iOS gestures and pinch/double-tap zooming
+    document.addEventListener('gesturestart', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('gesturechange', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('gestureend', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchstart', function (e) {
+        if (e.touches.length > 1) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    if (screen.orientation && screen.orientation.lock) {
+        screen.orientation.lock('portrait').catch(function () {});
+    }
+
     const cookbookDatabase = [
         {
             id: "three-cup-chicken-san-bei-ji",
