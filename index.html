@@ -117,6 +117,8 @@
         <label>Meal Categories</label>
         <div id="meal-categories" class="checkbox-group">
             <label><input type="checkbox" value="Proper Good Dinners" checked> Proper Good Dinners</label>
+            <label><input type="checkbox" value="Main Meals" checked> Main Meals</label>
+            <label><input type="checkbox" value="Fish & Seafood" checked> Fish &amp; Seafood</label>
             <label><input type="checkbox" value="Hosting Dinners" checked> Hosting Dinners</label>
             <label><input type="checkbox" value="Puddings"> Puddings</label>
             <label><input type="checkbox" value="Cakes and treats"> Cakes &amp; Treats</label>
@@ -198,6 +200,63 @@
 <script>
     const cookbookDatabase = [
         {
+            id: "three-cup-chicken-san-bei-ji",
+            title: "Three Cup Chicken (San Bei Ji)",
+            type: "Main Meals",
+            time: "15",
+            image: "3cup.png",
+            rawIngredients: [
+                "1 1/2 tbsp plain oil (canola, vegetable, or peanut)",
+                "600g chicken thighs, boneless, skinless, cut into 2.5cm pieces",
+                "6 slices ginger, ~3mm thick",
+                "1 1/2 tbsp finely minced garlic (5-6 cloves)",
+                "2 dried red chillies",
+                "1 1/2 tbsp toasted sesame oil",
+                "1 cup lightly packed Thai basil leaves",
+                "2 tbsp light soy sauce",
+                "2 tsp dark soy sauce",
+                "2 tsp white sugar",
+                "2 tbsp Chinese cooking wine or Taiwanese rice wine (mijiu)",
+                "White rice (for serving)"
+            ],
+            method: [
+                "Toast the sliced ginger and dried chillies in plain oil for 30 seconds.",
+                "Add the chicken pieces and sear to seal, adding the minced garlic toward the end.",
+                "Pour in the light soy, dark soy, sugar, and cooking wine.",
+                "Braise over medium-high heat for 4 to 5 minutes until the sauce reduces to a syrupy glaze.",
+                "Turn off the heat, stir in the toasted sesame oil and fresh Thai basil leaves until wilted, then serve with white rice."
+            ]
+        },
+        {
+            id: "seafood-marinara-pasta",
+            title: "Seafood Marinara Pasta",
+            type: "Fish & Seafood",
+            time: "20",
+            image: "seafood-marinara-pasta.jpg",
+            rawIngredients: [
+                "6 oz / 180g dried spaghetti pasta (or other long pasta of choice)",
+                "2 1/2 tbsp olive oil, separated",
+                "10 oz / 300g seafood Marinara mix",
+                "2 garlic cloves, minced",
+                "1/2 onion, finely chopped (~1/2 cup)",
+                "1/2 cup white wine (any dry white)",
+                "2 cups tomato passata / tomato puree (or 600g canned crushed tomato + 1/2 cup water)",
+                "1/2 tsp sugar",
+                "2 tbsp finely chopped fresh parsley",
+                "Salt and black pepper to taste"
+            ],
+            method: [
+                "Bring a large pot of salted water to boil. Cook pasta according to packet directions, reducing time by 1 minute. Reserve 1 mug of pasta cooking water, then drain pasta.",
+                "Sort the seafood mix by cooking time: fish and large prawns first, small prawns second, calamari last.",
+                "Heat 1 1/2 tbsp olive oil in a large skillet over high heat. Sear fish and large prawns for 30 seconds, add small prawns for 30 seconds, then add calamari for 1 minute. Transfer all seafood immediately to a bowl.",
+                "Reduce heat to medium-high. Add the remaining 1 tbsp olive oil, minced garlic, and chopped onion. Cook for 3 minutes until translucent.",
+                "Pour in the white wine, deglaze the skillet by scraping up brown bits, and simmer for 1 minute until the raw alcohol aroma dissipates.",
+                "Stir in tomato passata, sugar, salt, and pepper. Simmer over medium-high heat for 2 minutes, then adjust seasoning to taste.",
+                "Add the drained pasta, seared seafood, and approximately 1/2 cup of reserved pasta water into the sauce. Toss continuously for 1 to 2 minutes until the sauce thickens and emulsifies around the pasta.",
+                "Remove from heat, garnish with fresh parsley, and serve immediately."
+            ]
+        },
+        {
             id: "jerk-chicken",
             title: "Jerk Chicken with Rice and Peas",
             type: "Proper Good Dinners",
@@ -208,12 +267,12 @@
                 "4 spring onions (chicken)",
                 "Small bunch of fresh thyme",
                 "3 bay leaves",
-                "Ground cloves",
-                "Ground nutmeg",
-                "Ground allspice",
-                "6 tbsps golden rum",
-                "6 tbsps white wine vinegar",
-                "1 tbsp honey",
+                "Pinch of ground cloves",
+                "Pinch of ground nutmeg",
+                "Pinch of ground allspice",
+                "6 tbsp golden rum",
+                "6 tbsp white wine vinegar",
+                "2 tbsp honey",
                 "1 Scotch bonnet chilli",
                 "4 cloves garlic",
                 "2 spring onions (rice)",
@@ -250,11 +309,11 @@
                 "1 tsp cayenne",
                 "1 tsp cinnamon",
                 "2 tbsp oil",
-                "Greek yoghurt",
-                "Red onion",
-                "Peppers",
-                "Coriander",
-                "Flatbreads"
+                "Greek yoghurt (to serve)",
+                "1 red onion",
+                "2 bell peppers",
+                "Fresh coriander (to serve)",
+                "Flatbreads (to serve)"
             ],
             method: [
                 "Preheat oven to 180°C.",
@@ -291,7 +350,7 @@
                 "Add cubed chicken and sear 3-4 minutes until sealed.",
                 "Add fresh tomatoes and cook 5-7 minutes until soft.",
                 "Stir in tomato puree and yoghurt; cook 8-10 minutes until oil separates.",
-                "Add spices, fenugreek, and salt; simmer 5-7 minutes until chicken is done.",
+                "Add spices, fenugreek, and salt; simmer 5-7 minutes until chicken is cooked.",
                 "Melt butter into curry before removing from heat."
             ]
         },
@@ -330,7 +389,7 @@
             time: "45",
             image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80",
             rawIngredients: [
-                "Chicken breasts",
+                "3 chicken breasts",
                 "4 tbsp Greek-style yoghurt",
                 "3.5 tbsp Tandoori spice mix",
                 "1.5 tsp Coriander powder",
@@ -369,7 +428,7 @@
             time: "50",
             image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=80",
             rawIngredients: [
-                "1 chicken breast per person",
+                "4 chicken breasts",
                 "1 large onion",
                 "40g butter",
                 "40g plain flour",
@@ -433,7 +492,7 @@
                 "1 leek",
                 "1 pepper",
                 "3 cloves garlic",
-                "100g pasta per person",
+                "400g pasta",
                 "1 tin chopped tomatoes",
                 "Splash red wine",
                 "Splash balsamic vinegar",
@@ -463,10 +522,10 @@
                 "2 tbsp flour",
                 "1 can (800g) chopped tomatoes",
                 "2 tbsp tomato paste",
-                "2 tsp fresh thyme",
+                "2 tsp fresh thyme leaves",
                 "400ml vegetable or chicken stock",
-                "Sugar",
-                "Lemon juice",
+                "2 pinches sugar",
+                "2 squeezes lemon juice",
                 "Black pepper"
             ],
             method: [
@@ -533,9 +592,9 @@
             time: "50",
             image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80",
             rawIngredients: [
-                "100g cocoa powder",
+                "100g cocoa powder (75g cake + 25g sauce)",
                 "75g self-raising flour",
-                "175g light brown sugar",
+                "175g light brown sugar (100g cake + 75g sauce)",
                 "100g butter",
                 "1 tsp vanilla essence",
                 "2 eggs",
@@ -560,7 +619,7 @@
                 "600ml double cream",
                 "1 tbsp vanilla extract",
                 "4 medium eggs",
-                "96g caster sugar",
+                "96g caster sugar (28g custard + 68g compote)",
                 "320g rhubarb",
                 "Zest and juice of 1 orange",
                 "4 tbsp demerara sugar"
@@ -583,11 +642,11 @@
             rawIngredients: [
                 "120g butter",
                 "85ml milk",
-                "250g light brown sugar",
+                "250g light brown sugar (115g batter + 135g sauce)",
                 "2 eggs",
                 "165g self-raising flour",
                 "½ tsp bicarbonate of soda",
-                "50g cocoa powder"
+                "50g cocoa powder (30g batter + 20g sauce)"
             ],
             method: [
                 "Melt butter in microwave. Whisk in milk, 115g brown sugar, and eggs.",
@@ -612,8 +671,8 @@
                 "250g plain flour",
                 "2 tsp baking powder",
                 "50g dark chocolate chips",
-                "Pinch cinnamon",
-                "Pinch salt"
+                "Pinch of cinnamon",
+                "Pinch of salt"
             ],
             method: [
                 "Cream butter and sugar until pale and fluffy.",
@@ -694,7 +753,13 @@
 
     let recipes = [];
     let config = { days: 0, categories: [] };
-    let state = { currentRecipeIndex: 0, acceptedMeals: 0, acceptedRecipes: [], ingredientsList: [] };
+    let state = { 
+        currentRecipeIndex: 0, 
+        acceptedMeals: 0, 
+        acceptedRecipes: [], 
+        rejectedRecipes: [], 
+        rawIngredientsList: [] 
+    };
     let favorites = JSON.parse(localStorage.getItem('bbcMealPlannerFavorites')) || [];
     
     const pageCurrent = document.getElementById('page-current');
@@ -800,16 +865,19 @@
                 favorites.push(recipe);
                 localStorage.setItem('bbcMealPlannerFavorites', JSON.stringify(favorites));
             }
+            state.rejectedRecipes.push(recipe);
+        } else if (action === 'reject') {
+            state.rejectedRecipes.push(recipe);
         } else if (action === 'accept') {
             state.acceptedMeals++;
             state.acceptedRecipes.push(recipe);
             
             recipe.rawIngredients.forEach(rawIng => {
-                const existing = state.ingredientsList.find(i => i.name === rawIng);
+                const existing = state.rawIngredientsList.find(i => i.line === rawIng);
                 if (existing) {
-                    existing.qty += 1;
+                    existing.count += 1;
                 } else {
-                    state.ingredientsList.push({ name: rawIng, qty: 1 });
+                    state.rawIngredientsList.push({ line: rawIng, count: 1 });
                 }
             });
         }
@@ -818,9 +886,22 @@
         
         if (state.acceptedMeals >= config.days) {
             finalizePlan();
-        } else {
-            loadPages();
+            return;
         }
+
+        if (state.currentRecipeIndex >= recipes.length) {
+            if (state.rejectedRecipes.length > 0) {
+                recipes = [...state.rejectedRecipes];
+                recipes.sort(() => Math.random() - 0.5);
+                state.rejectedRecipes = [];
+                state.currentRecipeIndex = 0;
+            } else {
+                finalizePlan();
+                return;
+            }
+        }
+
+        loadPages();
     }
 
     function switchScreen(screenId) {
@@ -850,7 +931,13 @@
             return;
         }
 
-        state = { currentRecipeIndex: 0, acceptedMeals: 0, acceptedRecipes: [], ingredientsList: [] };
+        state = { 
+            currentRecipeIndex: 0, 
+            acceptedMeals: 0, 
+            acceptedRecipes: [], 
+            rejectedRecipes: [], 
+            rawIngredientsList: [] 
+        };
         setControlsState(false);
         loadPages();
     }
@@ -866,7 +953,7 @@
 
     function renderPage(pageEl, index, acceptedCount) {
         if (index >= recipes.length) {
-            pageEl.querySelector('.recipe-title').innerText = "Out of recipes.";
+            pageEl.querySelector('.recipe-title').innerText = "No more recipes.";
             pageEl.querySelector('.recipe-image').src = "";
             pageEl.querySelector('.meal-tag').innerText = "N/A";
             pageEl.querySelector('.recipe-time').innerText = "--";
@@ -896,9 +983,10 @@
         const listContainer = document.getElementById('shopping-list');
         listContainer.innerHTML = '';
         
-        state.ingredientsList.sort((a, b) => a.name.localeCompare(b.name)).forEach(item => {
+        state.rawIngredientsList.sort((a, b) => a.line.localeCompare(b.line)).forEach(item => {
             const li = document.createElement('li');
-            li.innerHTML = `<span>${item.name}</span> <span>x${item.qty}</span>`;
+            const multiplier = item.count > 1 ? ` <span style="color:#0056b3; font-weight:bold;">(${item.count} batches)</span>` : '';
+            li.innerHTML = `<span>${item.line}${multiplier}</span>`;
             listContainer.appendChild(li);
         });
         
@@ -909,7 +997,7 @@
         const plan = {
             date: new Date().toISOString(),
             agenda: state.acceptedRecipes,
-            shoppingList: state.ingredientsList
+            shoppingList: state.rawIngredientsList
         };
         
         let savedPlans = JSON.parse(localStorage.getItem('bbcMealPlannerSavedPlans')) || [];
