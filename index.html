@@ -52,6 +52,7 @@
     button:active { opacity: 0.8; }
     button:disabled { opacity: 0.5; pointer-events: none; }
     button.secondary { background: #6c757d; margin-top: 10px; }
+    button.action-btn { background: #17a2b8; margin-top: 10px; }
     
     .swipe-page {
         position: absolute;
@@ -132,6 +133,88 @@
     .wakelock-btn.active {
         background: #198754;
     }
+
+    /* Print Formatting Optimized for Single Page A4 */
+    @media print {
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+
+        body {
+            background-color: #fff !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: block !important;
+        }
+
+        #app-container {
+            max-width: 100% !important;
+            width: 100% !important;
+            box-shadow: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            min-height: auto !important;
+            overflow: visible !important;
+        }
+
+        .screen {
+            display: none !important;
+        }
+
+        #summary-screen {
+            display: block !important;
+            padding: 0 !important;
+            overflow: visible !important;
+        }
+
+        #summary-screen h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 6px;
+        }
+
+        .print-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .print-section h3 {
+            font-size: 13px;
+            margin-top: 0;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #999;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        ul {
+            margin-bottom: 0 !important;
+        }
+
+        li {
+            padding: 3px 0 !important;
+            font-size: 10.5px !important;
+            border-bottom: 1px dotted #ccc !important;
+            line-height: 1.25 !important;
+        }
+
+        #shopping-list li span {
+            word-break: break-word;
+        }
+
+        /* Hide all UI controls and modals during print */
+        button,
+        #info-modal,
+        .modal {
+            display: none !important;
+        }
+    }
 </style>
 </head>
 <body>
@@ -198,13 +281,20 @@
     <div id="summary-screen" class="screen">
         <h2>Weekly Plan Complete</h2>
         
-        <h3>Meal Agenda</h3>
-        <ul id="meal-agenda"></ul>
+        <div class="print-layout">
+            <div class="print-section">
+                <h3>Meal Agenda</h3>
+                <ul id="meal-agenda"></ul>
+            </div>
+            
+            <div class="print-section">
+                <h3>Shopping List</h3>
+                <ul id="shopping-list"></ul>
+            </div>
+        </div>
         
-        <h3>Shopping List</h3>
-        <ul id="shopping-list"></ul>
-        
-        <button onclick="savePlan()">Save Plan</button>
+        <button onclick="printPlan()">Print Plan (A4)</button>
+        <button class="action-btn" onclick="savePlan()">Save Plan</button>
         <button class="secondary" onclick="resetApp()">Start Over</button>
     </div>
 
@@ -234,7 +324,7 @@
             title: "Three Cup Chicken (San Bei Ji)",
             type: "Main Meals",
             time: "15",
-            image: "./images/3cup.jpeg",
+            image: "images/3cup.jpeg",
             rawIngredients: [
                 "1 1/2 tbsp plain oil (canola, vegetable, or peanut)",
                 "600g chicken thighs, boneless, skinless, cut into 2.5cm pieces",
@@ -262,7 +352,7 @@
             title: "Seafood Marinara Pasta",
             type: "Fish & Seafood",
             time: "20",
-            image: "./images/seafood-marinara-pasta.png",
+            image: "images/seafood-marinara-pasta.png",
             rawIngredients: [
                 "6 oz / 180g dried spaghetti pasta (or other long pasta of choice)",
                 "2 1/2 tbsp olive oil, separated",
@@ -515,7 +605,7 @@
             title: "Sexy Sausage Pasta",
             type: "Proper Good Dinners",
             time: "30",
-            image: "./images/ssp.png",
+            image: "images/ssp.png",
             rawIngredients: [
                 "4 sausages",
                 "1 onion",
@@ -531,9 +621,10 @@
             method: [
                 "Remove skins from sausages and fry meat until browned and crispy.",
                 "Boil pasta in salted water until al dente.",
+                "Add cooked pasta water to adjust sauce consistency.",
                 "Add diced onion and garlic to sausages; cook 5 mins.",
                 "Add sliced leek, then peppers after 5 mins.",
-                "Pour in chopped tomatoes and simmer, adding pasta water to adjust consistency.",
+                "Pour in chopped tomatoes and simmer.",
                 "Deglaze with red wine and balsamic vinegar.",
                 "Toss pasta into sauce and serve."
             ]
@@ -1022,6 +1113,10 @@
         });
         
         switchScreen('summary-screen');
+    }
+
+    function printPlan() {
+        window.print();
     }
 
     function savePlan() {
