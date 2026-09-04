@@ -200,6 +200,8 @@
 </div>
 
 <script>
+    const CARDS_FOLDER = 'RecipeCards';
+
     let recipes = [];
     let config = { days: 0, categories: [] };
     let state = { currentRecipeIndex: 0, acceptedMeals: 0, acceptedRecipes: [], ingredientsList: [] };
@@ -336,17 +338,29 @@
         document.getElementById(screenId).classList.add('active');
     }
 
-    // Helper: normalizes individual JSON recipe cards into internal app format
+    // Resolves image paths: prefixes with RecipeCards/ if not absolute HTTP/HTTPS
+    function resolveImagePath(rawPath) {
+        if (!rawPath) {
+            return "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/bbc-good-food-logo-b171f11.jpg";
+        }
+        if (rawPath.startsWith('http://') || rawPath.startsWith('https://') || rawPath.startsWith('/')) {
+            return rawPath;
+        }
+        if (rawPath.startsWith(CARDS_FOLDER + '/')) {
+            return rawPath;
+        }
+        return `${CARDS_FOLDER}/${rawPath}`;
+    }
+
     function normalizeRecipe(source) {
         if (!source) return null;
-        // Supports cards where the recipe object is direct, or wrapped under a recipes array
         const raw = source.recipes ? source.recipes[0] : source;
         if (!raw || !raw.title) return null;
 
         return {
             id: raw.bbc_url || raw.id || raw.title,
             title: raw.title || "Recipe Card",
-            image: raw.image || "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/bbc-good-food-logo-b171f11.jpg",
+            image: resolveImagePath(raw.image),
             time: raw.cook_time ? String(raw.cook_time).replace(/\D/g, '') : "45",
             type: raw.category || "Main Meals",
             ingredients: (raw.ingredients || []).map(ing => ({ name: ing, qty: 1 })),
@@ -369,26 +383,24 @@
         pageCurrent.querySelector('.recipe-title').innerText = "Loading recipe cards...";
 
         try {
-            let loadedRecipes = [];
-
-            // Attempt 1: Fetch an index/manifest file (recipes/index.json) listing individual file paths
-            // Format of recipes/index.json: ["recipes/chicken-curry.json", "recipes/three-cup-chicken.json"]
-            const indexResponse = await fetch('recipes/index.json');
-            
-            if (indexResponse.ok) {
-                const fileList = await indexResponse.json();
-                const fetchedCards = await Promise.all(
-                    fileList.map(path => fetch(path).then(res => res.ok ? res.json() : null).catch(() => null))
-                );
-                loadedRecipes = fetchedCards.map(normalizeRecipe).filter(Boolean);
-            } else {
-                // Attempt 2: Fallback to root recipes.json if no index manifest is present
-                const fallbackResponse = await fetch('recipes.json');
-                if (!fallbackResponse.ok) throw new Error("Could not load recipes/index.json or recipes.json");
-                const fallbackData = await fallbackResponse.json();
-                const rawItems = Array.isArray(fallbackData) ? fallbackData : (fallbackData.recipes || [fallbackData]);
-                loadedRecipes = rawItems.map(normalizeRecipe).filter(Boolean);
+            // Fetch index manifest listing individual cards inside RecipeCards folder
+            const indexResponse = await fetch(`${CARDS_FOLDER}/index.json`);
+            if (!indexResponse.ok) {
+                throw new Error(`Failed to load ${CARDS_FOLDER}/index.json (Status: ${indexResponse.status})`);
             }
+
+            const fileList = await indexResponse.json();
+            
+            // Map card paths ensuring RecipeCards/ prefix is respected
+            const fetchPromises = fileList.map(item => {
+                const filePath = item.startsWith(CARDS_FOLDER + '/') ? item : `${CARDS_FOLDER}/${item}`;
+                return fetch(filePath)
+                    .then(res => res.ok ? res.json() : null)
+                    .catch(() => null);
+            });
+
+            const fetchedCards = await Promise.all(fetchPromises);
+            const loadedRecipes = fetchedCards.map(normalizeRecipe).filter(Boolean);
 
             recipes = loadedRecipes.filter(r => config.categories.includes(r.type));
             recipes.sort(() => Math.random() - 0.5);
@@ -404,7 +416,7 @@
             loadPages();
             
         } catch (error) {
-            pageCurrent.querySelector('.recipe-title').innerText = "Error reading recipe cards. Ensure files are served via HTTP.";
+            pageCurrent.querySelector('.recipe-title').innerText = `Error loading cards from ${CARDS_FOLDER}/. Check console.`;
             console.error(error);
         }
     }
