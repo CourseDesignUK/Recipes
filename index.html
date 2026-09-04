@@ -97,12 +97,41 @@
     .favorite-item div { display: flex; align-items: center; }
     
     .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
-    .modal-content { background-color: #fff; margin: 15% auto; padding: 20px; border-radius: 12px; width: 90%; max-width: 400px; max-height: 70vh; overflow-y: auto; position: relative; box-sizing: border-box; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+    .modal-content { 
+        background-color: #fff; 
+        margin: 15% auto; 
+        padding: 20px; 
+        border-radius: 12px; 
+        width: 90%; 
+        max-width: 400px; 
+        max-height: 75vh; 
+        overflow-y: auto; 
+        position: relative; 
+        box-sizing: border-box; 
+        -webkit-overflow-scrolling: touch; 
+        overscroll-behavior: contain; 
+        display: flex;
+        flex-direction: column;
+    }
     .close-modal { position: absolute; right: 15px; top: 15px; color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1; padding: 5px; }
     .modal-content h3 { margin-top: 0; padding-right: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
     .modal-content h4 { margin-top: 15px; margin-bottom: 5px; color: #444; }
     .modal-content ul, .modal-content ol { padding-left: 20px; margin-bottom: 15px; }
     .modal-content li { display: list-item; border-bottom: none; padding: 4px 0; justify-content: flex-start; text-align: left; }
+
+    .wakelock-btn {
+        background: #495057;
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    .wakelock-btn.active {
+        background: #198754;
+    }
 </style>
 </head>
 <body>
@@ -194,6 +223,7 @@
         <ul id="modal-ingredients"></ul>
         <h4>Method</h4>
         <ol id="modal-method"></ol>
+        <button id="wakelock-btn" class="wakelock-btn" onclick="toggleWakeLock()">Keep Screen On: Off</button>
     </div>
 </div>
 
@@ -761,6 +791,7 @@
         rawIngredientsList: [] 
     };
     let favorites = JSON.parse(localStorage.getItem('bbcMealPlannerFavorites')) || [];
+    let wakeLockSentinel = null;
     
     const pageCurrent = document.getElementById('page-current');
     const pageNext = document.getElementById('page-next');
@@ -1056,12 +1087,79 @@
             methodList.appendChild(li);
         });
 
+        updateWakeLockUI();
         document.getElementById('info-modal').style.display = 'block';
     }
 
-    function closeRecipeInfo() {
+    async function closeRecipeInfo() {
+        if (wakeLockSentinel) {
+            try {
+                await wakeLockSentinel.release();
+            } catch (err) {
+                console.error("Error releasing wake lock:", err);
+            }
+            wakeLockSentinel = null;
+        }
+        updateWakeLockUI();
         document.getElementById('info-modal').style.display = 'none';
     }
+
+    async function toggleWakeLock() {
+        if (!('wakeLock' in navigator)) {
+            alert("Wake Lock API is not supported in this browser.");
+            return;
+        }
+
+        if (wakeLockSentinel !== null) {
+            try {
+                await wakeLockSentinel.release();
+            } catch (err) {
+                console.error("Error releasing wake lock:", err);
+            }
+            wakeLockSentinel = null;
+        } else {
+            try {
+                wakeLockSentinel = await navigator.wakeLock.request('screen');
+                wakeLockSentinel.addEventListener('release', () => {
+                    wakeLockSentinel = null;
+                    updateWakeLockUI();
+                });
+            } catch (err) {
+                console.error("Wake lock acquisition failed:", err);
+            }
+        }
+        updateWakeLockUI();
+    }
+
+    function updateWakeLockUI() {
+        const btn = document.getElementById('wakelock-btn');
+        if (!btn) return;
+        if (wakeLockSentinel !== null) {
+            btn.classList.add('active');
+            btn.innerText = "Keep Screen On: Active";
+        } else {
+            btn.classList.remove('active');
+            btn.innerText = "Keep Screen On: Off";
+        }
+    }
+
+    document.addEventListener('visibilitychange', async () => {
+        if (document.visibilityState === 'visible' && document.getElementById('info-modal').style.display === 'block') {
+            const btn = document.getElementById('wakelock-btn');
+            if (btn && btn.classList.contains('active') && wakeLockSentinel === null) {
+                try {
+                    wakeLockSentinel = await navigator.wakeLock.request('screen');
+                    wakeLockSentinel.addEventListener('release', () => {
+                        wakeLockSentinel = null;
+                        updateWakeLockUI();
+                    });
+                } catch (err) {
+                    console.error("Wake lock re-acquisition failed:", err);
+                }
+                updateWakeLockUI();
+            }
+        }
+    });
 </script>
 
 </body>
