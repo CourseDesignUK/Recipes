@@ -284,7 +284,6 @@
 
         setTimeout(() => {
             pageCurrent.classList.add('dragging');
-            
             pageCurrent.classList.remove('swipe-left', 'swipe-right', 'swipe-up');
             
             pageNext.style.transition = 'none';
@@ -292,11 +291,9 @@
             pageNext.style.opacity = '0.8';
             
             processSwipeAction(action);
-            
             void pageCurrent.offsetWidth;
             
             pageCurrent.classList.remove('dragging');
-            
             if (state.currentRecipeIndex < recipes.length) {
                 setControlsState(false);
             }
@@ -339,6 +336,25 @@
         document.getElementById(screenId).classList.add('active');
     }
 
+    // Helper: normalizes individual JSON recipe cards into internal app format
+    function normalizeRecipe(source) {
+        if (!source) return null;
+        // Supports cards where the recipe object is direct, or wrapped under a recipes array
+        const raw = source.recipes ? source.recipes[0] : source;
+        if (!raw || !raw.title) return null;
+
+        return {
+            id: raw.bbc_url || raw.id || raw.title,
+            title: raw.title || "Recipe Card",
+            image: raw.image || "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/bbc-good-food-logo-b171f11.jpg",
+            time: raw.cook_time ? String(raw.cook_time).replace(/\D/g, '') : "45",
+            type: raw.category || "Main Meals",
+            ingredients: (raw.ingredients || []).map(ing => ({ name: ing, qty: 1 })),
+            rawIngredients: raw.ingredients || [],
+            method: raw.method || []
+        };
+    }
+
     async function startPlanning() {
         config.days = parseInt(document.getElementById('days').value);
         config.categories = Array.from(document.querySelectorAll('#meal-categories input:checked')).map(cb => cb.value);
@@ -350,32 +366,32 @@
 
         switchScreen('swipe-screen');
         setControlsState(true);
-        pageCurrent.querySelector('.recipe-title').innerText = "Loading recipes.json...";
+        pageCurrent.querySelector('.recipe-title').innerText = "Loading recipe cards...";
 
         try {
-            const response = await fetch('recipes.json');
-            if (!response.ok) throw new Error("Failed to load recipes.json");
-            const recipeData = await response.json();
+            let loadedRecipes = [];
 
-            let filteredSources = recipeData.recipes.filter(r => config.categories.includes(r.category));
+            // Attempt 1: Fetch an index/manifest file (recipes/index.json) listing individual file paths
+            // Format of recipes/index.json: ["recipes/chicken-curry.json", "recipes/three-cup-chicken.json"]
+            const indexResponse = await fetch('recipes/index.json');
             
-            filteredSources.sort(() => Math.random() - 0.5);
-            recipes = [];
-
-            for (const source of filteredSources) {
-                const parsedIngredients = (source.ingredients || []).map(ing => ({ name: ing, qty: 1 }));
-                
-                recipes.push({
-                    id: source.bbc_url || source.title,
-                    title: source.title || "BBC Recipe",
-                    image: source.image || "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/bbc-good-food-logo-b171f11.jpg",
-                    time: source.cook_time ? source.cook_time.replace(/\D/g, '') : "45",
-                    type: source.category,
-                    ingredients: parsedIngredients,
-                    rawIngredients: source.ingredients || [],
-                    method: source.method || []
-                });
+            if (indexResponse.ok) {
+                const fileList = await indexResponse.json();
+                const fetchedCards = await Promise.all(
+                    fileList.map(path => fetch(path).then(res => res.ok ? res.json() : null).catch(() => null))
+                );
+                loadedRecipes = fetchedCards.map(normalizeRecipe).filter(Boolean);
+            } else {
+                // Attempt 2: Fallback to root recipes.json if no index manifest is present
+                const fallbackResponse = await fetch('recipes.json');
+                if (!fallbackResponse.ok) throw new Error("Could not load recipes/index.json or recipes.json");
+                const fallbackData = await fallbackResponse.json();
+                const rawItems = Array.isArray(fallbackData) ? fallbackData : (fallbackData.recipes || [fallbackData]);
+                loadedRecipes = rawItems.map(normalizeRecipe).filter(Boolean);
             }
+
+            recipes = loadedRecipes.filter(r => config.categories.includes(r.type));
+            recipes.sort(() => Math.random() - 0.5);
 
             if (recipes.length === 0) {
                 pageCurrent.querySelector('.recipe-title').innerText = "No matching recipes found.";
@@ -388,7 +404,7 @@
             loadPages();
             
         } catch (error) {
-            pageCurrent.querySelector('.recipe-title').innerText = "Error reading recipes.json. Ensure file is served via HTTP.";
+            pageCurrent.querySelector('.recipe-title').innerText = "Error reading recipe cards. Ensure files are served via HTTP.";
             console.error(error);
         }
     }
