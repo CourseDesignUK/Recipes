@@ -250,6 +250,14 @@
         currentY = 0;
     }, { passive: true });
 
+    function resetCardStyles(el) {
+        if (!el) return;
+        el.className = 'swipe-page';
+        el.style.transition = '';
+        el.style.transform = '';
+        el.style.opacity = '';
+    }
+
     function triggerSwipe(action) {
         if (state.currentRecipeIndex >= recipes.length) return;
         
@@ -270,10 +278,7 @@
         setTimeout(() => {
             processSwipeAction(action);
 
-            pageCurrent.classList.remove('swipe-left', 'swipe-right', 'swipe-up', 'dragging');
-            pageCurrent.style.transition = 'none';
-            pageCurrent.style.transform = '';
-            pageCurrent.style.opacity = '1';
+            resetCardStyles(pageCurrent);
 
             pageNext.style.transition = 'none';
             pageNext.style.transform = 'scale(0.95)';
@@ -322,37 +327,58 @@
     }
 
     function switchScreen(screenId) {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById(screenId).classList.add('active');
+        if (!screenId || typeof screenId !== 'string') return;
+        
+        const screens = document.getElementsByClassName('screen');
+        for (let i = 0; i < screens.length; i++) {
+            screens[i].classList.remove('active');
+        }
+
+        const target = document.getElementById(screenId);
+        if (target) {
+            target.classList.add('active');
+        } else {
+            console.error(`Target screen element not found: #${screenId}`);
+        }
     }
 
     function resolveImagePath(rawPath) {
         if (!rawPath) {
             return "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/bbc-good-food-logo-b171f11.jpg";
         }
-        if (rawPath.startsWith('http://') || rawPath.startsWith('https://') || rawPath.startsWith('/')) {
-            return rawPath;
+        const strPath = String(rawPath);
+        if (strPath.startsWith('http://') || strPath.startsWith('https://') || strPath.startsWith('/')) {
+            return strPath;
         }
-        if (rawPath.startsWith(CARDS_FOLDER + '/')) {
-            return rawPath;
+        if (strPath.startsWith(CARDS_FOLDER + '/')) {
+            return strPath;
         }
-        return `${CARDS_FOLDER}/${rawPath}`;
+        return `${CARDS_FOLDER}/${strPath}`;
     }
 
     function normalizeRecipe(source) {
         if (!source) return null;
-        const raw = source.recipes ? source.recipes[0] : source;
-        if (!raw || !raw.title) return null;
+        const raw = (source.recipes && Array.isArray(source.recipes)) ? source.recipes[0] : source;
+        if (!raw || typeof raw !== 'object') return null;
+
+        const rawTimeStr = raw.cook_time !== undefined && raw.cook_time !== null ? String(raw.cook_time) : "45";
+        const parsedTime = rawTimeStr.replace(/[^\d]/g, '') || "45";
+
+        const title = (raw.title && typeof raw.title === 'string') ? raw.title.trim() : "Untitled Recipe";
+        const id = String(raw.bbc_url || raw.id || title);
+
+        const rawIngredients = Array.isArray(raw.ingredients) ? raw.ingredients.map(String) : [];
+        const method = Array.isArray(raw.method) ? raw.method.map(String) : [];
 
         return {
-            id: raw.bbc_url || raw.id || raw.title,
-            title: raw.title || "Recipe Card",
+            id: id,
+            title: title,
             image: resolveImagePath(raw.image),
-            time: raw.cook_time ? String(raw.cook_time).replace(/\D/g, '') : "45",
-            type: raw.category || "Recipe",
-            ingredients: (raw.ingredients || []).map(ing => ({ name: ing, qty: 1 })),
-            rawIngredients: raw.ingredients || [],
-            method: raw.method || []
+            time: parsedTime,
+            type: (raw.category && typeof raw.category === 'string') ? raw.category : "Recipe",
+            ingredients: rawIngredients.map(ing => ({ name: ing, qty: 1 })),
+            rawIngredients: rawIngredients,
+            method: method
         };
     }
 
@@ -384,7 +410,8 @@
             }
 
             const fetchPromises = fileList.map(async item => {
-                const filePath = item.startsWith(CARDS_FOLDER + '/') ? item : `${CARDS_FOLDER}/${item}`;
+                const itemStr = String(item);
+                const filePath = itemStr.startsWith(CARDS_FOLDER + '/') ? itemStr : `${CARDS_FOLDER}/${itemStr}`;
                 try {
                     const res = await fetch(filePath);
                     if (!res.ok) {
