@@ -219,7 +219,6 @@
         z-index: 1; 
     }
 
-    /* Swipe Indicator Stamps */
     .swipe-stamp {
         position: absolute;
         top: 45px;
@@ -442,17 +441,24 @@
     @media print {
         @page {
             size: A4 portrait;
-            margin: 10mm;
+            margin: 8mm 10mm;
         }
 
-        body {
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+
+        html, body {
             background-color: #fff !important;
             padding: 0 !important;
             margin: 0 !important;
             display: block !important;
             position: static !important;
             overflow: visible !important;
+            height: auto !important;
             color: #000 !important;
+            font-size: 9pt !important;
+            line-height: 1.2 !important;
         }
 
         #app-container {
@@ -464,6 +470,8 @@
             min-height: auto !important;
             max-height: none !important;
             overflow: visible !important;
+            position: static !important;
+            display: block !important;
         }
 
         .screen {
@@ -473,15 +481,19 @@
         #summary-screen {
             display: block !important;
             padding: 0 !important;
+            margin: 0 !important;
             overflow: visible !important;
+            position: static !important;
         }
 
         #summary-screen h2 {
-            font-size: 18px;
-            margin-bottom: 12px;
+            font-size: 13pt;
+            margin: 0 0 6px 0;
             text-align: center;
-            border-bottom: 2px solid #333;
-            padding-bottom: 6px;
+            border-bottom: 1.5pt solid #222;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             color: #000 !important;
         }
 
@@ -490,41 +502,109 @@
         }
 
         .print-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 20px;
-            align-items: start;
+            display: block !important;
+        }
+
+        .print-section {
+            width: 100% !important;
+        }
+
+        .print-section-agenda {
+            margin-bottom: 8px;
+            break-inside: avoid;
+            page-break-inside: avoid;
         }
 
         .print-section h3 {
-            font-size: 13px;
-            margin-top: 0;
-            margin-bottom: 6px;
-            border-bottom: 1px solid #999;
-            padding-bottom: 3px;
+            font-size: 9.5pt;
+            margin: 0 0 4px 0;
+            border-bottom: 1pt solid #444;
+            padding-bottom: 2px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             color: #000 !important;
+            font-weight: 700;
+        }
+
+        #meal-agenda {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            column-gap: 16px !important;
+            row-gap: 2px !important;
+            margin-bottom: 6px !important;
+            padding: 0 !important;
+        }
+
+        #meal-agenda li {
+            padding: 1.5px 0 !important;
+            font-size: 8.5pt !important;
+            border-bottom: 0.5pt solid #ddd !important;
+            line-height: 1.2 !important;
+            color: #000 !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        #shopping-list-container {
+            column-count: 3 !important;
+            column-gap: 14px !important;
+            column-rule: 0.5pt solid #e0e0e0;
+            width: 100% !important;
+            display: block !important;
+            margin-top: 4px !important;
+        }
+
+        .shopping-category {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            display: inline-block;
+            width: 100%;
+            margin-top: 0 !important;
+            margin-bottom: 6px !important;
+            vertical-align: top;
+        }
+
+        .shopping-category h4 {
+            font-size: 8.5pt !important;
+            margin: 0 0 2px 0 !important;
+            border-bottom: 0.75pt solid #666 !important;
+            padding-bottom: 1.5px !important;
+            color: #000 !important;
+            font-weight: 700;
         }
 
         ul {
-            margin-bottom: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
         }
 
-        li {
-            padding: 3px 0 !important;
-            font-size: 10.5px !important;
-            border-bottom: 1px dotted #ccc !important;
-            line-height: 1.25 !important;
+        .shopping-item {
+            padding: 1.5px 0 !important;
+            font-size: 7.5pt !important;
+            border-bottom: 0.5pt dotted #ccc !important;
+            line-height: 1.15 !important;
             color: #000 !important;
+            display: block !important;
+            break-inside: avoid;
+            page-break-inside: avoid;
         }
 
         .shopping-item input[type="checkbox"] {
             display: none !important;
         }
 
-        #shopping-list li span {
+        .shopping-item span {
             word-break: break-word;
+            display: block;
+        }
+
+        .shopping-item.checked span {
+            text-decoration: none !important;
+            color: #000 !important;
+            opacity: 1 !important;
         }
 
         button,
@@ -637,7 +717,7 @@
         </div>
 
         <div class="print-layout">
-            <div class="print-section">
+            <div class="print-section print-section-agenda">
                 <h3>Menu Agenda</h3>
                 <ul id="meal-agenda"></ul>
             </div>
@@ -742,7 +822,6 @@
 
     document.addEventListener('DOMContentLoaded', loadCookbookDatabase);
 
-    // Gestures: Pointer / Touch / Mouse Unified Drag
     function handleDragStart(clientX, clientY, target) {
         if (target.closest('button') || state.currentRecipeIndex >= recipes.length) return false;
         touchStartX = clientX;
@@ -768,7 +847,6 @@
         pageNext.style.transform = `scale(${scale})`;
         pageNext.style.opacity = opacity;
 
-        // Stamp visuals
         if (currentY < -30 && Math.abs(currentX) < 50) {
             const favProgress = Math.min(Math.abs(currentY) / 100, 1);
             stampFavorite.style.opacity = favProgress;
@@ -816,7 +894,6 @@
         stampFavorite.style.opacity = 0;
     }
 
-    // Touch event bindings
     pageCurrent.addEventListener('touchstart', e => {
         handleDragStart(e.touches[0].clientX, e.touches[0].clientY, e.target);
     }, { passive: true });
@@ -829,7 +906,6 @@
         handleDragEnd();
     }, { passive: true });
 
-    // Desktop Mouse Drag bindings
     pageCurrent.addEventListener('mousedown', e => {
         if (handleDragStart(e.clientX, e.clientY, e.target)) {
             e.preventDefault();
@@ -848,7 +924,6 @@
         }
     });
 
-    // Keyboard navigation controls
     window.addEventListener('keydown', e => {
         const swipeScreenActive = document.getElementById('swipe-screen').classList.contains('active');
         const modalOpen = document.getElementById('info-modal').style.display === 'block';
@@ -922,7 +997,6 @@
     function processSwipeAction(action) {
         const recipe = recipes[state.currentRecipeIndex];
         
-        // Push snapshot to undo history
         swipeHistory.push({
             action: action,
             recipeIndex: state.currentRecipeIndex,
@@ -1089,7 +1163,6 @@
         pageEl.querySelector('.recipe-time').innerText = `Time: ${recipe.time} mins`;
     }
 
-    // Aisle sorting dictionary
     function categorizeIngredient(rawLine) {
         const text = rawLine.toLowerCase();
         
@@ -1110,7 +1183,7 @@
         for (const word of bakeryKeywords) {
             if (text.includes(word)) return 'Bakery';
         }
-        return 'Larder';
+        return 'Kitchen Cupboard';
     }
 
     function scaleIngredientLine(line, scale) {
