@@ -140,22 +140,22 @@
         font-weight: 500; 
         font-size: 14px; 
         background: var(--mg-chip); 
-        color: var(--mg-text);
+        color: var(--mg-text); 
         padding: 10px 14px; 
         border-radius: 8px; 
         cursor: pointer; 
-        border: 1px solid transparent;
-        transition: background-color 0.2s, border-color 0.2s;
+        border: 1px solid transparent; 
+        transition: background-color 0.2s, border-color 0.2s; 
     }
-    .checkbox-group label:active {
-        background: var(--mg-chip-active);
+    .checkbox-group label:active { 
+        background: var(--mg-chip-active); 
     }
     .checkbox-group input[type="checkbox"] { 
         width: auto; 
         margin: 0 8px 0 0; 
         cursor: pointer; 
         transform: scale(1.2); 
-        accent-color: var(--mg-primary);
+        accent-color: var(--mg-primary); 
     }
     
     button { width: 100%; padding: 14px; margin-top: 15px; border: none; border-radius: 8px; background: var(--mg-primary); color: #ffffff; font-size: 16px; font-weight: 600; cursor: pointer; transition: opacity 0.2s, background-color 0.2s; }
@@ -194,7 +194,7 @@
         border-radius: 12px; 
         padding: 0; 
         text-align: center; 
-        margin-bottom: 20px; 
+        margin-bottom: 12px; 
         flex: 1; 
         display: flex; 
         flex-direction: column; 
@@ -271,20 +271,96 @@
         z-index: 3; 
         pointer-events: auto; 
     }
+
+    /* Dynamic Swipe Badges */
+    .swipe-stamp {
+        position: absolute;
+        top: 40px;
+        padding: 6px 14px;
+        border: 4px solid;
+        border-radius: 8px;
+        font-size: 26px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 10;
+        transform: rotate(0deg);
+        transition: opacity 0.1s linear;
+    }
+    .stamp-like {
+        right: 20px;
+        border-color: var(--mg-accept);
+        color: var(--mg-accept);
+        transform: rotate(15deg);
+    }
+    .stamp-nope {
+        left: 20px;
+        border-color: var(--mg-reject);
+        color: var(--mg-reject);
+        transform: rotate(-15deg);
+    }
+    .stamp-fav {
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%) rotate(0deg);
+        border-color: var(--mg-accent);
+        color: var(--mg-accent);
+    }
     
-    .swipe-controls { display: flex; gap: 10px; position: relative; z-index: 3; }
-    .swipe-controls button { margin-top: 0; border-radius: 8px; }
+    .status-bar { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        font-size: 14px; 
+        margin-bottom: 12px; 
+        border-bottom: 1px solid var(--mg-border); 
+        padding-bottom: 8px; 
+        font-weight: bold; 
+        color: var(--mg-primary); 
+    }
+    .undo-btn {
+        background: transparent;
+        color: var(--mg-secondary);
+        border: 1px solid var(--mg-border);
+        border-radius: 6px;
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: 600;
+        width: auto;
+        margin: 0;
+        cursor: pointer;
+    }
+    .undo-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+
+    .swipe-controls { display: flex; gap: 8px; position: relative; z-index: 3; }
+    .swipe-controls button { margin-top: 0; border-radius: 8px; padding: 12px; font-size: 14px; }
     .btn-left { background: var(--mg-reject); flex: 1; }
     .btn-mid { background: var(--mg-accent); color: #ffffff; flex: 1; }
     .btn-right { background: var(--mg-accept); flex: 1; }
-    
-    .status-bar { display: flex; justify-content: flex-end; font-size: 14px; margin-bottom: 15px; border-bottom: 1px solid var(--mg-border); padding-bottom: 10px; font-weight: bold; color: var(--mg-primary); pointer-events: none; }
     
     ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 20px; }
     li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--mg-border); font-size: 14px; color: var(--mg-text); }
     .favorite-item { align-items: center; }
     .favorite-item img { width: 44px; height: 44px; border-radius: 6px; margin-right: 12px; object-fit: cover; }
     .favorite-item div { display: flex; align-items: center; }
+
+    /* Aisle Grouping Styles */
+    .aisle-title {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--mg-primary);
+        background: var(--mg-chip);
+        padding: 6px 10px;
+        border-radius: 6px;
+        margin: 12px 0 6px 0;
+    }
     
     .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(20, 31, 24, 0.6); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
     .modal-content { 
@@ -388,20 +464,25 @@
             color: #000 !important;
         }
 
+        .aisle-title {
+            background: none !important;
+            border-bottom: 1px solid #bbb !important;
+            padding: 2px 0 !important;
+            margin: 6px 0 2px 0 !important;
+            font-size: 10px !important;
+            color: #333 !important;
+        }
+
         ul {
             margin-bottom: 0 !important;
         }
 
         li {
-            padding: 3px 0 !important;
-            font-size: 10.5px !important;
+            padding: 2px 0 !important;
+            font-size: 10px !important;
             border-bottom: 1px dotted #ccc !important;
-            line-height: 1.25 !important;
+            line-height: 1.2 !important;
             color: #000 !important;
-        }
-
-        #shopping-list li span {
-            word-break: break-word;
         }
 
         button,
@@ -423,10 +504,18 @@
 
 <div id="app-container">
     <div id="setup-screen" class="screen active">
-        <h2>Easy meal planner</h2>
+        <h2>Easy Meal Planner</h2>
         
         <label for="days">Number of days Cooking</label>
         <input type="number" id="days" value="5" min="1" max="7">
+
+        <label for="portion-multiplier">Portion Scaling / Servings</label>
+        <select id="portion-multiplier">
+            <option value="1" selected>Default (1x Recipe Servings)</option>
+            <option value="1.5">Scale 1.5x (Approx 3 Servings)</option>
+            <option value="2">Scale 2.0x (Double Portions)</option>
+            <option value="3">Scale 3.0x (Family / Batch Cook)</option>
+        </select>
 
         <label>Meal Categories</label>
         <div id="meal-categories" class="checkbox-group">
@@ -449,7 +538,7 @@
             </div>
             <div class="card">
                 <span class="meal-tag">Loading</span>
-                <button class="info-btn" onclick="showRecipeInfo()">Info</button>
+                <button class="info-btn" tabindex="-1">Info</button>
                 <img class="recipe-image" src="" alt="Recipe Image">
                 <div class="card-details">
                     <h3 class="recipe-title">Loading recipes...</h3>
@@ -457,17 +546,22 @@
                 </div>
             </div>
             <div class="swipe-controls">
-                <button class="btn-left">Hell no!</button>
-                <button class="btn-mid">Favorite</button>
-                <button class="btn-right">Oh yes!</button>
+                <button class="btn-left" tabindex="-1">Hell no!</button>
+                <button class="btn-mid" tabindex="-1">Favorite</button>
+                <button class="btn-right" tabindex="-1">Oh yes!</button>
             </div>
         </div>
 
         <div id="page-current" class="swipe-page">
             <div class="status-bar">
+                <button id="undo-btn" class="undo-btn" onclick="undoLastAction()" disabled title="Shortcut: Z or Backspace">&#8630; Undo</button>
                 <span class="meal-status">Meals: 0 / 5</span>
             </div>
             <div class="card">
+                <div class="swipe-stamp stamp-like" id="stamp-like">LIKE</div>
+                <div class="swipe-stamp stamp-nope" id="stamp-nope">NOPE</div>
+                <div class="swipe-stamp stamp-fav" id="stamp-fav">FAV</div>
+
                 <span class="meal-tag">Loading</span>
                 <button class="info-btn" onclick="showRecipeInfo()">Info</button>
                 <img class="recipe-image" src="" alt="Recipe Image">
@@ -477,9 +571,9 @@
                 </div>
             </div>
             <div class="swipe-controls">
-                <button class="btn-left" onclick="triggerSwipe('reject')">Hell no!</button>
-                <button class="btn-mid" onclick="triggerSwipe('favorite')">Favorite</button>
-                <button class="btn-right" onclick="triggerSwipe('accept')">Oh yes!</button>
+                <button class="btn-left" onclick="triggerSwipe('reject')" title="Shortcut: Left Arrow">Hell no!</button>
+                <button class="btn-mid" onclick="triggerSwipe('favorite')" title="Shortcut: Up Arrow">Favorite</button>
+                <button class="btn-right" onclick="triggerSwipe('accept')" title="Shortcut: Right Arrow">Oh yes!</button>
             </div>
         </div>
     </div>
@@ -494,8 +588,8 @@
             </div>
             
             <div class="print-section">
-                <h3>Shopping List</h3>
-                <ul id="shopping-list"></ul>
+                <h3>Shopping List (Aisle Grouped)</h3>
+                <div id="shopping-list-grouped"></div>
             </div>
         </div>
         
@@ -524,49 +618,108 @@
 </div>
 
 <script>
-    document.addEventListener('gesturestart', function (e) {
-        e.preventDefault();
-    }, { passive: false });
-
-    document.addEventListener('gesturechange', function (e) {
-        e.preventDefault();
-    }, { passive: false });
-
-    document.addEventListener('gestureend', function (e) {
-        e.preventDefault();
-    }, { passive: false });
-
-    document.addEventListener('touchstart', function (e) {
-        if (e.touches.length > 1) {
-            e.preventDefault();
-        }
-    }, { passive: false });
+    document.addEventListener('gesturestart', e => e.preventDefault(), { passive: false });
+    document.addEventListener('gesturechange', e => e.preventDefault(), { passive: false });
+    document.addEventListener('gestureend', e => e.preventDefault(), { passive: false });
+    document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
 
     if (screen.orientation && screen.orientation.lock) {
-        screen.orientation.lock('portrait').catch(function () {});
+        screen.orientation.lock('portrait').catch(() => {});
     }
 
     let cookbookDatabase = [];
     let recipes = [];
-    let config = { days: 0, categories: [] };
+    let config = { days: 0, categories: [], multiplier: 1 };
     let state = { 
         currentRecipeIndex: 0, 
         acceptedMeals: 0, 
         acceptedRecipes: [], 
         rejectedRecipes: [], 
-        rawIngredientsList: [] 
+        rawIngredientsList: [],
+        history: []
     };
     let favorites = JSON.parse(localStorage.getItem('bbcMealPlannerFavorites')) || [];
     let wakeLockSentinel = null;
     
     const pageCurrent = document.getElementById('page-current');
     const pageNext = document.getElementById('page-next');
+    const stampLike = document.getElementById('stamp-like');
+    const stampNope = document.getElementById('stamp-nope');
+    const stampFav = document.getElementById('stamp-fav');
+    const undoBtn = document.getElementById('undo-btn');
 
     let touchStartX = 0;
     let touchStartY = 0;
     let currentX = 0;
     let currentY = 0;
     const swipeThreshold = 80;
+
+    // Aisle Categorization Reference
+    const AISLE_PATTERNS = [
+        {
+            name: 'Produce',
+            pattern: /\b(onion|garlic|ginger|potato|carrot|tomato|spinach|kale|salad|lettuce|lemon|lime|avocado|mushroom|bell pepper|pepper|herb|parsley|coriander|cilantro|basil|rosemary|thyme|chili|broccoli|cauliflower|zucchini|courgette|cucumber|apple|banana|berry|orange)\b/i
+        },
+        {
+            name: 'Meat & Seafood',
+            pattern: /\b(chicken|beef|steak|mince|pork|lamb|bacon|sausage|fish|salmon|cod|prawn|shrimp|turkey|tuna|fillet|pancetta|chorizo)\b/i
+        },
+        {
+            name: 'Dairy & Chilled',
+            pattern: /\b(milk|cream|butter|cheddar|parmesan|cheese|yoghurt|yogurt|egg|eggs|mozzarella|creme fraiche|ricotta)\b/i
+        },
+        {
+            name: 'Bakery',
+            pattern: /\b(bread|roll|bun|buns|baguette|tortilla|wrap|wraps|pita|pitta|pastry|brioche|croissant)\b/i
+        },
+        {
+            name: 'Spices & Seasonings',
+            pattern: /\b(salt|black pepper|paprika|cumin|oregano|cinnamon|turmeric|curry powder|chili flakes|clove|nutmeg|bay leaf|seasoning)\b/i
+        },
+        {
+            name: 'Pantry & Dry Goods',
+            pattern: /\b(rice|pasta|spaghetti|noodle|oil|olive oil|flour|sugar|stock|broth|can|tinned|chickpea|lentil|beans|soy sauce|vinegar|mustard|honey|mayo|tomato paste|coconut milk)\b/i
+        }
+    ];
+
+    function classifyIngredient(line) {
+        for (const aisle of AISLE_PATTERNS) {
+            if (aisle.pattern.test(line)) return aisle.name;
+        }
+        return 'Pantry & Dry Goods';
+    }
+
+    function scaleIngredientLine(line, factor) {
+        if (factor === 1) return line;
+
+        // Matches unicode fractions, standard fractions, decimals, and whole numbers at start of ingredient line
+        const fractionMap = { '½': 0.5, '⅓': 0.333, '⅔': 0.667, '¼': 0.25, '¾': 0.75, '⅛': 0.125 };
+        let modified = line;
+
+        // Check for unicode fractions
+        for (const [char, val] of Object.entries(fractionMap)) {
+            if (modified.startsWith(char)) {
+                const scaled = Math.round(val * factor * 10) / 10;
+                return `${scaled} ${modified.substring(char.length).trim()}`;
+            }
+        }
+
+        const match = modified.match(/^(\d+\s*\/\s*\d+|\d*\.?\d+)\s*(.*)/);
+        if (!match) return line;
+
+        let originalQty = 0;
+        if (match[1].includes('/')) {
+            const parts = match[1].split('/');
+            originalQty = parseFloat(parts[0]) / parseFloat(parts[1]);
+        } else {
+            originalQty = parseFloat(match[1]);
+        }
+
+        if (isNaN(originalQty) || originalQty <= 0) return line;
+
+        const scaledQty = Math.round(originalQty * factor * 100) / 100;
+        return `${scaledQty} ${match[2]}`.trim();
+    }
 
     async function loadCookbookDatabase() {
         try {
@@ -578,22 +731,43 @@
                 const cleanFilename = itemPath.replace(/^(\.\/)?(Cards\/)?/i, '');
                 const cardUrl = `Cards/${cleanFilename}`;
                 const res = await fetch(cardUrl);
-                if (!res.ok) {
-                    console.error(`Failed to load card: ${cardUrl} (HTTP ${res.status})`);
-                    return null;
-                }
+                if (!res.ok) return null;
                 return res.json();
             });
             
             const results = await Promise.all(cardPromises);
             cookbookDatabase = results.filter(item => item !== null);
-            console.log(`Loaded ${cookbookDatabase.length} recipes.`);
         } catch (err) {
             console.error("Initialization error loading recipe cards:", err);
         }
     }
 
     document.addEventListener('DOMContentLoaded', loadCookbookDatabase);
+
+    function resetStamps() {
+        stampLike.style.opacity = 0;
+        stampNope.style.opacity = 0;
+        stampFav.style.opacity = 0;
+    }
+
+    function updateStamps(x, y) {
+        const absX = Math.abs(x);
+        if (y < -40 && absX < 50) {
+            stampFav.style.opacity = Math.min(Math.abs(y) / swipeThreshold, 1);
+            stampLike.style.opacity = 0;
+            stampNope.style.opacity = 0;
+        } else if (x > 0) {
+            stampLike.style.opacity = Math.min(x / swipeThreshold, 1);
+            stampNope.style.opacity = 0;
+            stampFav.style.opacity = 0;
+        } else if (x < 0) {
+            stampNope.style.opacity = Math.min(absX / swipeThreshold, 1);
+            stampLike.style.opacity = 0;
+            stampFav.style.opacity = 0;
+        } else {
+            resetStamps();
+        }
+    }
 
     pageCurrent.addEventListener('touchstart', e => {
         if (e.target.closest('button') || state.currentRecipeIndex >= recipes.length) return;
@@ -619,6 +793,8 @@
         const opacity = 0.8 + (0.2 * progress);
         pageNext.style.transform = `scale(${scale})`;
         pageNext.style.opacity = opacity;
+
+        updateStamps(currentX, currentY);
     }, { passive: true });
 
     pageCurrent.addEventListener('touchend', e => {
@@ -628,6 +804,7 @@
         pageCurrent.classList.remove('dragging');
         pageCurrent.style.transition = '';
         pageNext.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease';
+        resetStamps();
 
         if (currentX < -swipeThreshold) {
             triggerSwipe('reject');
@@ -648,6 +825,7 @@
         if (state.currentRecipeIndex >= recipes.length) return;
         
         setControlsState(true);
+        resetStamps();
         pageCurrent.style.transform = '';
         
         pageNext.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease';
@@ -682,6 +860,17 @@
     }
 
     function processSwipeAction(action) {
+        // Record immutable history snapshot for Undo
+        state.history.push({
+            currentRecipeIndex: state.currentRecipeIndex,
+            acceptedMeals: state.acceptedMeals,
+            acceptedRecipes: [...state.acceptedRecipes],
+            rejectedRecipes: [...state.rejectedRecipes],
+            rawIngredientsList: state.rawIngredientsList.map(i => ({ ...i })),
+            recipes: [...recipes]
+        });
+        updateUndoButton();
+
         const recipe = recipes[state.currentRecipeIndex];
         
         if (action === 'favorite') {
@@ -697,11 +886,12 @@
             state.acceptedRecipes.push(recipe);
             
             recipe.rawIngredients.forEach(rawIng => {
-                const existing = state.rawIngredientsList.find(i => i.line === rawIng);
+                const scaledLine = scaleIngredientLine(rawIng, config.multiplier);
+                const existing = state.rawIngredientsList.find(i => i.line === scaledLine);
                 if (existing) {
                     existing.count += 1;
                 } else {
-                    state.rawIngredientsList.push({ line: rawIng, count: 1 });
+                    state.rawIngredientsList.push({ line: scaledLine, count: 1 });
                 }
             });
         }
@@ -728,6 +918,29 @@
         loadPages();
     }
 
+    function undoLastAction() {
+        if (!state.history || state.history.length === 0) return;
+        
+        const previousState = state.history.pop();
+        state.currentRecipeIndex = previousState.currentRecipeIndex;
+        state.acceptedMeals = previousState.acceptedMeals;
+        state.acceptedRecipes = previousState.acceptedRecipes;
+        state.rejectedRecipes = previousState.rejectedRecipes;
+        state.rawIngredientsList = previousState.rawIngredientsList;
+        recipes = previousState.recipes;
+
+        updateUndoButton();
+        resetStamps();
+        loadPages();
+        setControlsState(false);
+    }
+
+    function updateUndoButton() {
+        if (undoBtn) {
+            undoBtn.disabled = state.history.length === 0;
+        }
+    }
+
     function switchScreen(screenId) {
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById(screenId).classList.add('active');
@@ -744,6 +957,7 @@
         }
 
         config.days = parseInt(document.getElementById('days').value);
+        config.multiplier = parseFloat(document.getElementById('portion-multiplier').value) || 1;
         config.categories = Array.from(document.querySelectorAll('#meal-categories input:checked')).map(cb => cb.value);
         
         if (config.categories.length === 0) {
@@ -769,14 +983,16 @@
             acceptedMeals: 0, 
             acceptedRecipes: [], 
             rejectedRecipes: [], 
-            rawIngredientsList: [] 
+            rawIngredientsList: [],
+            history: []
         };
+        updateUndoButton();
         setControlsState(false);
         loadPages();
     }
 
     function setControlsState(disabled) {
-        document.querySelectorAll('#swipe-screen button').forEach(btn => btn.disabled = disabled);
+        document.querySelectorAll('#swipe-screen button:not(#undo-btn)').forEach(btn => btn.disabled = disabled);
     }
 
     function loadPages() {
@@ -813,14 +1029,32 @@
             agendaContainer.appendChild(li);
         });
 
-        const listContainer = document.getElementById('shopping-list');
-        listContainer.innerHTML = '';
-        
-        state.rawIngredientsList.sort((a, b) => a.line.localeCompare(b.line)).forEach(item => {
-            const li = document.createElement('li');
-            const multiplier = item.count > 1 ? ` <span style="color:var(--mg-highlight); font-weight:bold;">(${item.count} batches)</span>` : '';
-            li.innerHTML = `<span>${item.line}${multiplier}</span>`;
-            listContainer.appendChild(li);
+        // Group shopping list by aisle
+        const groupedContainer = document.getElementById('shopping-list-grouped');
+        groupedContainer.innerHTML = '';
+
+        const aisleBuckets = {};
+        state.rawIngredientsList.forEach(item => {
+            const department = classifyIngredient(item.line);
+            if (!aisleBuckets[department]) aisleBuckets[department] = [];
+            aisleBuckets[department].push(item);
+        });
+
+        const sortedAisles = Object.keys(aisleBuckets).sort();
+        sortedAisles.forEach(aisleName => {
+            const header = document.createElement('div');
+            header.className = 'aisle-title';
+            header.innerText = aisleName;
+            groupedContainer.appendChild(header);
+
+            const ul = document.createElement('ul');
+            aisleBuckets[aisleName].sort((a, b) => a.line.localeCompare(b.line)).forEach(item => {
+                const li = document.createElement('li');
+                const multiplier = item.count > 1 ? ` <span style="color:var(--mg-highlight); font-weight:bold;">(${item.count} batches)</span>` : '';
+                li.innerHTML = `<span>${item.line}${multiplier}</span>`;
+                ul.appendChild(li);
+            });
+            groupedContainer.appendChild(ul);
         });
         
         switchScreen('summary-screen');
@@ -833,6 +1067,7 @@
     function savePlan() {
         const plan = {
             date: new Date().toISOString(),
+            multiplier: config.multiplier,
             agenda: state.acceptedRecipes,
             shoppingList: state.rawIngredientsList
         };
@@ -881,7 +1116,7 @@
         ingList.innerHTML = '';
         recipe.rawIngredients.forEach(ing => {
             const li = document.createElement('li');
-            li.innerText = ing;
+            li.innerText = scaleIngredientLine(ing, config.multiplier);
             ingList.appendChild(li);
         });
 
@@ -948,6 +1183,43 @@
             btn.innerText = "Keep Screen On: Off";
         }
     }
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', e => {
+        const swipeActive = document.getElementById('swipe-screen').classList.contains('active');
+        const modalOpen = document.getElementById('info-modal').style.display === 'block';
+
+        if (e.code === 'Space') {
+            e.preventDefault();
+            if (modalOpen) {
+                closeRecipeInfo();
+            } else if (swipeActive) {
+                showRecipeInfo();
+            }
+            return;
+        }
+
+        if (e.key === 'Escape' && modalOpen) {
+            closeRecipeInfo();
+            return;
+        }
+
+        if (swipeActive && !modalOpen) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                triggerSwipe('reject');
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                triggerSwipe('accept');
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                triggerSwipe('favorite');
+            } else if (e.key === 'Backspace' || e.code === 'KeyZ') {
+                e.preventDefault();
+                undoLastAction();
+            }
+        }
+    });
 
     document.addEventListener('visibilitychange', async () => {
         if (document.visibilityState === 'visible' && document.getElementById('info-modal').style.display === 'block') {
