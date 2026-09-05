@@ -1,0 +1,23 @@
+{
+  "id": "spicy-gyoza-laksa-soup",
+  "title": "Spicy Gyoza Laksa-style Soup",
+  "type": "Main Meals",
+  "time": 25,
+  "image": "Cards/images/spicy-gyoza-laksa-soup.jpg",
+  "rawIngredients": [
+    "2 tsp vegetable oil",
+    "210g vegetable stir fry pack",
+    "½ x 185g jar laksa paste",
+    "400ml reduced fat coconut milk",
+    "150ml chicken stock",
+    "240g spicy chicken gyoza",
+    "2 x 150g packs udon noodles"
+  ],
+  "method": [
+    "Heat vegetable oil in a large pan over medium-high heat. Add onion and red cabbage from the stir fry pack; fry for 2 minutes.",
+    "Add laksa paste and fry, stirring, for 2-3 minutes. Pour in coconut milk and chicken stock; simmer gently for 8 minutes.",
+    "Cook the chicken gyoza and udon noodles according to pack instructions, then divide between 2 large bowls.",
+    "Add the remaining stir fry vegetables (except coriander) to the broth and simmer for 3-4 minutes until tender.",
+    "Ladle broth and vegetables over the noodles and gyoza, garnish with coriander, and serve."
+  ]
+}
