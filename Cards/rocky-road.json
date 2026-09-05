@@ -3,7 +3,7 @@
   "title": "Rocky Road",
   "type": "Cakes and treats",
   "time": "20",
-  "image": "images/RockyRoad.jpeg",
+  "image": "./images/RockyRoad.jpeg",
   "rawIngredients": [
     "200g rich tea biscuits",
     "135g butter",
