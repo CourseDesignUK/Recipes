@@ -3,7 +3,7 @@
   "title": "The Best Banana Bread Ever",
   "type": "Cakes and treats",
   "time": "65",
-  "image": "images/BananaBread.jpg",
+  "image": "./images/BananaBread.jpg",
   "rawIngredients": [
     "125g butter",
     "150g caster sugar",
