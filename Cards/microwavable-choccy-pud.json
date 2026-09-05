@@ -3,7 +3,7 @@
   "title": "Microwavable Choccy Pud",
   "type": "Puddings",
   "time": "15",
-  "image": "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=600&q=80",
+  "image": "./images/MCP.jpeg",
   "rawIngredients": [
     "120g butter",
     "85ml milk",
