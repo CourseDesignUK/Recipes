@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
 <title>Meal Planner Prototype</title>
 <style>
+    :root {
+        --mg-bg: #f4f7f4;
+        --mg-surface: #ffffff;
+        --mg-surface-card: #f9fbf9;
+        --mg-primary: #2d5a43;
+        --mg-primary-active: #224432;
+        --mg-secondary: #5c7365;
+        --mg-accent: #b38b59;
+        --mg-reject: #b95d55;
+        --mg-accept: #3d7e56;
+        --mg-text: #1f2d24;
+        --mg-text-muted: #596b60;
+        --mg-border: #dbe3dc;
+        --mg-chip: #e8efe9;
+        --mg-chip-active: #d6e2d8;
+        --mg-highlight: #416f55;
+    }
+
     html {
         overflow: hidden;
         height: 100%;
@@ -14,7 +32,8 @@
 
     body { 
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-        background-color: #f4f4f9; 
+        background-color: var(--mg-bg); 
+        color: var(--mg-text);
         display: flex; 
         justify-content: center; 
         margin: 0; 
@@ -43,7 +62,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: #1a1a1a;
+            background: #141f18;
             color: #ffffff;
             z-index: 999999;
             flex-direction: column;
@@ -66,8 +85,8 @@
         max-width: 400px; 
         height: 100%; 
         max-height: 100dvh; 
-        background: #fff; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+        background: var(--mg-surface); 
+        box-shadow: 0 4px 20px rgba(45, 90, 67, 0.08); 
         box-sizing: border-box; 
         position: relative; 
         overflow: hidden; 
@@ -88,25 +107,62 @@
     #swipe-screen { 
         position: relative; 
         overflow: hidden; 
-        background: #e9ecef; 
+        background: #e5ece6; 
         padding-top: env(safe-area-inset-top); 
         padding-bottom: env(safe-area-inset-bottom); 
     }
 
-    h2 { margin-top: 0; color: #333; }
-    h3 { margin-top: 15px; margin-bottom: 10px; color: #444; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-    label { font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; color: #555; }
-    input[type="number"], select { width: 100%; padding: 12px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; appearance: none; -webkit-appearance: none; }
+    h2 { margin-top: 0; color: var(--mg-primary); }
+    h3 { margin-top: 15px; margin-bottom: 10px; color: var(--mg-text); font-size: 16px; border-bottom: 1px solid var(--mg-border); padding-bottom: 5px; }
+    label { font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; color: var(--mg-text); }
+    input[type="number"], select { 
+        width: 100%; 
+        padding: 12px; 
+        box-sizing: border-box; 
+        border: 1px solid var(--mg-border); 
+        border-radius: 8px; 
+        font-size: 16px; 
+        background: #ffffff;
+        color: var(--mg-text);
+        appearance: none; 
+        -webkit-appearance: none; 
+    }
+    input[type="number"]:focus, select:focus {
+        outline: none;
+        border-color: var(--mg-primary);
+    }
     
     .checkbox-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; }
-    .checkbox-group label { display: inline-flex; align-items: center; margin-top: 0; font-weight: normal; font-size: 14px; background: #f0f0f0; padding: 10px 14px; border-radius: 8px; cursor: pointer; }
-    .checkbox-group input[type="checkbox"] { width: auto; margin: 0 8px 0 0; cursor: pointer; transform: scale(1.2); }
+    .checkbox-group label { 
+        display: inline-flex; 
+        align-items: center; 
+        margin-top: 0; 
+        font-weight: 500; 
+        font-size: 14px; 
+        background: var(--mg-chip); 
+        color: var(--mg-text);
+        padding: 10px 14px; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        border: 1px solid transparent;
+        transition: background-color 0.2s, border-color 0.2s;
+    }
+    .checkbox-group label:active {
+        background: var(--mg-chip-active);
+    }
+    .checkbox-group input[type="checkbox"] { 
+        width: auto; 
+        margin: 0 8px 0 0; 
+        cursor: pointer; 
+        transform: scale(1.2); 
+        accent-color: var(--mg-primary);
+    }
     
-    button { width: 100%; padding: 14px; margin-top: 15px; border: none; border-radius: 8px; background: #0056b3; color: white; font-size: 16px; font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
-    button:active { opacity: 0.8; }
+    button { width: 100%; padding: 14px; margin-top: 15px; border: none; border-radius: 8px; background: var(--mg-primary); color: #ffffff; font-size: 16px; font-weight: 600; cursor: pointer; transition: opacity 0.2s, background-color 0.2s; }
+    button:active { background: var(--mg-primary-active); }
     button:disabled { opacity: 0.5; pointer-events: none; }
-    button.secondary { background: #6c757d; margin-top: 10px; }
-    button.action-btn { background: #17a2b8; margin-top: 10px; }
+    button.secondary { background: var(--mg-secondary); margin-top: 10px; }
+    button.action-btn { background: var(--mg-accent); margin-top: 10px; }
     
     .swipe-page {
         position: absolute;
@@ -115,13 +171,13 @@
         padding-top: max(20px, env(safe-area-inset-top));
         padding-bottom: max(20px, env(safe-area-inset-bottom));
         box-sizing: border-box;
-        background: #fff;
+        background: var(--mg-surface);
         display: flex;
         flex-direction: column;
         transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
         transform-origin: 50% 100%;
         will-change: transform;
-        box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        box-shadow: 0 0 15px rgba(45, 90, 67, 0.06);
     }
     
     #page-current { z-index: 2; }
@@ -132,30 +188,30 @@
     .swipe-page.swipe-right { transform: translate(150%, 0) rotate(15deg) !important; opacity: 0; }
     .swipe-page.swipe-up { transform: translate(0, -150%) scale(0.8) !important; opacity: 0; }
     
-    .card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px; flex: 1; display: flex; flex-direction: column; position: relative; user-select: none; -webkit-user-select: none; }
-    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; background: #ddd; pointer-events: none; }
-    .card h3.recipe-title { margin: 0 0 10px 0; font-size: 18px; border: none; padding: 0; pointer-events: none; }
-    .card p { color: #666; margin: 5px 0; font-size: 14px; pointer-events: none; }
-    .meal-tag { position: absolute; top: 30px; left: 30px; background: rgba(0,0,0,0.7); color: white; padding: 6px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; text-transform: uppercase; pointer-events: none; }
-    .info-btn { position: absolute; top: 30px; right: 30px; background: rgba(0,123,255,0.9); color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold; text-transform: uppercase; margin: 0; width: auto; z-index: 10; pointer-events: auto; }
+    .card { background: var(--mg-surface-card); border: 1px solid var(--mg-border); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px; flex: 1; display: flex; flex-direction: column; position: relative; user-select: none; -webkit-user-select: none; }
+    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; background: #e0e8e2; pointer-events: none; }
+    .card h3.recipe-title { margin: 0 0 10px 0; font-size: 18px; border: none; padding: 0; pointer-events: none; color: var(--mg-text); }
+    .card p { color: var(--mg-text-muted); margin: 5px 0; font-size: 14px; pointer-events: none; }
+    .meal-tag { position: absolute; top: 30px; left: 30px; background: rgba(31, 45, 36, 0.85); color: #ffffff; padding: 6px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; text-transform: uppercase; pointer-events: none; }
+    .info-btn { position: absolute; top: 30px; right: 30px; background: var(--mg-primary); color: #ffffff; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold; text-transform: uppercase; margin: 0; width: auto; z-index: 10; pointer-events: auto; }
     
     .swipe-controls { display: flex; gap: 10px; position: relative; z-index: 3; }
     .swipe-controls button { margin-top: 0; border-radius: 8px; }
-    .btn-left { background: #dc3545; flex: 1; }
-    .btn-mid { background: #ffc107; color: #000; flex: 1; }
-    .btn-right { background: #28a745; flex: 1; }
+    .btn-left { background: var(--mg-reject); flex: 1; }
+    .btn-mid { background: var(--mg-accent); color: #ffffff; flex: 1; }
+    .btn-right { background: var(--mg-accept); flex: 1; }
     
-    .status-bar { display: flex; justify-content: flex-end; font-size: 14px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-weight: bold; pointer-events: none; }
+    .status-bar { display: flex; justify-content: flex-end; font-size: 14px; margin-bottom: 15px; border-bottom: 1px solid var(--mg-border); padding-bottom: 10px; font-weight: bold; color: var(--mg-primary); pointer-events: none; }
     
     ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 20px; }
-    li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+    li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--mg-border); font-size: 14px; color: var(--mg-text); }
     .favorite-item { align-items: center; }
     .favorite-item img { width: 44px; height: 44px; border-radius: 6px; margin-right: 12px; object-fit: cover; }
     .favorite-item div { display: flex; align-items: center; }
     
-    .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+    .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(20, 31, 24, 0.6); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
     .modal-content { 
-        background-color: #fff; 
+        background-color: var(--mg-surface); 
         margin: 15% auto; 
         padding: 20px; 
         border-radius: 12px; 
@@ -169,15 +225,16 @@
         overscroll-behavior: contain; 
         display: flex; 
         flex-direction: column; 
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
-    .close-modal { position: absolute; right: 15px; top: 15px; color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1; padding: 5px; }
-    .modal-content h3 { margin-top: 0; padding-right: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-    .modal-content h4 { margin-top: 15px; margin-bottom: 5px; color: #444; }
+    .close-modal { position: absolute; right: 15px; top: 15px; color: var(--mg-secondary); font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1; padding: 5px; }
+    .modal-content h3 { margin-top: 0; padding-right: 30px; border-bottom: 1px solid var(--mg-border); padding-bottom: 10px; color: var(--mg-primary); }
+    .modal-content h4 { margin-top: 15px; margin-bottom: 5px; color: var(--mg-text); }
     .modal-content ul, .modal-content ol { padding-left: 20px; margin-bottom: 15px; }
     .modal-content li { display: list-item; border-bottom: none; padding: 4px 0; justify-content: flex-start; text-align: left; }
 
     .wakelock-btn {
-        background: #495057;
+        background: var(--mg-secondary);
         margin-top: 10px;
         font-size: 14px;
         padding: 12px;
@@ -187,7 +244,7 @@
         gap: 8px;
     }
     .wakelock-btn.active {
-        background: #198754;
+        background: var(--mg-accept);
     }
 
     @media print {
@@ -203,6 +260,7 @@
             display: block !important;
             position: static !important;
             overflow: visible !important;
+            color: #000 !important;
         }
 
         #app-container {
@@ -232,6 +290,7 @@
             text-align: center;
             border-bottom: 2px solid #333;
             padding-bottom: 6px;
+            color: #000 !important;
         }
 
         .print-layout {
@@ -249,6 +308,7 @@
             padding-bottom: 3px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            color: #000 !important;
         }
 
         ul {
@@ -260,6 +320,7 @@
             font-size: 10.5px !important;
             border-bottom: 1px dotted #ccc !important;
             line-height: 1.25 !important;
+            color: #000 !important;
         }
 
         #shopping-list li span {
@@ -280,7 +341,7 @@
 <div id="portrait-warning">
     <svg viewBox="0 0 24 24"><path d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm1 18H7V5h10v14z"/></svg>
     <div style="font-weight: 600; font-size: 16px;">Portrait Mode Only</div>
-    <div style="font-size: 13px; color: #aaa; margin-top: 4px;">Rotate device back to portrait orientation.</div>
+    <div style="font-size: 13px; color: #a4b3a8; margin-top: 4px;">Rotate device back to portrait orientation.</div>
 </div>
 
 <div id="app-container">
@@ -430,16 +491,23 @@
     async function loadCookbookDatabase() {
         try {
             const manifestRes = await fetch('Cards/cards.json');
-            if (!manifestRes.ok) throw new Error(`Manifest load failed: ${manifestRes.status}`);
+            if (!manifestRes.ok) throw new Error(`Manifest load failed: HTTP ${manifestRes.status}`);
             const cardPaths = await manifestRes.json();
             
-            const cardPromises = cardPaths.map(async path => {
-                const res = await fetch(path);
-                if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+            const cardPromises = cardPaths.map(async itemPath => {
+                const cleanFilename = itemPath.replace(/^(\.\/)?(Cards\/)?/i, '');
+                const cardUrl = `Cards/${cleanFilename}`;
+                const res = await fetch(cardUrl);
+                if (!res.ok) {
+                    console.error(`Failed to load card: ${cardUrl} (HTTP ${res.status})`);
+                    return null;
+                }
                 return res.json();
             });
             
-            cookbookDatabase = await Promise.all(cardPromises);
+            const results = await Promise.all(cardPromises);
+            cookbookDatabase = results.filter(item => item !== null);
+            console.log(`Loaded ${cookbookDatabase.length} recipes.`);
         } catch (err) {
             console.error("Initialization error loading recipe cards:", err);
         }
@@ -590,6 +658,11 @@
             await loadCookbookDatabase();
         }
 
+        if (cookbookDatabase.length === 0) {
+            alert("No recipe data available. Check console network responses for cards.json and card items.");
+            return;
+        }
+
         config.days = parseInt(document.getElementById('days').value);
         config.categories = Array.from(document.querySelectorAll('#meal-categories input:checked')).map(cb => cb.value);
         
@@ -598,18 +671,18 @@
             return;
         }
 
+        const filtered = cookbookDatabase.filter(r => config.categories.includes(r.type));
+        
+        if (filtered.length === 0) {
+            alert(`No recipes found matching the selected categories: ${config.categories.join(', ')}`);
+            return;
+        }
+
         switchScreen('swipe-screen');
         setControlsState(true);
 
-        const filtered = cookbookDatabase.filter(r => config.categories.includes(r.type));
         filtered.sort(() => Math.random() - 0.5);
         recipes = filtered;
-
-        if (recipes.length === 0) {
-            pageCurrent.querySelector('.recipe-title').innerText = "No matching recipes found.";
-            setControlsState(true);
-            return;
-        }
 
         state = { 
             currentRecipeIndex: 0, 
@@ -656,7 +729,7 @@
         
         state.acceptedRecipes.forEach(recipe => {
             const li = document.createElement('li');
-            li.innerHTML = `<span><strong>${recipe.title}</strong></span> <span style="color:#666; font-size:12px;">${recipe.type}</span>`;
+            li.innerHTML = `<span><strong>${recipe.title}</strong></span> <span style="color:var(--mg-secondary); font-size:12px;">${recipe.type}</span>`;
             agendaContainer.appendChild(li);
         });
 
@@ -665,7 +738,7 @@
         
         state.rawIngredientsList.sort((a, b) => a.line.localeCompare(b.line)).forEach(item => {
             const li = document.createElement('li');
-            const multiplier = item.count > 1 ? ` <span style="color:#0056b3; font-weight:bold;">(${item.count} batches)</span>` : '';
+            const multiplier = item.count > 1 ? ` <span style="color:var(--mg-highlight); font-weight:bold;">(${item.count} batches)</span>` : '';
             li.innerHTML = `<span>${item.line}${multiplier}</span>`;
             listContainer.appendChild(li);
         });
