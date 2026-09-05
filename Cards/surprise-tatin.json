@@ -1,0 +1,27 @@
+{
+  "id": "surprise-tatin",
+  "title": "Surprise Tatin",
+  "type": "Hosting Dinners",
+  "time": "75",
+  "image": "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "500g baby potatoes",
+    "150g cherry tomatoes",
+    "1 large onion",
+    "40g sugar",
+    "10g butter",
+    "1 sprig fresh oregano",
+    "100g goat's cheese",
+    "1 sheet puff pastry",
+    "Olive oil",
+    "Salt and pepper"
+  ],
+  "method": [
+    "Boil whole baby potatoes in salted water 25 mins, drain and slice into 2cm discs.",
+    "Halve cherry tomatoes; slow roast at 130°C for 45 mins. Caramelise onions separately in oil.",
+    "Melt sugar and butter in a pan until semi-dark caramel; pour into base of lined 22cm cake tin.",
+    "Sprinkle oregano over caramel, pack potato slices upright, tuck onions and tomatoes into gaps, layer sliced goat's cheese.",
+    "Tuck puff pastry circle tightly over filling.",
+    "Bake at 200°C for 25 mins, then 180°C for 15 mins. Invert onto serving plate."
+  ]
+}

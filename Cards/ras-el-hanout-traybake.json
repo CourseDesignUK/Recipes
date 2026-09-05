@@ -1,0 +1,26 @@
+{
+  "id": "ras-el-hanout-traybake",
+  "title": "Ras el Hanout Traybake",
+  "type": "Hosting Dinners",
+  "time": "90",
+  "image": "images/REH.JPG",
+  "rawIngredients": [
+    "600g whole mushrooms (portabellini or chestnut)",
+    "300g whole shallots, peeled and halved",
+    "70g butter",
+    "4 tsp ras el hanout",
+    "1 lemon, zest and juice",
+    "4 cloves garlic, crushed",
+    "250g halloumi, cut into 1cm cubes",
+    "30g pine nuts",
+    "Large handful of flat-leaf parsley, roughly chopped",
+    "2 tsp pink peppercorns (optional but very nice)",
+    "Sea salt and freshly ground black pepper"
+  ],
+  "method": [
+    "Preheat oven to 130°C fan / 150°C / gas 2. Place butter, ras el hanout, lemon zest, and crushed garlic in a roasting tin, then heat in the oven for 5 minutes to melt butter and toast spices.",
+    "Trim mushrooms and peel/halve shallots. Add them to the tin with the melted spice butter, season well with sea salt and black pepper, and mix thoroughly. Cover with foil and roast for 1 hour.",
+    "Increase oven temperature to 150°C fan / 170°C / gas 3 and remove foil. Squeeze over lemon juice, add diced halloumi, mix well, and scatter pine nuts over the top. Roast uncovered for 15 minutes.",
+    "Adjust salt seasoning to taste, then scatter with chopped flat-leaf parsley and pink peppercorns before serving."
+  ]
+}

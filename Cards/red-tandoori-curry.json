@@ -1,0 +1,39 @@
+{
+  "id": "red-tandoori-curry",
+  "title": "Red Tandoori Curry",
+  "type": "Proper Good Dinners",
+  "time": "45",
+  "image": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "3 chicken breasts",
+    "4 tbsp Greek-style yoghurt",
+    "3.5 tbsp Tandoori spice mix",
+    "1.5 tsp Coriander powder",
+    "2 tsp Garlic puree",
+    "3 tbsp Vegetable oil",
+    "5 Cloves",
+    "3 large Onions",
+    "1 tsp Fresh ginger puree",
+    "2 tsp Tomato puree",
+    "150g Creamed tomatoes",
+    "100ml Chicken stock",
+    "1 tsp Mango chutney",
+    "1.5 tbsp Brown sugar",
+    "1 tsp Garam masala",
+    "1 tsp Paprika",
+    "½ tsp Curry powder",
+    "½ tsp Red chilli powder",
+    "½ tsp Turmeric powder",
+    "Fresh coriander"
+  ],
+  "method": [
+    "Cut chicken and marinate with yoghurt, 1.5 tbsp tandoori spice, coriander powder, and 1 tsp garlic puree for 3 hours.",
+    "Skewer chicken and grill under high heat until golden.",
+    "Infuse oil with cloves for 2 minutes, then discard cloves.",
+    "Caramelise chopped onions with 1/2 tsp brown sugar for 15-20 minutes.",
+    "Add ginger and garlic puree; fry 2 minutes.",
+    "Add dry spices, tomato puree, mango chutney, and brown sugar; fry 2 minutes.",
+    "Add creamed tomatoes and chicken stock; simmer 10-15 minutes.",
+    "Fold in grilled chicken, simmer 5 minutes, and finish with fresh coriander."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "chicken-shawarma",
+  "title": "Chicken Shawarma",
+  "type": "Proper Good Dinners",
+  "time": "45",
+  "image": "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "750g chicken breasts",
+    "2 tbsp flour",
+    "1 tsp salt",
+    "1 tsp cumin",
+    "1 tsp dried coriander",
+    "1 tsp paprika",
+    "1 tsp turmeric",
+    "½ tsp cloves",
+    "1 tsp cayenne",
+    "1 tsp cinnamon",
+    "2 tbsp oil",
+    "Greek yoghurt (to serve)",
+    "1 red onion",
+    "2 bell peppers",
+    "Fresh coriander (to serve)",
+    "Flatbreads (to serve)"
+  ],
+  "method": [
+    "Preheat oven to 180°C.",
+    "Mix spice blend, flour, and oil. Marinate chicken for at least 2 hours.",
+    "Layer chicken tightly into a loaf tin and bake for 40 minutes.",
+    "Flash fry sliced red onion and peppers on high heat to retain crunch.",
+    "Carve chicken and assemble inside flatbreads with yoghurt and herbs."
+  ]
+}

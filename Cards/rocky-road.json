@@ -1,0 +1,23 @@
+{
+  "id": "rocky-road",
+  "title": "Rocky Road",
+  "type": "Cakes and treats",
+  "time": "20",
+  "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "200g rich tea biscuits",
+    "135g butter",
+    "200g dark chocolate",
+    "3 tbsp golden syrup",
+    "100g mini marshmallows",
+    "50g raisins",
+    "50g glacé cherries"
+  ],
+  "method": [
+    "Line an 18cm square tin with baking paper.",
+    "Crush rich tea biscuits into rough chunks.",
+    "Gently melt butter, dark chocolate, and golden syrup together in a saucepan.",
+    "Fold biscuits, marshmallows, raisins, and cherries into chocolate sauce.",
+    "Press firmly into tin and chill in fridge for at least 2 hours before slicing."
+  ]
+}

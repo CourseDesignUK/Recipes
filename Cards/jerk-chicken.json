@@ -1,0 +1,35 @@
+{
+  "id": "jerk-chicken",
+  "title": "Jerk Chicken with Rice and Peas",
+  "type": "Proper Good Dinners",
+  "time": "35",
+  "image": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "4 chicken breasts",
+    "4 spring onions (chicken)",
+    "Small bunch of fresh thyme",
+    "3 bay leaves",
+    "Pinch of ground cloves",
+    "Pinch of ground nutmeg",
+    "Pinch of ground allspice",
+    "6 tbsp golden rum",
+    "6 tbsp white wine vinegar",
+    "2 tbsp honey",
+    "1 Scotch bonnet chilli",
+    "4 cloves garlic",
+    "2 spring onions (rice)",
+    "1 cinnamon stick",
+    "250g rice",
+    "600ml chicken stock",
+    "400g black beans"
+  ],
+  "method": [
+    "Cut each chicken breast on a plastic board and halve each one, leaving joined at top.",
+    "Drizzle with olive oil, sprinkle with salt and pepper, then rub both sides.",
+    "Put into hot pan, skin side down to cook.",
+    "Chop 4 spring onions, blend with thyme, bay leaves, pinch of each spice, rum, vinegar, honey, chilli, and garlic. Add olive oil to loosen if needed.",
+    "Turn chicken over, pour over jerk sauce, drizzle 1 tbsp honey and thyme. Cook for 15 mins.",
+    "Finely slice 2 spring onions, place in saucepan with cinnamon stick, olive oil, salt, and pepper. Soften for 1 min.",
+    "Add rice, chicken stock, rinsed black beans. Bring to boil, cover, reduce heat and simmer 12 mins."
+  ]
+}

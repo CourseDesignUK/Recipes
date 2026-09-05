@@ -1,0 +1,33 @@
+{
+  "id": "ritas-rowdy-enchiladas",
+  "title": "Rita’s Rowdy Enchiladas",
+  "type": "Proper Good Dinners",
+  "time": "55",
+  "image": "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "400g chicken breasts",
+    "2 red peppers",
+    "2 tbsp olive oil",
+    "¾ tsp mild chilli powder",
+    "1½ tsp ground cumin",
+    "¾ tsp smoked paprika",
+    "80g mozzarella",
+    "65g mature Cheddar",
+    "8 plain tortilla wraps",
+    "½ onion",
+    "2 garlic cloves",
+    "500g tomato passata",
+    "½ tsp dried oregano",
+    "1 tbsp chipotle chilli paste",
+    "400g tin black beans",
+    "½ lime",
+    "Fresh coriander"
+  ],
+  "method": [
+    "Toss chicken and sliced peppers with spices and oil; roast covered at 190°C for 25-30 mins, then shred chicken.",
+    "Sauté onion and garlic; add passata, oregano, chipotle paste; simmer 10 mins. Add beans and lime juice.",
+    "Mix 1/3 sauce and half mozzarella with chicken.",
+    "Roll chicken mixture in tortillas, pack in baking dish, top with remaining sauce and cheese.",
+    "Bake 20-25 mins until browned and bubbling. Top with chopped coriander."
+  ]
+}

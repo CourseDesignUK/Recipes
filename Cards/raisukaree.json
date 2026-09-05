@@ -1,0 +1,28 @@
+{
+  "id": "raisukaree",
+  "title": "Raisukaree",
+  "type": "Proper Good Dinners",
+  "time": "30",
+  "image": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "2 chicken breasts",
+    "2 tbsp Thai red curry paste",
+    "200ml coconut milk",
+    "1 tbsp demerara sugar",
+    "1 tbsp dark soy sauce",
+    "Juice of 1 lime",
+    "1 tbsp minced garlic",
+    "2 red onions",
+    "1 large red pepper",
+    "1 pack mangetout",
+    "Fresh coriander"
+  ],
+  "method": [
+    "Chop onions, peppers, mangetout, and chicken.",
+    "Fry curry paste with minced garlic on high heat for 2 minutes.",
+    "Add chicken, reduce heat, and cook through.",
+    "Pour in coconut milk, soy sauce, and half the lime juice; simmer 5 minutes.",
+    "Add mangetout and peppers 5 minutes before serving.",
+    "Garnish with lime wedges and coriander."
+  ]
+}

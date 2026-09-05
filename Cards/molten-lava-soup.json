@@ -1,0 +1,28 @@
+{
+  "id": "molten-lava-soup",
+  "title": "Molten Lava Soup",
+  "type": "Proper Good Dinners",
+  "time": "35",
+  "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "1 onion",
+    "2 carrots",
+    "4 tbsp olive oil",
+    "2 garlic cloves",
+    "2 tbsp flour",
+    "1 can (800g) chopped tomatoes",
+    "2 tbsp tomato paste",
+    "2 tsp fresh thyme leaves",
+    "400ml vegetable or chicken stock",
+    "2 pinches sugar",
+    "2 squeezes lemon juice",
+    "Black pepper"
+  ],
+  "method": [
+    "Dice onion and carrot; sauté in olive oil for 5 mins.",
+    "Stir in garlic and flour; cook 1 min.",
+    "Add tomatoes, paste, thyme, stock, sugar, and lemon juice. Simmer 20-25 mins.",
+    "Blend soup until completely smooth.",
+    "Reheat gently and serve with crusty sourdough bread."
+  ]
+}

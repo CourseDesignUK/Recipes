@@ -1,0 +1,26 @@
+{
+  "id": "maddie-pie",
+  "title": "Maddie Pie",
+  "type": "Proper Good Dinners",
+  "time": "50",
+  "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "4 chicken breasts",
+    "1 large onion",
+    "40g butter",
+    "40g plain flour",
+    "350ml milk",
+    "1 chicken stock cube",
+    "250g mixed vegetables (leeks, carrots, peas)",
+    "250g puff pastry",
+    "1 egg or 10ml milk (for glaze)"
+  ],
+  "method": [
+    "Preheat oven to 200°C (180°C fan). Sauté chopped onion in butter for 5 mins.",
+    "Stir in flour and crumbled stock cube to make a roux; cook out 2 mins.",
+    "Gradually whisk in warm milk until smooth and thickened. Season with salt, pepper, nutmeg, mustard.",
+    "Stir in chopped cooked chicken and vegetables. Transfer into a pie dish.",
+    "Roll puff pastry over dish, crimp edges, cut steam hole, and brush with egg wash.",
+    "Bake for 25 minutes until golden brown."
+  ]
+}

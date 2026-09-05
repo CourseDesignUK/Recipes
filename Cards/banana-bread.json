@@ -1,0 +1,26 @@
+{
+  "id": "banana-bread",
+  "title": "The Best Banana Bread Ever",
+  "type": "Cakes and treats",
+  "time": "65",
+  "image": "https://images.unsplash.com/photo-1607958996333-41aef7caef4b?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "125g butter",
+    "150g caster sugar",
+    "2 eggs",
+    "3 ripe bananas",
+    "1 tsp vanilla",
+    "250g plain flour",
+    "2 tsp baking powder",
+    "50g dark chocolate chips",
+    "Pinch of cinnamon",
+    "Pinch of salt"
+  ],
+  "method": [
+    "Cream butter and sugar until pale and fluffy.",
+    "Beat in eggs one at a time, then add mashed bananas and vanilla.",
+    "Fold in flour, baking powder, salt, and cinnamon until just combined.",
+    "Fold in dark chocolate chips.",
+    "Bake in a lined loaf tin at 160°C for 60 minutes."
+  ]
+}

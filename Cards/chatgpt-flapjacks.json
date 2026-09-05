@@ -1,0 +1,21 @@
+{
+  "id": "chatgpt-flapjacks",
+  "title": "Chat GPT Flapjacks",
+  "type": "Cakes and treats",
+  "time": "25",
+  "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "200g unsalted butter",
+    "100g soft light brown sugar",
+    "3 tbsp golden syrup",
+    "275g porridge oats",
+    "½ tsp salt"
+  ],
+  "method": [
+    "Preheat oven to 170°C (150°C fan) and line a 20cm square tin.",
+    "Melt butter, brown sugar, and golden syrup in saucepan over low heat without boiling.",
+    "Stir in porridge oats and salt until every oat is coated.",
+    "Press mixture firmly into tin using back of a spoon.",
+    "Bake 18-22 minutes. Score into squares while warm; cool completely in tin."
+  ]
+}

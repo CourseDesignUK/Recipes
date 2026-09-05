@@ -1,0 +1,24 @@
+{
+  "id": "rhubarb-creme-brulee",
+  "title": "Rhubarb Crème Brûlée",
+  "type": "Puddings",
+  "time": "40",
+  "image": "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "600ml double cream",
+    "1 tbsp vanilla extract",
+    "4 medium eggs",
+    "96g caster sugar (28g custard + 68g compote)",
+    "320g rhubarb",
+    "Zest and juice of 1 orange",
+    "4 tbsp demerara sugar"
+  ],
+  "method": [
+    "Heat double cream and vanilla to near boil; remove and infuse 20 mins.",
+    "Whisk eggs with 28g caster sugar; slowly pour in hot cream, then cook over low heat stirring constantly to 88°C.",
+    "Strain custard through sieve and cover surface with parchment.",
+    "Simmer rhubarb with remaining sugar, orange zest, and juice until thick compote; spread into dish.",
+    "Blend cooled custard smooth, layer over rhubarb, and chill 4 hours.",
+    "Scatter demerara sugar on top and caramelise with a blowtorch."
+  ]
+}

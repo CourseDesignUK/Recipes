@@ -1,0 +1,23 @@
+{
+  "id": "chatgpt-brownie",
+  "title": "Chat GPT Brownie",
+  "type": "Cakes and treats",
+  "time": "30",
+  "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "200g dark chocolate",
+    "150g butter",
+    "3 large eggs",
+    "200g caster sugar",
+    "100g plain flour",
+    "½ tsp baking powder",
+    "1 tsp vanilla extract"
+  ],
+  "method": [
+    "Preheat oven to 180°C and line a brownie tin.",
+    "Melt dark chocolate and butter together until completely smooth.",
+    "Whisk eggs, sugar, and vanilla until pale and frothy.",
+    "Pour chocolate into eggs, then fold in flour and baking powder.",
+    "Bake for 20-25 minutes. Cool thoroughly before slicing."
+  ]
+}

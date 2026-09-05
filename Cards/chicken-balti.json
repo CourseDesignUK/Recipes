@@ -1,0 +1,31 @@
+{
+  "id": "chicken-balti",
+  "title": "Chicken Balti",
+  "type": "Proper Good Dinners",
+  "time": "35",
+  "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "200g chicken breast",
+    "2 tbsp vegetable oil",
+    "1 tsp cumin seeds",
+    "1 tsp garlic puree",
+    "1 tsp grated ginger",
+    "2 large tomatoes finely chopped",
+    "1 tbsp tomato puree",
+    "2 tbsp plain yoghurt",
+    "½ tsp chilli powder",
+    "½ tsp black pepper",
+    "¼ tsp ground turmeric",
+    "1 tbsp fenugreek leaves",
+    "1 tbsp unsalted butter"
+  ],
+  "method": [
+    "Heat oil over medium heat, fry cumin seeds 30 seconds until spluttering.",
+    "Add garlic and ginger; fry 30 seconds.",
+    "Add cubed chicken and sear 3-4 minutes until sealed.",
+    "Add fresh tomatoes and cook 5-7 minutes until soft.",
+    "Stir in tomato puree and yoghurt; cook 8-10 minutes until oil separates.",
+    "Add spices, fenugreek, and salt; simmer 5-7 minutes until chicken is cooked.",
+    "Melt butter into curry before removing from heat."
+  ]
+}

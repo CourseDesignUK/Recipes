@@ -1,0 +1,23 @@
+{
+  "id": "microwavable-choccy-pud",
+  "title": "Microwavable Choccy Pud",
+  "type": "Puddings",
+  "time": "15",
+  "image": "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "120g butter",
+    "85ml milk",
+    "250g light brown sugar (115g batter + 135g sauce)",
+    "2 eggs",
+    "165g self-raising flour",
+    "½ tsp bicarbonate of soda",
+    "50g cocoa powder (30g batter + 20g sauce)"
+  ],
+  "method": [
+    "Melt butter in microwave. Whisk in milk, 115g brown sugar, and eggs.",
+    "Sift flour, bicarbonate of soda, and 30g cocoa powder into the wet mixture; combine.",
+    "Pour batter into a round microwavable dish.",
+    "Whisk 135g brown sugar, 20g cocoa powder, and 165ml boiling water; pour gently over batter.",
+    "Microwave on high for 8-10 minutes until risen."
+  ]
+}

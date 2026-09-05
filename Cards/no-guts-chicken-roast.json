@@ -1,0 +1,22 @@
+{
+  "id": "no-guts-chicken-roast",
+  "title": "No-Guts Chicken Roast",
+  "type": "Hosting Dinners",
+  "time": "80",
+  "image": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=600&q=80",
+  "rawIngredients": [
+    "1 whole chicken",
+    "100g butter",
+    "3 sprigs rosemary",
+    "3 sprigs oregano",
+    "2 sprigs sage",
+    "Black pepper and salt"
+  ],
+  "method": [
+    "Spatchcock chicken by cutting out the backbone with kitchen scissors and flattening.",
+    "Separate skin from meat over breasts and legs using fingers.",
+    "Finely chop fresh rosemary, oregano, and sage; incorporate into softened butter.",
+    "Distribute herb butter evenly underneath chicken skin across breasts and thighs.",
+    "Roast at 190°C for 60-80 mins until skin is deeply golden and juices run clear, basting every 20 mins."
+  ]
+}

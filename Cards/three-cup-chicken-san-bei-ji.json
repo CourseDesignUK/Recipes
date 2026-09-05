@@ -1,0 +1,28 @@
+{
+  "id": "three-cup-chicken-san-bei-ji",
+  "title": "Three Cup Chicken (San Bei Ji)",
+  "type": "Main Meals",
+  "time": "15",
+  "image": "images/3cup.jpeg",
+  "rawIngredients": [
+    "1 1/2 tbsp plain oil (canola, vegetable, or peanut)",
+    "600g chicken thighs, boneless, skinless, cut into 2.5cm pieces",
+    "6 slices ginger, ~3mm thick",
+    "1 1/2 tbsp finely minced garlic (5-6 cloves)",
+    "2 dried red chillies",
+    "1 1/2 tbsp toasted sesame oil",
+    "1 cup lightly packed Thai basil leaves",
+    "2 tbsp light soy sauce",
+    "2 tsp dark soy sauce",
+    "2 tsp white sugar",
+    "2 tbsp Chinese cooking wine or Taiwanese rice wine (mijiu)",
+    "White rice (for serving)"
+  ],
+  "method": [
+    "Toast the sliced ginger and dried chillies in plain oil for 30 seconds.",
+    "Add the chicken pieces and sear to seal, adding the minced garlic toward the end.",
+    "Pour in the light soy, dark soy, sugar, and cooking wine.",
+    "Braise over medium-high heat for 4 to 5 minutes until the sauce reduces to a syrupy glaze.",
+    "Turn off the heat, stir in the toasted sesame oil and fresh Thai basil leaves until wilted, then serve with white rice."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "sexy-sausage-pasta",
+  "title": "Sexy Sausage Pasta",
+  "type": "Proper Good Dinners",
+  "time": "30",
+  "image": "images/ssp.png",
+  "rawIngredients": [
+    "4 sausages",
+    "1 onion",
+    "1 leek",
+    "1 pepper",
+    "3 cloves garlic",
+    "400g pasta",
+    "1 tin chopped tomatoes",
+    "Splash red wine",
+    "Splash balsamic vinegar",
+    "Salt and pepper"
+  ],
+  "method": [
+    "Remove skins from sausages and fry meat until browned and crispy.",
+    "Boil pasta in salted water until al dente.",
+    "Add cooked pasta water to adjust sauce consistency.",
+    "Add diced onion and garlic to sausages; cook 5 mins.",
+    "Add sliced leek, then peppers after 5 mins.",
+    "Pour in chopped tomatoes and simmer.",
+    "Deglaze with red wine and balsamic vinegar.",
+    "Toss pasta into sauce and serve."
+  ]
+}
