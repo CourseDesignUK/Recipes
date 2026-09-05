@@ -18,17 +18,17 @@
         display: flex; 
         justify-content: center; 
         margin: 0; 
-        padding: 0;
-        width: 100vw;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        overflow: hidden;
+        padding: 0; 
+        width: 100vw; 
+        height: 100%; 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        overflow: hidden; 
         touch-action: pan-y; 
-        -webkit-tap-highlight-color: transparent;
-        -webkit-user-select: none;
-        user-select: none;
+        -webkit-tap-highlight-color: transparent; 
+        -webkit-user-select: none; 
+        user-select: none; 
     }
     
     #portrait-warning {
@@ -64,15 +64,15 @@
     #app-container { 
         width: 100%; 
         max-width: 400px; 
-        height: 100%;
-        max-height: 100dvh;
+        height: 100%; 
+        max-height: 100dvh; 
         background: #fff; 
         box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
         box-sizing: border-box; 
         position: relative; 
         overflow: hidden; 
-        display: flex;
-        flex-direction: column;
+        display: flex; 
+        flex-direction: column; 
     }
 
     .screen { flex: 1; display: none; flex-direction: column; position: relative; }
@@ -80,17 +80,17 @@
     
     #setup-screen, #summary-screen, #favorites-screen { 
         padding: 20px; 
-        padding-top: max(20px, env(safe-area-inset-top));
-        padding-bottom: max(20px, env(safe-area-inset-bottom));
+        padding-top: max(20px, env(safe-area-inset-top)); 
+        padding-bottom: max(20px, env(safe-area-inset-bottom)); 
         overflow-y: auto; 
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch; 
     }
     #swipe-screen { 
         position: relative; 
         overflow: hidden; 
         background: #e9ecef; 
-        padding-top: env(safe-area-inset-top);
-        padding-bottom: env(safe-area-inset-bottom);
+        padding-top: env(safe-area-inset-top); 
+        padding-bottom: env(safe-area-inset-bottom); 
     }
 
     h2 { margin-top: 0; color: #333; }
@@ -167,8 +167,8 @@
         box-sizing: border-box; 
         -webkit-overflow-scrolling: touch; 
         overscroll-behavior: contain; 
-        display: flex;
-        flex-direction: column;
+        display: flex; 
+        flex-direction: column; 
     }
     .close-modal { position: absolute; right: 15px; top: 15px; color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1; padding: 5px; }
     .modal-content h3 { margin-top: 0; padding-right: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
@@ -300,7 +300,7 @@
             <label><input type="checkbox" value="Cakes and treats"> Cakes &amp; Treats</label>
         </div>
         
-        <button onclick="startPlanning()">Start Swiping</button>
+        <button id="start-btn" onclick="startPlanning()">Start Swiping</button>
         <button class="secondary" onclick="viewFavorites()">View Favorites</button>
     </div>
 
@@ -405,586 +405,7 @@
         screen.orientation.lock('portrait').catch(function () {});
     }
 
-    const cookbookDatabase = [
-        {
-            id: "three-cup-chicken-san-bei-ji",
-            title: "Three Cup Chicken (San Bei Ji)",
-            type: "Main Meals",
-            time: "15",
-            image: "images/3cup.jpeg",
-            rawIngredients: [
-                "1 1/2 tbsp plain oil (canola, vegetable, or peanut)",
-                "600g chicken thighs, boneless, skinless, cut into 2.5cm pieces",
-                "6 slices ginger, ~3mm thick",
-                "1 1/2 tbsp finely minced garlic (5-6 cloves)",
-                "2 dried red chillies",
-                "1 1/2 tbsp toasted sesame oil",
-                "1 cup lightly packed Thai basil leaves",
-                "2 tbsp light soy sauce",
-                "2 tsp dark soy sauce",
-                "2 tsp white sugar",
-                "2 tbsp Chinese cooking wine or Taiwanese rice wine (mijiu)",
-                "White rice (for serving)"
-            ],
-            method: [
-                "Toast the sliced ginger and dried chillies in plain oil for 30 seconds.",
-                "Add the chicken pieces and sear to seal, adding the minced garlic toward the end.",
-                "Pour in the light soy, dark soy, sugar, and cooking wine.",
-                "Braise over medium-high heat for 4 to 5 minutes until the sauce reduces to a syrupy glaze.",
-                "Turn off the heat, stir in the toasted sesame oil and fresh Thai basil leaves until wilted, then serve with white rice."
-            ]
-        },
-        {
-            id: "seafood-marinara-pasta",
-            title: "Seafood Marinara Pasta",
-            type: "Fish & Seafood",
-            time: "20",
-            image: "images/seafood-marinara-pasta.png",
-            rawIngredients: [
-                "6 oz / 180g dried spaghetti pasta (or other long pasta of choice)",
-                "2 1/2 tbsp olive oil, separated",
-                "10 oz / 300g seafood Marinara mix",
-                "2 garlic cloves, minced",
-                "1/2 onion, finely chopped (~1/2 cup)",
-                "1/2 cup white wine (any dry white)",
-                "2 cups tomato passata / tomato puree (or 600g canned crushed tomato + 1/2 cup water)",
-                "1/2 tsp sugar",
-                "2 tbsp finely chopped fresh parsley",
-                "Salt and black pepper to taste"
-            ],
-            method: [
-                "Bring a large pot of salted water to boil. Cook pasta according to packet directions, reducing time by 1 minute. Reserve 1 mug of pasta cooking water, then drain pasta.",
-                "Sort the seafood mix by cooking time: fish and large prawns first, small prawns second, calamari last.",
-                "Heat 1 1/2 tbsp olive oil in a large skillet over high heat. Sear fish and large prawns for 30 seconds, add small prawns for 30 seconds, then add calamari for 1 minute. Transfer all seafood immediately to a bowl.",
-                "Reduce heat to medium-high. Add the remaining 1 tbsp olive oil, minced garlic, and chopped onion. Cook for 3 minutes until translucent.",
-                "Pour in the white wine, deglaze the skillet by scraping up brown bits, and simmer for 1 minute until the raw alcohol aroma dissipates.",
-                "Stir in tomato passata, sugar, salt, and pepper. Simmer over medium-high heat for 2 minutes, then adjust seasoning to taste.",
-                "Add the drained pasta, seared seafood, and approximately 1/2 cup of reserved pasta water into the sauce. Toss continuously for 1 to 2 minutes until the sauce thickens and emulsifies around the pasta.",
-                "Remove from heat, garnish with fresh parsley, and serve immediately."
-            ]
-        },
-        {
-            id: "ras-el-hanout-traybake",
-            title: "Ras el Hanout Traybake",
-            type: "Hosting Dinners",
-            time: "90",
-            image: "images/REH.JPG",
-            rawIngredients: [
-                "600g whole mushrooms (portabellini or chestnut)",
-                "300g whole shallots, peeled and halved",
-                "70g butter",
-                "4 tsp ras el hanout",
-                "1 lemon, zest and juice",
-                "4 cloves garlic, crushed",
-                "250g halloumi, cut into 1cm cubes",
-                "30g pine nuts",
-                "Large handful of flat-leaf parsley, roughly chopped",
-                "2 tsp pink peppercorns (optional but very nice)",
-                "Sea salt and freshly ground black pepper"
-            ],
-            method: [
-                "Preheat oven to 130°C fan / 150°C / gas 2. Place butter, ras el hanout, lemon zest, and crushed garlic in a roasting tin, then heat in the oven for 5 minutes to melt butter and toast spices.",
-                "Trim mushrooms and peel/halve shallots. Add them to the tin with the melted spice butter, season well with sea salt and black pepper, and mix thoroughly. Cover with foil and roast for 1 hour.",
-                "Increase oven temperature to 150°C fan / 170°C / gas 3 and remove foil. Squeeze over lemon juice, add diced halloumi, mix well, and scatter pine nuts over the top. Roast uncovered for 15 minutes.",
-                "Adjust salt seasoning to taste, then scatter with chopped flat-leaf parsley and pink peppercorns before serving."
-            ]
-        },
-        {
-            id: "jerk-chicken",
-            title: "Jerk Chicken with Rice and Peas",
-            type: "Proper Good Dinners",
-            time: "35",
-            image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "4 chicken breasts",
-                "4 spring onions (chicken)",
-                "Small bunch of fresh thyme",
-                "3 bay leaves",
-                "Pinch of ground cloves",
-                "Pinch of ground nutmeg",
-                "Pinch of ground allspice",
-                "6 tbsp golden rum",
-                "6 tbsp white wine vinegar",
-                "2 tbsp honey",
-                "1 Scotch bonnet chilli",
-                "4 cloves garlic",
-                "2 spring onions (rice)",
-                "1 cinnamon stick",
-                "250g rice",
-                "600ml chicken stock",
-                "400g black beans"
-            ],
-            method: [
-                "Cut each chicken breast on a plastic board and halve each one, leaving joined at top.",
-                "Drizzle with olive oil, sprinkle with salt and pepper, then rub both sides.",
-                "Put into hot pan, skin side down to cook.",
-                "Chop 4 spring onions, blend with thyme, bay leaves, pinch of each spice, rum, vinegar, honey, chilli, and garlic. Add olive oil to loosen if needed.",
-                "Turn chicken over, pour over jerk sauce, drizzle 1 tbsp honey and thyme. Cook for 15 mins.",
-                "Finely slice 2 spring onions, place in saucepan with cinnamon stick, olive oil, salt, and pepper. Soften for 1 min.",
-                "Add rice, chicken stock, rinsed black beans. Bring to boil, cover, reduce heat and simmer 12 mins."
-            ]
-        },
-        {
-            id: "chicken-shawarma",
-            title: "Chicken Shawarma",
-            type: "Proper Good Dinners",
-            time: "45",
-            image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "750g chicken breasts",
-                "2 tbsp flour",
-                "1 tsp salt",
-                "1 tsp cumin",
-                "1 tsp dried coriander",
-                "1 tsp paprika",
-                "1 tsp turmeric",
-                "½ tsp cloves",
-                "1 tsp cayenne",
-                "1 tsp cinnamon",
-                "2 tbsp oil",
-                "Greek yoghurt (to serve)",
-                "1 red onion",
-                "2 bell peppers",
-                "Fresh coriander (to serve)",
-                "Flatbreads (to serve)"
-            ],
-            method: [
-                "Preheat oven to 180°C.",
-                "Mix spice blend, flour, and oil. Marinate chicken for at least 2 hours.",
-                "Layer chicken tightly into a loaf tin and bake for 40 minutes.",
-                "Flash fry sliced red onion and peppers on high heat to retain crunch.",
-                "Carve chicken and assemble inside flatbreads with yoghurt and herbs."
-            ]
-        },
-        {
-            id: "chicken-balti",
-            title: "Chicken Balti",
-            type: "Proper Good Dinners",
-            time: "35",
-            image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "200g chicken breast",
-                "2 tbsp vegetable oil",
-                "1 tsp cumin seeds",
-                "1 tsp garlic puree",
-                "1 tsp grated ginger",
-                "2 large tomatoes finely chopped",
-                "1 tbsp tomato puree",
-                "2 tbsp plain yoghurt",
-                "½ tsp chilli powder",
-                "½ tsp black pepper",
-                "¼ tsp ground turmeric",
-                "1 tbsp fenugreek leaves",
-                "1 tbsp unsalted butter"
-            ],
-            method: [
-                "Heat oil over medium heat, fry cumin seeds 30 seconds until spluttering.",
-                "Add garlic and ginger; fry 30 seconds.",
-                "Add cubed chicken and sear 3-4 minutes until sealed.",
-                "Add fresh tomatoes and cook 5-7 minutes until soft.",
-                "Stir in tomato puree and yoghurt; cook 8-10 minutes until oil separates.",
-                "Add spices, fenugreek, and salt; simmer 5-7 minutes until chicken is cooked.",
-                "Melt butter into curry before removing from heat."
-            ]
-        },
-        {
-            id: "raisukaree",
-            title: "Raisukaree",
-            type: "Proper Good Dinners",
-            time: "30",
-            image: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "2 chicken breasts",
-                "2 tbsp Thai red curry paste",
-                "200ml coconut milk",
-                "1 tbsp demerara sugar",
-                "1 tbsp dark soy sauce",
-                "Juice of 1 lime",
-                "1 tbsp minced garlic",
-                "2 red onions",
-                "1 large red pepper",
-                "1 pack mangetout",
-                "Fresh coriander"
-            ],
-            method: [
-                "Chop onions, peppers, mangetout, and chicken.",
-                "Fry curry paste with minced garlic on high heat for 2 minutes.",
-                "Add chicken, reduce heat, and cook through.",
-                "Pour in coconut milk, soy sauce, and half the lime juice; simmer 5 minutes.",
-                "Add mangetout and peppers 5 minutes before serving.",
-                "Garnish with lime wedges and coriander."
-            ]
-        },
-        {
-            id: "red-tandoori-curry",
-            title: "Red Tandoori Curry",
-            type: "Proper Good Dinners",
-            time: "45",
-            image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "3 chicken breasts",
-                "4 tbsp Greek-style yoghurt",
-                "3.5 tbsp Tandoori spice mix",
-                "1.5 tsp Coriander powder",
-                "2 tsp Garlic puree",
-                "3 tbsp Vegetable oil",
-                "5 Cloves",
-                "3 large Onions",
-                "1 tsp Fresh ginger puree",
-                "2 tsp Tomato puree",
-                "150g Creamed tomatoes",
-                "100ml Chicken stock",
-                "1 tsp Mango chutney",
-                "1.5 tbsp Brown sugar",
-                "1 tsp Garam masala",
-                "1 tsp Paprika",
-                "½ tsp Curry powder",
-                "½ tsp Red chilli powder",
-                "½ tsp Turmeric powder",
-                "Fresh coriander"
-            ],
-            method: [
-                "Cut chicken and marinate with yoghurt, 1.5 tbsp tandoori spice, coriander powder, and 1 tsp garlic puree for 3 hours.",
-                "Skewer chicken and grill under high heat until golden.",
-                "Infuse oil with cloves for 2 minutes, then discard cloves.",
-                "Caramelise chopped onions with 1/2 tsp brown sugar for 15-20 minutes.",
-                "Add ginger and garlic puree; fry 2 minutes.",
-                "Add dry spices, tomato puree, mango chutney, and brown sugar; fry 2 minutes.",
-                "Add creamed tomatoes and chicken stock; simmer 10-15 minutes.",
-                "Fold in grilled chicken, simmer 5 minutes, and finish with fresh coriander."
-            ]
-        },
-        {
-            id: "maddie-pie",
-            title: "Maddie Pie",
-            type: "Proper Good Dinners",
-            time: "50",
-            image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "4 chicken breasts",
-                "1 large onion",
-                "40g butter",
-                "40g plain flour",
-                "350ml milk",
-                "1 chicken stock cube",
-                "250g mixed vegetables (leeks, carrots, peas)",
-                "250g puff pastry",
-                "1 egg or 10ml milk (for glaze)"
-            ],
-            method: [
-                "Preheat oven to 200°C (180°C fan). Sauté chopped onion in butter for 5 mins.",
-                "Stir in flour and crumbled stock cube to make a roux; cook out 2 mins.",
-                "Gradually whisk in warm milk until smooth and thickened. Season with salt, pepper, nutmeg, mustard.",
-                "Stir in chopped cooked chicken and vegetables. Transfer into a pie dish.",
-                "Roll puff pastry over dish, crimp edges, cut steam hole, and brush with egg wash.",
-                "Bake for 25 minutes until golden brown."
-            ]
-        },
-        {
-            id: "ritas-rowdy-enchiladas",
-            title: "Rita’s Rowdy Enchiladas",
-            type: "Proper Good Dinners",
-            time: "55",
-            image: "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "400g chicken breasts",
-                "2 red peppers",
-                "2 tbsp olive oil",
-                "¾ tsp mild chilli powder",
-                "1½ tsp ground cumin",
-                "¾ tsp smoked paprika",
-                "80g mozzarella",
-                "65g mature Cheddar",
-                "8 plain tortilla wraps",
-                "½ onion",
-                "2 garlic cloves",
-                "500g tomato passata",
-                "½ tsp dried oregano",
-                "1 tbsp chipotle chilli paste",
-                "400g tin black beans",
-                "½ lime",
-                "Fresh coriander"
-            ],
-            method: [
-                "Toss chicken and sliced peppers with spices and oil; roast covered at 190°C for 25-30 mins, then shred chicken.",
-                "Sauté onion and garlic; add passata, oregano, chipotle paste; simmer 10 mins. Add beans and lime juice.",
-                "Mix 1/3 sauce and half mozzarella with chicken.",
-                "Roll chicken mixture in tortillas, pack in baking dish, top with remaining sauce and cheese.",
-                "Bake 20-25 mins until browned and bubbling. Top with chopped coriander."
-            ]
-        },
-        {
-            id: "sexy-sausage-pasta",
-            title: "Sexy Sausage Pasta",
-            type: "Proper Good Dinners",
-            time: "30",
-            image: "images/ssp.png",
-            rawIngredients: [
-                "4 sausages",
-                "1 onion",
-                "1 leek",
-                "1 pepper",
-                "3 cloves garlic",
-                "400g pasta",
-                "1 tin chopped tomatoes",
-                "Splash red wine",
-                "Splash balsamic vinegar",
-                "Salt and pepper"
-            ],
-            method: [
-                "Remove skins from sausages and fry meat until browned and crispy.",
-                "Boil pasta in salted water until al dente.",
-                "Add cooked pasta water to adjust sauce consistency.",
-                "Add diced onion and garlic to sausages; cook 5 mins.",
-                "Add sliced leek, then peppers after 5 mins.",
-                "Pour in chopped tomatoes and simmer.",
-                "Deglaze with red wine and balsamic vinegar.",
-                "Toss pasta into sauce and serve."
-            ]
-        },
-        {
-            id: "molten-lava-soup",
-            title: "Molten Lava Soup",
-            type: "Proper Good Dinners",
-            time: "35",
-            image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "1 onion",
-                "2 carrots",
-                "4 tbsp olive oil",
-                "2 garlic cloves",
-                "2 tbsp flour",
-                "1 can (800g) chopped tomatoes",
-                "2 tbsp tomato paste",
-                "2 tsp fresh thyme leaves",
-                "400ml vegetable or chicken stock",
-                "2 pinches sugar",
-                "2 squeezes lemon juice",
-                "Black pepper"
-            ],
-            method: [
-                "Dice onion and carrot; sauté in olive oil for 5 mins.",
-                "Stir in garlic and flour; cook 1 min.",
-                "Add tomatoes, paste, thyme, stock, sugar, and lemon juice. Simmer 20-25 mins.",
-                "Blend soup until completely smooth.",
-                "Reheat gently and serve with crusty sourdough bread."
-            ]
-        },
-        {
-            id: "surprise-tatin",
-            title: "Surprise Tatin",
-            type: "Hosting Dinners",
-            time: "75",
-            image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "500g baby potatoes",
-                "150g cherry tomatoes",
-                "1 large onion",
-                "40g sugar",
-                "10g butter",
-                "1 sprig fresh oregano",
-                "100g goat's cheese",
-                "1 sheet puff pastry",
-                "Olive oil",
-                "Salt and pepper"
-            ],
-            method: [
-                "Boil whole baby potatoes in salted water 25 mins, drain and slice into 2cm discs.",
-                "Halve cherry tomatoes; slow roast at 130°C for 45 mins. Caramelise onions separately in oil.",
-                "Melt sugar and butter in a pan until semi-dark caramel; pour into base of lined 22cm cake tin.",
-                "Sprinkle oregano over caramel, pack potato slices upright, tuck onions and tomatoes into gaps, layer sliced goat's cheese.",
-                "Tuck puff pastry circle tightly over filling.",
-                "Bake at 200°C for 25 mins, then 180°C for 15 mins. Invert onto serving plate."
-            ]
-        },
-        {
-            id: "no-guts-chicken-roast",
-            title: "No-Guts Chicken Roast",
-            type: "Hosting Dinners",
-            time: "80",
-            image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "1 whole chicken",
-                "100g butter",
-                "3 sprigs rosemary",
-                "3 sprigs oregano",
-                "2 sprigs sage",
-                "Black pepper and salt"
-            ],
-            method: [
-                "Spatchcock chicken by cutting out the backbone with kitchen scissors and flattening.",
-                "Separate skin from meat over breasts and legs using fingers.",
-                "Finely chop fresh rosemary, oregano, and sage; incorporate into softened butter.",
-                "Distribute herb butter evenly underneath chicken skin across breasts and thighs.",
-                "Roast at 190°C for 60-80 mins until skin is deeply golden and juices run clear, basting every 20 mins."
-            ]
-        },
-        {
-            id: "chocolate-orange-pudding",
-            title: "Chocolate Orange Pudding",
-            type: "Puddings",
-            time: "50",
-            image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "100g cocoa powder (75g cake + 25g sauce)",
-                "75g self-raising flour",
-                "175g light brown sugar (100g cake + 75g sauce)",
-                "100g butter",
-                "1 tsp vanilla essence",
-                "2 eggs",
-                "Zest and juice of 1 orange",
-                "300ml whole milk"
-            ],
-            method: [
-                "Preheat oven to 180°C. Cream 100g sugar with butter, vanilla, and beaten eggs.",
-                "Sift flour and 75g cocoa powder; fold into batter with orange zest and 2 tbsp orange juice.",
-                "Transfer batter to a buttered 1L ovenproof dish.",
-                "Whisk remaining sugar, 25g cocoa powder, milk, and remaining orange juice together.",
-                "Pour sauce over raw sponge mix; bake 40-45 mins until top is firm and pudding has self-sauced."
-            ]
-        },
-        {
-            id: "rhubarb-creme-brulee",
-            title: "Rhubarb Crème Brûlée",
-            type: "Puddings",
-            time: "40",
-            image: "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "600ml double cream",
-                "1 tbsp vanilla extract",
-                "4 medium eggs",
-                "96g caster sugar (28g custard + 68g compote)",
-                "320g rhubarb",
-                "Zest and juice of 1 orange",
-                "4 tbsp demerara sugar"
-            ],
-            method: [
-                "Heat double cream and vanilla to near boil; remove and infuse 20 mins.",
-                "Whisk eggs with 28g caster sugar; slowly pour in hot cream, then cook over low heat stirring constantly to 88°C.",
-                "Strain custard through sieve and cover surface with parchment.",
-                "Simmer rhubarb with remaining sugar, orange zest, and juice until thick compote; spread into dish.",
-                "Blend cooled custard smooth, layer over rhubarb, and chill 4 hours.",
-                "Scatter demerara sugar on top and caramelise with a blowtorch."
-            ]
-        },
-        {
-            id: "microwavable-choccy-pud",
-            title: "Microwavable Choccy Pud",
-            type: "Puddings",
-            time: "15",
-            image: "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "120g butter",
-                "85ml milk",
-                "250g light brown sugar (115g batter + 135g sauce)",
-                "2 eggs",
-                "165g self-raising flour",
-                "½ tsp bicarbonate of soda",
-                "50g cocoa powder (30g batter + 20g sauce)"
-            ],
-            method: [
-                "Melt butter in microwave. Whisk in milk, 115g brown sugar, and eggs.",
-                "Sift flour, bicarbonate of soda, and 30g cocoa powder into the wet mixture; combine.",
-                "Pour batter into a round microwavable dish.",
-                "Whisk 135g brown sugar, 20g cocoa powder, and 165ml boiling water; pour gently over batter.",
-                "Microwave on high for 8-10 minutes until risen."
-            ]
-        },
-        {
-            id: "banana-bread",
-            title: "The Best Banana Bread Ever",
-            type: "Cakes and treats",
-            time: "65",
-            image: "https://images.unsplash.com/photo-1607958996333-41aef7caef4b?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "125g butter",
-                "150g caster sugar",
-                "2 eggs",
-                "3 ripe bananas",
-                "1 tsp vanilla",
-                "250g plain flour",
-                "2 tsp baking powder",
-                "50g dark chocolate chips",
-                "Pinch of cinnamon",
-                "Pinch of salt"
-            ],
-            method: [
-                "Cream butter and sugar until pale and fluffy.",
-                "Beat in eggs one at a time, then add mashed bananas and vanilla.",
-                "Fold in flour, baking powder, salt, and cinnamon until just combined.",
-                "Fold in dark chocolate chips.",
-                "Bake in a lined loaf tin at 160°C for 60 minutes."
-            ]
-        },
-        {
-            id: "rocky-road",
-            title: "Rocky Road",
-            type: "Cakes and treats",
-            time: "20",
-            image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "200g rich tea biscuits",
-                "135g butter",
-                "200g dark chocolate",
-                "3 tbsp golden syrup",
-                "100g mini marshmallows",
-                "50g raisins",
-                "50g glacé cherries"
-            ],
-            method: [
-                "Line an 18cm square tin with baking paper.",
-                "Crush rich tea biscuits into rough chunks.",
-                "Gently melt butter, dark chocolate, and golden syrup together in a saucepan.",
-                "Fold biscuits, marshmallows, raisins, and cherries into chocolate sauce.",
-                "Press firmly into tin and chill in fridge for at least 2 hours before slicing."
-            ]
-        },
-        {
-            id: "chatgpt-brownie",
-            title: "Chat GPT Brownie",
-            type: "Cakes and treats",
-            time: "30",
-            image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "200g dark chocolate",
-                "150g butter",
-                "3 large eggs",
-                "200g caster sugar",
-                "100g plain flour",
-                "½ tsp baking powder",
-                "1 tsp vanilla extract"
-            ],
-            method: [
-                "Preheat oven to 180°C and line a brownie tin.",
-                "Melt dark chocolate and butter together until completely smooth.",
-                "Whisk eggs, sugar, and vanilla until pale and frothy.",
-                "Pour chocolate into eggs, then fold in flour and baking powder.",
-                "Bake for 20-25 minutes. Cool thoroughly before slicing."
-            ]
-        },
-        {
-            id: "chatgpt-flapjacks",
-            title: "Chat GPT Flapjacks",
-            type: "Cakes and treats",
-            time: "25",
-            image: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=600&q=80",
-            rawIngredients: [
-                "200g unsalted butter",
-                "100g soft light brown sugar",
-                "3 tbsp golden syrup",
-                "275g porridge oats",
-                "½ tsp salt"
-            ],
-            method: [
-                "Preheat oven to 170°C (150°C fan) and line a 20cm square tin.",
-                "Melt butter, brown sugar, and golden syrup in saucepan over low heat without boiling.",
-                "Stir in porridge oats and salt until every oat is coated.",
-                "Press mixture firmly into tin using back of a spoon.",
-                "Bake 18-22 minutes. Score into squares while warm; cool completely in tin."
-            ]
-        }
-    ];
-
+    let cookbookDatabase = [];
     let recipes = [];
     let config = { days: 0, categories: [] };
     let state = { 
@@ -1005,6 +426,26 @@
     let currentX = 0;
     let currentY = 0;
     const swipeThreshold = 80;
+
+    async function loadCookbookDatabase() {
+        try {
+            const manifestRes = await fetch('Cards/cards.json');
+            if (!manifestRes.ok) throw new Error(`Manifest load failed: ${manifestRes.status}`);
+            const cardPaths = await manifestRes.json();
+            
+            const cardPromises = cardPaths.map(async path => {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+                return res.json();
+            });
+            
+            cookbookDatabase = await Promise.all(cardPromises);
+        } catch (err) {
+            console.error("Initialization error loading recipe cards:", err);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadCookbookDatabase);
 
     pageCurrent.addEventListener('touchstart', e => {
         if (e.target.closest('button') || state.currentRecipeIndex >= recipes.length) return;
@@ -1144,7 +585,11 @@
         document.getElementById(screenId).classList.add('active');
     }
 
-    function startPlanning() {
+    async function startPlanning() {
+        if (cookbookDatabase.length === 0) {
+            await loadCookbookDatabase();
+        }
+
         config.days = parseInt(document.getElementById('days').value);
         config.categories = Array.from(document.querySelectorAll('#meal-categories input:checked')).map(cb => cb.value);
         
