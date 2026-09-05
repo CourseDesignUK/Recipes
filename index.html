@@ -180,8 +180,7 @@
         box-shadow: 0 0 15px rgba(45, 90, 67, 0.06);
     }
     
-    #page-current { z-index: 2; cursor: grab; }
-    #page-current:active { cursor: grabbing; }
+    #page-current { z-index: 2; }
     #page-next { z-index: 1; transform: scale(0.95); opacity: 0.8; }
     
     .swipe-page.dragging { transition: none !important; }
@@ -195,7 +194,7 @@
         border-radius: 12px; 
         padding: 0; 
         text-align: center; 
-        margin-bottom: 12px; 
+        margin-bottom: 20px; 
         flex: 1; 
         display: flex; 
         flex-direction: column; 
@@ -218,41 +217,6 @@
         pointer-events: none; 
         z-index: 1; 
     }
-
-    .swipe-stamp {
-        position: absolute;
-        top: 45px;
-        padding: 6px 14px;
-        border: 3px solid;
-        border-radius: 8px;
-        font-size: 24px;
-        font-weight: 800;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        opacity: 0;
-        pointer-events: none;
-        z-index: 4;
-        transform-origin: center center;
-    }
-    .stamp-accept {
-        left: 20px;
-        color: var(--mg-accept);
-        border-color: var(--mg-accept);
-        transform: rotate(-15deg);
-    }
-    .stamp-reject {
-        right: 20px;
-        color: var(--mg-reject);
-        border-color: var(--mg-reject);
-        transform: rotate(15deg);
-    }
-    .stamp-favorite {
-        left: 50%;
-        transform: translate(-50%, 0) rotate(0deg);
-        color: var(--mg-accent);
-        border-color: var(--mg-accent);
-    }
-
     .card-details {
         position: relative;
         z-index: 2;
@@ -308,94 +272,16 @@
         pointer-events: auto; 
     }
     
-    .status-bar { 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        font-size: 14px; 
-        margin-bottom: 12px; 
-        border-bottom: 1px solid var(--mg-border); 
-        padding-bottom: 8px; 
-        font-weight: bold; 
-        color: var(--mg-primary); 
-    }
-    .undo-btn {
-        background: transparent;
-        border: 1px solid var(--mg-secondary);
-        color: var(--mg-secondary);
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-size: 12px;
-        font-weight: 600;
-        margin: 0;
-        width: auto;
-        cursor: pointer;
-    }
-    .undo-btn:disabled {
-        opacity: 0.3;
-        pointer-events: none;
-    }
-
-    .swipe-controls { display: flex; gap: 8px; position: relative; z-index: 3; }
+    .swipe-controls { display: flex; gap: 10px; position: relative; z-index: 3; }
     .swipe-controls button { margin-top: 0; border-radius: 8px; }
     .btn-left { background: var(--mg-reject); flex: 1; }
     .btn-mid { background: var(--mg-accent); color: #ffffff; flex: 1; }
     .btn-right { background: var(--mg-accept); flex: 1; }
     
-    .summary-controls {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        margin-bottom: 15px;
-        background: var(--mg-chip);
-        padding: 8px 12px;
-        border-radius: 8px;
-    }
-    .summary-controls label {
-        margin: 0;
-        font-size: 14px;
-        white-space: nowrap;
-    }
-    .summary-controls select {
-        padding: 6px 8px;
-        font-size: 14px;
-        border-radius: 6px;
-    }
-
-    .shopping-category {
-        margin-top: 15px;
-    }
-    .shopping-category h4 {
-        margin: 0 0 6px 0;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: var(--mg-secondary);
-        border-bottom: 1px dashed var(--mg-border);
-        padding-bottom: 3px;
-    }
+    .status-bar { display: flex; justify-content: flex-end; font-size: 14px; margin-bottom: 15px; border-bottom: 1px solid var(--mg-border); padding-bottom: 10px; font-weight: bold; color: var(--mg-primary); pointer-events: none; }
     
-    ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 15px; }
+    ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 20px; }
     li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--mg-border); font-size: 14px; color: var(--mg-text); }
-    
-    .shopping-item {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        padding: 8px 0;
-    }
-    .shopping-item input[type="checkbox"] {
-        margin-right: 10px;
-        transform: scale(1.15);
-        accent-color: var(--mg-accept);
-        cursor: pointer;
-    }
-    .shopping-item.checked span {
-        text-decoration: line-through;
-        color: var(--mg-text-muted);
-        opacity: 0.6;
-    }
-
     .favorite-item { align-items: center; }
     .favorite-item img { width: 44px; height: 44px; border-radius: 6px; margin-right: 12px; object-fit: cover; }
     .favorite-item div { display: flex; align-items: center; }
@@ -441,24 +327,17 @@
     @media print {
         @page {
             size: A4 portrait;
-            margin: 8mm 10mm;
+            margin: 10mm;
         }
 
-        *, *:before, *:after {
-            box-sizing: border-box;
-        }
-
-        html, body {
+        body {
             background-color: #fff !important;
             padding: 0 !important;
             margin: 0 !important;
             display: block !important;
             position: static !important;
             overflow: visible !important;
-            height: auto !important;
             color: #000 !important;
-            font-size: 9pt !important;
-            line-height: 1.2 !important;
         }
 
         #app-container {
@@ -470,8 +349,6 @@
             min-height: auto !important;
             max-height: none !important;
             overflow: visible !important;
-            position: static !important;
-            display: block !important;
         }
 
         .screen {
@@ -481,130 +358,50 @@
         #summary-screen {
             display: block !important;
             padding: 0 !important;
-            margin: 0 !important;
             overflow: visible !important;
-            position: static !important;
         }
 
         #summary-screen h2 {
-            font-size: 13pt;
-            margin: 0 0 6px 0;
+            font-size: 18px;
+            margin-bottom: 12px;
             text-align: center;
-            border-bottom: 1.5pt solid #222;
+            border-bottom: 2px solid #333;
+            padding-bottom: 6px;
+            color: #000 !important;
+        }
+
+        .print-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .print-section h3 {
+            font-size: 13px;
+            margin-top: 0;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #999;
             padding-bottom: 3px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #000 !important;
         }
 
-        .summary-controls {
-            display: none !important;
-        }
-
-        .print-layout {
-            display: block !important;
-        }
-
-        .print-section {
-            width: 100% !important;
-        }
-
-        .print-section-agenda {
-            margin-bottom: 8px;
-            break-inside: avoid;
-            page-break-inside: avoid;
-        }
-
-        .print-section h3 {
-            font-size: 9.5pt;
-            margin: 0 0 4px 0;
-            border-bottom: 1pt solid #444;
-            padding-bottom: 2px;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-            color: #000 !important;
-            font-weight: 700;
-        }
-
-        #meal-agenda {
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            column-gap: 16px !important;
-            row-gap: 2px !important;
-            margin-bottom: 6px !important;
-            padding: 0 !important;
-        }
-
-        #meal-agenda li {
-            padding: 1.5px 0 !important;
-            font-size: 8.5pt !important;
-            border-bottom: 0.5pt solid #ddd !important;
-            line-height: 1.2 !important;
-            color: #000 !important;
-            display: flex !important;
-            justify-content: space-between !important;
-            break-inside: avoid;
-            page-break-inside: avoid;
-        }
-
-        #shopping-list-container {
-            column-count: 3 !important;
-            column-gap: 14px !important;
-            column-rule: 0.5pt solid #e0e0e0;
-            width: 100% !important;
-            display: block !important;
-            margin-top: 4px !important;
-        }
-
-        .shopping-category {
-            break-inside: avoid;
-            page-break-inside: avoid;
-            display: inline-block;
-            width: 100%;
-            margin-top: 0 !important;
-            margin-bottom: 6px !important;
-            vertical-align: top;
-        }
-
-        .shopping-category h4 {
-            font-size: 8.5pt !important;
-            margin: 0 0 2px 0 !important;
-            border-bottom: 0.75pt solid #666 !important;
-            padding-bottom: 1.5px !important;
-            color: #000 !important;
-            font-weight: 700;
-        }
-
         ul {
-            margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
+            margin-bottom: 0 !important;
         }
 
-        .shopping-item {
-            padding: 1.5px 0 !important;
-            font-size: 7.5pt !important;
-            border-bottom: 0.5pt dotted #ccc !important;
-            line-height: 1.15 !important;
+        li {
+            padding: 3px 0 !important;
+            font-size: 10.5px !important;
+            border-bottom: 1px dotted #ccc !important;
+            line-height: 1.25 !important;
             color: #000 !important;
-            display: block !important;
-            break-inside: avoid;
-            page-break-inside: avoid;
         }
 
-        .shopping-item input[type="checkbox"] {
-            display: none !important;
-        }
-
-        .shopping-item span {
+        #shopping-list li span {
             word-break: break-word;
-            display: block;
-        }
-
-        .shopping-item.checked span {
-            text-decoration: none !important;
-            color: #000 !important;
-            opacity: 1 !important;
         }
 
         button,
@@ -631,14 +428,6 @@
         <label for="days">Number of days Cooking</label>
         <input type="number" id="days" value="5" min="1" max="7">
 
-        <label for="prep-time-filter">Max Prep/Cook Time</label>
-        <select id="prep-time-filter">
-            <option value="0">Any time</option>
-            <option value="30">Under 30 mins</option>
-            <option value="45">Under 45 mins</option>
-            <option value="60">Under 60 mins</option>
-        </select>
-
         <label>Meal Categories</label>
         <div id="meal-categories" class="checkbox-group">
             <label><input type="checkbox" value="Proper Good Dinners" checked> Proper Good Dinners</label>
@@ -656,15 +445,11 @@
     <div id="swipe-screen" class="screen">
         <div id="page-next" class="swipe-page">
             <div class="status-bar">
-                <button class="undo-btn" disabled>Undo</button>
                 <span class="meal-status">Meals: 0 / 5</span>
             </div>
             <div class="card">
-                <span class="swipe-stamp stamp-accept">YES</span>
-                <span class="swipe-stamp stamp-reject">NOPE</span>
-                <span class="swipe-stamp stamp-favorite">FAV</span>
                 <span class="meal-tag">Loading</span>
-                <button class="info-btn">Info</button>
+                <button class="info-btn" onclick="showRecipeInfo()">Info</button>
                 <img class="recipe-image" src="" alt="Recipe Image">
                 <div class="card-details">
                     <h3 class="recipe-title">Loading recipes...</h3>
@@ -680,13 +465,9 @@
 
         <div id="page-current" class="swipe-page">
             <div class="status-bar">
-                <button id="btn-undo" class="undo-btn" onclick="undoLastSwipe()" disabled>Undo</button>
                 <span class="meal-status">Meals: 0 / 5</span>
             </div>
             <div class="card">
-                <span class="swipe-stamp stamp-accept" id="stamp-accept">YES</span>
-                <span class="swipe-stamp stamp-reject" id="stamp-reject">NOPE</span>
-                <span class="swipe-stamp stamp-favorite" id="stamp-favorite">FAV</span>
                 <span class="meal-tag">Loading</span>
                 <button class="info-btn" onclick="showRecipeInfo()">Info</button>
                 <img class="recipe-image" src="" alt="Recipe Image">
@@ -706,31 +487,20 @@
     <div id="summary-screen" class="screen">
         <h2>Weekly Plan Complete</h2>
         
-        <div class="summary-controls">
-            <label for="portion-scaler">Portion Multiplier:</label>
-            <select id="portion-scaler" onchange="updatePortionScaling()">
-                <option value="1" selected>Default (1x)</option>
-                <option value="1.5">1.5x Servings</option>
-                <option value="2">2x Servings</option>
-                <option value="3">3x Servings</option>
-            </select>
-        </div>
-
         <div class="print-layout">
-            <div class="print-section print-section-agenda">
+            <div class="print-section">
                 <h3>Menu Agenda</h3>
                 <ul id="meal-agenda"></ul>
             </div>
             
             <div class="print-section">
-                <h3>Categorized Shopping List</h3>
-                <div id="shopping-list-container"></div>
+                <h3>Shopping List</h3>
+                <ul id="shopping-list"></ul>
             </div>
         </div>
         
-        <button class="action-btn" onclick="shareShoppingList()">Share / Copy Shopping List</button>
         <button onclick="printPlan()">Print Plan (A4)</button>
-        <button class="secondary" onclick="savePlan()">Save Plan</button>
+        <button class="action-btn" onclick="savePlan()">Save Plan</button>
         <button class="secondary" onclick="resetApp()">Start Over</button>
     </div>
 
@@ -754,45 +524,48 @@
 </div>
 
 <script>
-    document.addEventListener('gesturestart', e => e.preventDefault(), { passive: false });
-    document.addEventListener('gesturechange', e => e.preventDefault(), { passive: false });
-    document.addEventListener('gestureend', e => e.preventDefault(), { passive: false });
-    document.addEventListener('touchstart', e => {
-        if (e.touches.length > 1) e.preventDefault();
+    document.addEventListener('gesturestart', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('gesturechange', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('gestureend', function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchstart', function (e) {
+        if (e.touches.length > 1) {
+            e.preventDefault();
+        }
     }, { passive: false });
 
     if (screen.orientation && screen.orientation.lock) {
-        screen.orientation.lock('portrait').catch(() => {});
+        screen.orientation.lock('portrait').catch(function () {});
     }
 
     let cookbookDatabase = [];
     let recipes = [];
-    let config = { days: 0, categories: [], maxTime: 0 };
+    let config = { days: 0, categories: [] };
     let state = { 
         currentRecipeIndex: 0, 
         acceptedMeals: 0, 
         acceptedRecipes: [], 
         rejectedRecipes: [], 
-        rawIngredientsList: [],
-        checkedIngredients: {},
-        portionScale: 1
+        rawIngredientsList: [] 
     };
-    let swipeHistory = [];
     let favorites = JSON.parse(localStorage.getItem('bbcMealPlannerFavorites')) || [];
     let wakeLockSentinel = null;
     
     const pageCurrent = document.getElementById('page-current');
     const pageNext = document.getElementById('page-next');
-    const stampAccept = document.getElementById('stamp-accept');
-    const stampReject = document.getElementById('stamp-reject');
-    const stampFavorite = document.getElementById('stamp-favorite');
-    const btnUndo = document.getElementById('btn-undo');
 
     let touchStartX = 0;
     let touchStartY = 0;
     let currentX = 0;
     let currentY = 0;
-    let isInteracting = false;
     const swipeThreshold = 80;
 
     async function loadCookbookDatabase() {
@@ -822,21 +595,21 @@
 
     document.addEventListener('DOMContentLoaded', loadCookbookDatabase);
 
-    function handleDragStart(clientX, clientY, target) {
-        if (target.closest('button') || state.currentRecipeIndex >= recipes.length) return false;
-        touchStartX = clientX;
-        touchStartY = clientY;
-        isInteracting = true;
+    pageCurrent.addEventListener('touchstart', e => {
+        if (e.target.closest('button') || state.currentRecipeIndex >= recipes.length) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
         pageCurrent.classList.add('dragging');
         pageCurrent.style.transition = 'none';
         pageNext.style.transition = 'none';
-        return true;
-    }
+    }, { passive: true });
 
-    function handleDragMove(clientX, clientY) {
-        if (!isInteracting) return;
-        currentX = clientX - touchStartX;
-        currentY = clientY - touchStartY;
+    pageCurrent.addEventListener('touchmove', e => {
+        if (e.target.closest('button') || state.currentRecipeIndex >= recipes.length) return;
+        if (!pageCurrent.classList.contains('dragging')) return;
+
+        currentX = e.touches[0].clientX - touchStartX;
+        currentY = e.touches[0].clientY - touchStartY;
         
         const rotate = currentX * 0.05;
         pageCurrent.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotate}deg)`;
@@ -846,28 +619,12 @@
         const opacity = 0.8 + (0.2 * progress);
         pageNext.style.transform = `scale(${scale})`;
         pageNext.style.opacity = opacity;
+    }, { passive: true });
 
-        if (currentY < -30 && Math.abs(currentX) < 50) {
-            const favProgress = Math.min(Math.abs(currentY) / 100, 1);
-            stampFavorite.style.opacity = favProgress;
-            stampAccept.style.opacity = 0;
-            stampReject.style.opacity = 0;
-        } else if (currentX > 20) {
-            stampAccept.style.opacity = progress;
-            stampReject.style.opacity = 0;
-            stampFavorite.style.opacity = 0;
-        } else if (currentX < -20) {
-            stampReject.style.opacity = progress;
-            stampAccept.style.opacity = 0;
-            stampFavorite.style.opacity = 0;
-        } else {
-            resetStamps();
-        }
-    }
+    pageCurrent.addEventListener('touchend', e => {
+        if (e.target.closest('button') || state.currentRecipeIndex >= recipes.length) return;
+        if (!pageCurrent.classList.contains('dragging')) return;
 
-    function handleDragEnd() {
-        if (!isInteracting) return;
-        isInteracting = false;
         pageCurrent.classList.remove('dragging');
         pageCurrent.style.transition = '';
         pageNext.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease';
@@ -883,85 +640,15 @@
             pageNext.style.transform = 'scale(0.95)';
             pageNext.style.opacity = '0.8';
         }
-        resetStamps();
         currentX = 0;
         currentY = 0;
-    }
-
-    function resetStamps() {
-        stampAccept.style.opacity = 0;
-        stampReject.style.opacity = 0;
-        stampFavorite.style.opacity = 0;
-    }
-
-    pageCurrent.addEventListener('touchstart', e => {
-        handleDragStart(e.touches[0].clientX, e.touches[0].clientY, e.target);
     }, { passive: true });
-
-    pageCurrent.addEventListener('touchmove', e => {
-        handleDragMove(e.touches[0].clientX, e.touches[0].clientY);
-    }, { passive: true });
-
-    pageCurrent.addEventListener('touchend', () => {
-        handleDragEnd();
-    }, { passive: true });
-
-    pageCurrent.addEventListener('mousedown', e => {
-        if (handleDragStart(e.clientX, e.clientY, e.target)) {
-            e.preventDefault();
-        }
-    });
-
-    window.addEventListener('mousemove', e => {
-        if (isInteracting) {
-            handleDragMove(e.clientX, e.clientY);
-        }
-    });
-
-    window.addEventListener('mouseup', () => {
-        if (isInteracting) {
-            handleDragEnd();
-        }
-    });
-
-    window.addEventListener('keydown', e => {
-        const swipeScreenActive = document.getElementById('swipe-screen').classList.contains('active');
-        const modalOpen = document.getElementById('info-modal').style.display === 'block';
-
-        if (modalOpen) {
-            if (e.key === 'Escape' || e.code === 'Space') {
-                e.preventDefault();
-                closeRecipeInfo();
-            }
-            return;
-        }
-
-        if (!swipeScreenActive) return;
-
-        if (e.key === 'ArrowLeft') {
-            e.preventDefault();
-            triggerSwipe('reject');
-        } else if (e.key === 'ArrowRight') {
-            e.preventDefault();
-            triggerSwipe('accept');
-        } else if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            triggerSwipe('favorite');
-        } else if (e.key === 'KeyZ' || (e.ctrlKey && e.key === 'z')) {
-            e.preventDefault();
-            undoLastSwipe();
-        } else if (e.code === 'Space') {
-            e.preventDefault();
-            showRecipeInfo();
-        }
-    });
 
     function triggerSwipe(action) {
         if (state.currentRecipeIndex >= recipes.length) return;
         
         setControlsState(true);
         pageCurrent.style.transform = '';
-        resetStamps();
         
         pageNext.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease';
         pageNext.style.transform = 'scale(1)';
@@ -997,16 +684,6 @@
     function processSwipeAction(action) {
         const recipe = recipes[state.currentRecipeIndex];
         
-        swipeHistory.push({
-            action: action,
-            recipeIndex: state.currentRecipeIndex,
-            acceptedMeals: state.acceptedMeals,
-            acceptedRecipes: [...state.acceptedRecipes],
-            rejectedRecipes: [...state.rejectedRecipes],
-            rawIngredientsList: state.rawIngredientsList.map(item => ({ ...item }))
-        });
-        btnUndo.disabled = false;
-
         if (action === 'favorite') {
             if (!favorites.find(f => f.id === recipe.id)) {
                 favorites.push(recipe);
@@ -1051,24 +728,6 @@
         loadPages();
     }
 
-    function undoLastSwipe() {
-        if (swipeHistory.length === 0) return;
-        const previousState = swipeHistory.pop();
-        
-        state.currentRecipeIndex = previousState.recipeIndex;
-        state.acceptedMeals = previousState.acceptedMeals;
-        state.acceptedRecipes = previousState.acceptedRecipes;
-        state.rejectedRecipes = previousState.rejectedRecipes;
-        state.rawIngredientsList = previousState.rawIngredientsList;
-
-        if (swipeHistory.length === 0) {
-            btnUndo.disabled = true;
-        }
-
-        setControlsState(false);
-        loadPages();
-    }
-
     function switchScreen(screenId) {
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById(screenId).classList.add('active');
@@ -1086,24 +745,16 @@
 
         config.days = parseInt(document.getElementById('days').value);
         config.categories = Array.from(document.querySelectorAll('#meal-categories input:checked')).map(cb => cb.value);
-        config.maxTime = parseInt(document.getElementById('prep-time-filter').value) || 0;
         
         if (config.categories.length === 0) {
             alert("Select at least one meal category.");
             return;
         }
 
-        let filtered = cookbookDatabase.filter(r => config.categories.includes(r.type));
+        const filtered = cookbookDatabase.filter(r => config.categories.includes(r.type));
         
-        if (config.maxTime > 0) {
-            filtered = filtered.filter(r => {
-                const t = parseInt(r.time) || 0;
-                return t > 0 && t <= config.maxTime;
-            });
-        }
-
         if (filtered.length === 0) {
-            alert("No recipes match your category and preparation time criteria.");
+            alert(`No recipes found matching the selected categories: ${config.categories.join(', ')}`);
             return;
         }
 
@@ -1118,25 +769,14 @@
             acceptedMeals: 0, 
             acceptedRecipes: [], 
             rejectedRecipes: [], 
-            rawIngredientsList: [],
-            checkedIngredients: {},
-            portionScale: 1
+            rawIngredientsList: [] 
         };
-        swipeHistory = [];
-        btnUndo.disabled = true;
-        document.getElementById('portion-scaler').value = "1";
-
         setControlsState(false);
         loadPages();
     }
 
     function setControlsState(disabled) {
-        document.querySelectorAll('#swipe-screen button').forEach(btn => {
-            if (btn !== btnUndo) btn.disabled = disabled;
-        });
-        if (swipeHistory.length === 0) {
-            btnUndo.disabled = true;
-        }
+        document.querySelectorAll('#swipe-screen button').forEach(btn => btn.disabled = disabled);
     }
 
     function loadPages() {
@@ -1163,112 +803,6 @@
         pageEl.querySelector('.recipe-time').innerText = `Time: ${recipe.time} mins`;
     }
 
-    function categorizeIngredient(rawLine) {
-        const text = rawLine.toLowerCase();
-        
-        const produceKeywords = ['onion', 'garlic', 'potato', 'carrot', 'tomato', 'lemon', 'lime', 'chili', 'chilli', 'spinach', 'apple', 'pepper', 'herb', 'coriander', 'parsley', 'ginger', 'mushroom', 'avocado', 'lettuce', 'cucumber', 'shallot', 'leek', 'zucchini', 'courgette', 'banana', 'basil', 'rosemary', 'thyme'];
-        const meatFishKeywords = ['chicken', 'beef', 'pork', 'lamb', 'steak', 'salmon', 'cod', 'prawn', 'fish', 'bacon', 'sausage', 'turkey', 'mince', 'fillet', 'tuna', 'haddock'];
-        const dairyKeywords = ['milk', 'cheese', 'butter', 'cream', 'yogurt', 'yoghurt', 'egg', 'cheddar', 'parmesan', 'mozzarella', 'creme fraiche'];
-        const bakeryKeywords = ['bread', 'roll', 'bun', 'baguette', 'tortilla', 'wrap', 'pastry', 'pitta'];
-        
-        for (const word of produceKeywords) {
-            if (text.includes(word)) return 'Produce';
-        }
-        for (const word of meatFishKeywords) {
-            if (text.includes(word)) return 'Meat & Seafood';
-        }
-        for (const word of dairyKeywords) {
-            if (text.includes(word)) return 'Dairy & Refrigerated';
-        }
-        for (const word of bakeryKeywords) {
-            if (text.includes(word)) return 'Bakery';
-        }
-        return 'Kitchen Cupboard';
-    }
-
-    function scaleIngredientLine(line, scale) {
-        if (scale === 1) return line;
-        return line.replace(/^([\d\/\.\s-]+)/, match => {
-            const trimmed = match.trim();
-            if (trimmed.includes('/')) {
-                const parts = trimmed.split('/');
-                const val = parseFloat(parts[0]) / parseFloat(parts[1]);
-                return `${Math.round(val * scale * 10) / 10} `;
-            }
-            const numeric = parseFloat(trimmed);
-            if (!isNaN(numeric)) {
-                return `${Math.round(numeric * scale * 10) / 10} `;
-            }
-            return match;
-        });
-    }
-
-    function renderCategorizedShoppingList() {
-        const container = document.getElementById('shopping-list-container');
-        container.innerHTML = '';
-
-        const categorized = {
-            'Produce': [],
-            'Meat & Seafood': [],
-            'Dairy & Refrigerated': [],
-            'Bakery': [],
-            'Pantry & Store Cupboard': []
-        };
-
-        state.rawIngredientsList.forEach(item => {
-            const category = categorizeIngredient(item.line);
-            categorized[category].push(item);
-        });
-
-        Object.keys(categorized).forEach(categoryName => {
-            const items = categorized[categoryName];
-            if (items.length === 0) return;
-
-            items.sort((a, b) => a.line.localeCompare(b.line));
-
-            const catDiv = document.createElement('div');
-            catDiv.className = 'shopping-category';
-            catDiv.innerHTML = `<h4>${categoryName}</h4>`;
-
-            const ul = document.createElement('ul');
-            items.forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'shopping-item';
-                
-                const isChecked = !!state.checkedIngredients[item.line];
-                if (isChecked) li.classList.add('checked');
-
-                const scaledText = scaleIngredientLine(item.line, state.portionScale);
-                const multiplier = item.count > 1 ? ` (${item.count} batches)` : '';
-                
-                li.innerHTML = `
-                    <input type="checkbox" ${isChecked ? 'checked' : ''}>
-                    <span>${scaledText}${multiplier}</span>
-                `;
-
-                li.querySelector('input').addEventListener('change', e => {
-                    const checked = e.target.checked;
-                    state.checkedIngredients[item.line] = checked;
-                    if (checked) {
-                        li.classList.add('checked');
-                    } else {
-                        li.classList.remove('checked');
-                    }
-                });
-
-                ul.appendChild(li);
-            });
-
-            catDiv.appendChild(ul);
-            container.appendChild(catDiv);
-        });
-    }
-
-    function updatePortionScaling() {
-        state.portionScale = parseFloat(document.getElementById('portion-scaler').value) || 1;
-        renderCategorizedShoppingList();
-    }
-
     function finalizePlan() {
         const agendaContainer = document.getElementById('meal-agenda');
         agendaContainer.innerHTML = '';
@@ -1279,51 +813,17 @@
             agendaContainer.appendChild(li);
         });
 
-        renderCategorizedShoppingList();
+        const listContainer = document.getElementById('shopping-list');
+        listContainer.innerHTML = '';
+        
+        state.rawIngredientsList.sort((a, b) => a.line.localeCompare(b.line)).forEach(item => {
+            const li = document.createElement('li');
+            const multiplier = item.count > 1 ? ` <span style="color:var(--mg-highlight); font-weight:bold;">(${item.count} batches)</span>` : '';
+            li.innerHTML = `<span>${item.line}${multiplier}</span>`;
+            listContainer.appendChild(li);
+        });
+        
         switchScreen('summary-screen');
-    }
-
-    async function shareShoppingList() {
-        let textOutput = `Meal Plan Shopping List (${state.acceptedMeals} meals, ${state.portionScale}x portions):\n\n`;
-
-        const categorized = {};
-        state.rawIngredientsList.forEach(item => {
-            const cat = categorizeIngredient(item.line);
-            if (!categorized[cat]) categorized[cat] = [];
-            categorized[cat].push(item);
-        });
-
-        Object.keys(categorized).forEach(cat => {
-            textOutput += `[${cat.toUpperCase()}]\n`;
-            categorized[cat].forEach(i => {
-                const scaled = scaleIngredientLine(i.line, state.portionScale);
-                const batches = i.count > 1 ? ` (${i.count} batches)` : '';
-                textOutput += `- ${scaled}${batches}\n`;
-            });
-            textOutput += '\n';
-        });
-
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: 'Meal Planner Shopping List',
-                    text: textOutput
-                });
-                return;
-            } catch (err) {
-                if (err.name !== 'AbortError') {
-                    console.error("Native share failed:", err);
-                }
-            }
-        }
-
-        try {
-            await navigator.clipboard.writeText(textOutput);
-            alert("Shopping list copied to clipboard!");
-        } catch (err) {
-            console.error("Clipboard copy failed:", err);
-            alert("Unable to copy directly. Check browser permissions.");
-        }
     }
 
     function printPlan() {
