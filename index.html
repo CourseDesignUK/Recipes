@@ -6,9 +6,9 @@
 <title>Meal Planner Prototype</title>
 <style>
     :root {
-        --mg-bg: #f4f7f4;
+        --mg-bg: #121513;
         --mg-surface: #ffffff;
-        --mg-surface-card: #f9fbf9;
+        --mg-surface-card: #1c1f1d;
         --mg-primary: #2d5a43;
         --mg-primary-active: #224432;
         --mg-secondary: #5c7365;
@@ -86,7 +86,7 @@
         height: 100%; 
         max-height: 100dvh; 
         background: var(--mg-surface); 
-        box-shadow: 0 4px 20px rgba(45, 90, 67, 0.08); 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
         box-sizing: border-box; 
         position: relative; 
         overflow: hidden; 
@@ -103,13 +103,14 @@
         padding-bottom: max(20px, env(safe-area-inset-bottom)); 
         overflow-y: auto; 
         -webkit-overflow-scrolling: touch; 
+        background: #f4f7f4;
     }
+
     #swipe-screen { 
         position: relative; 
         overflow: hidden; 
-        background: #e5ece6; 
-        padding-top: env(safe-area-inset-top); 
-        padding-bottom: env(safe-area-inset-bottom); 
+        background: #121513; 
+        padding: 0;
     }
 
     h2 { margin-top: 0; color: var(--mg-primary); }
@@ -167,17 +168,15 @@
     .swipe-page {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
-        padding: 20px;
-        padding-top: max(20px, env(safe-area-inset-top));
-        padding-bottom: max(20px, env(safe-area-inset-bottom));
+        padding: 0;
         box-sizing: border-box;
-        background: var(--mg-surface);
+        background: #1c1f1d;
         display: flex;
         flex-direction: column;
         transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
         transform-origin: 50% 100%;
         will-change: transform;
-        box-shadow: 0 0 15px rgba(45, 90, 67, 0.06);
+        overflow: hidden;
     }
     
     #page-current { z-index: 2; }
@@ -189,93 +188,218 @@
     .swipe-page.swipe-up { transform: translate(0, -150%) scale(0.8) !important; opacity: 0; }
     
     .card { 
-        background: var(--mg-surface-card); 
-        border: 1px solid var(--mg-border); 
-        border-radius: 12px; 
-        padding: 0; 
-        text-align: center; 
-        margin-bottom: 12px; 
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
         flex: 1; 
         display: flex; 
         flex-direction: column; 
-        justify-content: flex-end; 
+        justify-content: flex-start; 
         position: relative; 
         user-select: none; 
         -webkit-user-select: none; 
         overflow: hidden; 
     }
-    .card img.recipe-image { 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        object-fit: cover; 
-        margin-bottom: 0; 
-        border-radius: 0; 
-        background: #e0e8e2; 
-        pointer-events: none; 
-        z-index: 1; 
-    }
-    .card-details {
-        position: relative;
-        z-index: 2;
-        padding: 36px 16px 16px;
-        background: linear-gradient(to top, rgba(20, 31, 24, 0.92) 0%, rgba(20, 31, 24, 0.6) 70%, transparent 100%);
-        text-align: center;
+
+    .card-nav-bar {
+        position: absolute;
+        top: max(16px, env(safe-area-inset-top));
+        left: 16px;
+        right: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
         pointer-events: none;
     }
-    .card h3.recipe-title { 
-        margin: 0 0 6px 0; 
-        font-size: 18px; 
-        border: none; 
-        padding: 0; 
-        color: #ffffff; 
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); 
+    .circle-icon-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(30, 30, 30, 0.55);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        pointer-events: auto;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        line-height: 1;
     }
-    .card p.recipe-time { 
-        color: #e0e8e2; 
-        margin: 0; 
-        font-size: 14px; 
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); 
-    }
-    .meal-tag { 
-        position: absolute; 
-        top: 16px; 
-        left: 16px; 
-        background: rgba(31, 45, 36, 0.85); 
-        color: #ffffff; 
-        padding: 6px 10px; 
-        border-radius: 6px; 
-        font-size: 12px; 
-        font-weight: bold; 
-        text-transform: uppercase; 
-        pointer-events: none; 
-        z-index: 3; 
-    }
-    .info-btn { 
-        position: absolute; 
-        top: 16px; 
-        right: 16px; 
-        background: var(--mg-primary); 
-        color: #ffffff; 
-        border: none; 
-        padding: 6px 12px; 
-        border-radius: 6px; 
-        cursor: pointer; 
-        font-size: 12px; 
-        font-weight: bold; 
-        text-transform: uppercase; 
-        margin: 0; 
-        width: auto; 
-        z-index: 3; 
-        pointer-events: auto; 
+    .circle-icon-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
     }
 
-    /* Dynamic Swipe Badges */
+    .card-hero-image {
+        width: 100%;
+        height: 48%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background: #252a26;
+        pointer-events: none;
+    }
+
+    .card-content-pane {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 62%;
+        z-index: 2;
+        background: linear-gradient(to top, #181412 0%, #291f1a 50%, rgba(41, 31, 26, 0.88) 75%, transparent 100%);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px 20px max(24px, env(safe-area-inset-bottom));
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .recipe-header-block {
+        margin-bottom: 12px;
+    }
+    .card h3.recipe-title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+        color: #ffffff;
+        margin: 0 0 4px 0;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        border: none;
+        padding: 0;
+    }
+    .recipe-meta-author {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.65);
+        margin: 0;
+        font-weight: 400;
+    }
+
+    .recipe-metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 14px;
+    }
+    .metric-col {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    .metric-label {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+    .metric-val {
+        font-size: 14px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    .recipe-pill-actions {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    .pill-btn {
+        flex: 1;
+        height: 52px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        padding: 0;
+        margin: 0;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.15s ease, transform 0.1s ease;
+    }
+    .pill-btn:active {
+        background: rgba(255, 255, 255, 0.22);
+        transform: scale(0.97);
+    }
+    .pill-btn svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+    }
+    .pill-btn span {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+    }
+
+    .story-card-link {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+    .story-thumb {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        object-fit: cover;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .story-text {
+        flex: 1;
+        overflow: hidden;
+    }
+    .story-kicker {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .story-headline {
+        font-size: 12px;
+        font-weight: 600;
+        color: #ffffff;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .story-chevron {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 18px;
+        line-height: 1;
+    }
+
     .swipe-stamp {
         position: absolute;
-        top: 40px;
+        top: 60px;
         padding: 6px 14px;
         border: 4px solid;
         border-radius: 8px;
@@ -302,46 +426,12 @@
         transform: rotate(-15deg);
     }
     .stamp-fav {
-        top: 30px;
+        top: 60px;
         left: 50%;
         transform: translateX(-50%) rotate(0deg);
         border-color: var(--mg-accent);
         color: var(--mg-accent);
     }
-    
-    .status-bar { 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        font-size: 14px; 
-        margin-bottom: 12px; 
-        border-bottom: 1px solid var(--mg-border); 
-        padding-bottom: 8px; 
-        font-weight: bold; 
-        color: var(--mg-primary); 
-    }
-    .undo-btn {
-        background: transparent;
-        color: var(--mg-secondary);
-        border: 1px solid var(--mg-border);
-        border-radius: 6px;
-        padding: 4px 10px;
-        font-size: 12px;
-        font-weight: 600;
-        width: auto;
-        margin: 0;
-        cursor: pointer;
-    }
-    .undo-btn:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-    }
-
-    .swipe-controls { display: flex; gap: 8px; position: relative; z-index: 3; }
-    .swipe-controls button { margin-top: 0; border-radius: 8px; padding: 12px; font-size: 14px; }
-    .btn-left { background: var(--mg-reject); flex: 1; }
-    .btn-mid { background: var(--mg-accent); color: #ffffff; flex: 1; }
-    .btn-right { background: var(--mg-accept); flex: 1; }
     
     ul { list-style-type: none; padding: 0; margin: 0; margin-bottom: 20px; }
     li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--mg-border); font-size: 14px; color: var(--mg-text); }
@@ -349,7 +439,6 @@
     .favorite-item img { width: 44px; height: 44px; border-radius: 6px; margin-right: 12px; object-fit: cover; }
     .favorite-item div { display: flex; align-items: center; }
 
-    /* Aisle Grouping Styles */
     .aisle-title {
         font-size: 13px;
         font-weight: 700;
@@ -435,6 +524,7 @@
             display: block !important;
             padding: 0 !important;
             overflow: visible !important;
+            background: #fff !important;
         }
 
         #summary-screen h2 {
@@ -532,48 +622,92 @@
     </div>
 
     <div id="swipe-screen" class="screen">
+        <!-- Next Card Layer -->
         <div id="page-next" class="swipe-page">
-            <div class="status-bar">
-                <span class="meal-status">Meals: 0 / 5</span>
-            </div>
             <div class="card">
-                <span class="meal-tag">Loading</span>
-                <button class="info-btn" tabindex="-1">Info</button>
-                <img class="recipe-image" src="" alt="Recipe Image">
-                <div class="card-details">
-                    <h3 class="recipe-title">Loading recipes...</h3>
-                    <p class="recipe-time">Time: -- mins</p>
+                <img class="card-hero-image recipe-image" src="" alt="Recipe Image">
+                <div class="card-content-pane">
+                    <div class="recipe-header-block">
+                        <h3 class="recipe-title">Loading...</h3>
+                        <p class="recipe-meta-author">Collection &bull; Card</p>
+                    </div>
+                    <div class="recipe-metrics-grid">
+                        <div class="metric-col">
+                            <span class="metric-label">Cook Time</span>
+                            <span class="metric-val recipe-time">-- mins</span>
+                        </div>
+                        <div class="metric-col">
+                            <span class="metric-label">Yield</span>
+                            <span class="metric-val recipe-yield">2</span>
+                        </div>
+                        <div class="metric-col">
+                            <span class="metric-label">Type</span>
+                            <span class="metric-val meal-tag">Dinner</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="swipe-controls">
-                <button class="btn-left" tabindex="-1">Hell no!</button>
-                <button class="btn-mid" tabindex="-1">Favorite</button>
-                <button class="btn-right" tabindex="-1">Oh yes!</button>
             </div>
         </div>
 
+        <!-- Current Active Card Layer -->
         <div id="page-current" class="swipe-page">
-            <div class="status-bar">
-                <button id="undo-btn" class="undo-btn" onclick="undoLastAction()" disabled title="Shortcut: Z or Backspace">&#8630; Undo</button>
-                <span class="meal-status">Meals: 0 / 5</span>
+            <div class="card-nav-bar">
+                <button id="undo-btn" class="circle-icon-btn" onclick="undoLastAction()" disabled title="Undo">&#8249;</button>
+                <button class="circle-icon-btn" onclick="showRecipeInfo()" title="More details">&bull;&bull;&bull;</button>
             </div>
+
             <div class="card">
                 <div class="swipe-stamp stamp-like" id="stamp-like">LIKE</div>
                 <div class="swipe-stamp stamp-nope" id="stamp-nope">NOPE</div>
                 <div class="swipe-stamp stamp-fav" id="stamp-fav">FAV</div>
 
-                <span class="meal-tag">Loading</span>
-                <button class="info-btn" onclick="showRecipeInfo()">Info</button>
-                <img class="recipe-image" src="" alt="Recipe Image">
-                <div class="card-details">
-                    <h3 class="recipe-title">Loading recipes...</h3>
-                    <p class="recipe-time">Time: -- mins</p>
+                <img class="card-hero-image recipe-image" src="" alt="Recipe Image">
+
+                <div class="card-content-pane">
+                    <div class="recipe-header-block">
+                        <h3 class="recipe-title">Loading...</h3>
+                        <p class="recipe-meta-author">Curated Cookbook &bull; In House</p>
+                    </div>
+
+                    <div class="recipe-metrics-grid">
+                        <div class="metric-col">
+                            <span class="metric-label">Cook Time</span>
+                            <span class="metric-val recipe-time">-- mins</span>
+                        </div>
+                        <div class="metric-col">
+                            <span class="metric-label">Yield</span>
+                            <span class="metric-val recipe-yield">2</span>
+                        </div>
+                        <div class="metric-col">
+                            <span class="metric-label">Type</span>
+                            <span class="metric-val meal-tag">--</span>
+                        </div>
+                    </div>
+
+                    <div class="recipe-pill-actions">
+                        <button class="pill-btn" onclick="triggerSwipe('accept')" title="Select recipe">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <span>Cook</span>
+                        </button>
+                        <button class="pill-btn" onclick="triggerSwipe('favorite')" title="Save to favorites">
+                            <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+                            <span>Save</span>
+                        </button>
+                        <button class="pill-btn" onclick="triggerSwipe('reject')" title="Skip recipe">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                            <span>Skip</span>
+                        </button>
+                    </div>
+
+                    <div class="story-card-link" onclick="showRecipeInfo()">
+                        <img class="story-thumb recipe-image-thumb" src="" alt="">
+                        <div class="story-text">
+                            <div class="story-kicker">View Instructions</div>
+                            <div class="story-headline recipe-sub-headline">Method &amp; Ingredients</div>
+                        </div>
+                        <div class="story-chevron">&rsaquo;</div>
+                    </div>
                 </div>
-            </div>
-            <div class="swipe-controls">
-                <button class="btn-left" onclick="triggerSwipe('reject')" title="Shortcut: Left Arrow">Hell no!</button>
-                <button class="btn-mid" onclick="triggerSwipe('favorite')" title="Shortcut: Up Arrow">Favorite</button>
-                <button class="btn-right" onclick="triggerSwipe('accept')" title="Shortcut: Right Arrow">Oh yes!</button>
             </div>
         </div>
     </div>
@@ -654,7 +788,6 @@
     let currentY = 0;
     const swipeThreshold = 80;
 
-    // Aisle Categorization Reference
     const AISLE_PATTERNS = [
         {
             name: 'Produce',
@@ -692,11 +825,9 @@
     function scaleIngredientLine(line, factor) {
         if (factor === 1) return line;
 
-        // Matches unicode fractions, standard fractions, decimals, and whole numbers at start of ingredient line
         const fractionMap = { '½': 0.5, '⅓': 0.333, '⅔': 0.667, '¼': 0.25, '¾': 0.75, '⅛': 0.125 };
         let modified = line;
 
-        // Check for unicode fractions
         for (const [char, val] of Object.entries(fractionMap)) {
             if (modified.startsWith(char)) {
                 const scaled = Math.round(val * factor * 10) / 10;
@@ -770,7 +901,7 @@
     }
 
     pageCurrent.addEventListener('touchstart', e => {
-        if (e.target.closest('button') || state.currentRecipeIndex >= recipes.length) return;
+        if (e.target.closest('button') || e.target.closest('.story-card-link') || state.currentRecipeIndex >= recipes.length) return;
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
         pageCurrent.classList.add('dragging');
@@ -779,7 +910,7 @@
     }, { passive: true });
 
     pageCurrent.addEventListener('touchmove', e => {
-        if (e.target.closest('button') || state.currentRecipeIndex >= recipes.length) return;
+        if (e.target.closest('button') || e.target.closest('.story-card-link') || state.currentRecipeIndex >= recipes.length) return;
         if (!pageCurrent.classList.contains('dragging')) return;
 
         currentX = e.touches[0].clientX - touchStartX;
@@ -798,7 +929,7 @@
     }, { passive: true });
 
     pageCurrent.addEventListener('touchend', e => {
-        if (e.target.closest('button') || state.currentRecipeIndex >= recipes.length) return;
+        if (e.target.closest('button') || e.target.closest('.story-card-link') || state.currentRecipeIndex >= recipes.length) return;
         if (!pageCurrent.classList.contains('dragging')) return;
 
         pageCurrent.classList.remove('dragging');
@@ -860,7 +991,6 @@
     }
 
     function processSwipeAction(action) {
-        // Record immutable history snapshot for Undo
         state.history.push({
             currentRecipeIndex: state.currentRecipeIndex,
             acceptedMeals: state.acceptedMeals,
@@ -992,7 +1122,7 @@
     }
 
     function setControlsState(disabled) {
-        document.querySelectorAll('#swipe-screen button:not(#undo-btn)').forEach(btn => btn.disabled = disabled);
+        document.querySelectorAll('#swipe-screen .pill-btn').forEach(btn => btn.disabled = disabled);
     }
 
     function loadPages() {
@@ -1002,21 +1132,36 @@
 
     function renderPage(pageEl, index, acceptedCount) {
         if (index >= recipes.length) {
-            pageEl.querySelector('.recipe-title').innerText = "No more recipes.";
-            pageEl.querySelector('.recipe-image').src = "";
-            pageEl.querySelector('.meal-tag').innerText = "N/A";
-            pageEl.querySelector('.recipe-time').innerText = "--";
             pageEl.style.display = 'none';
             return;
         }
-        
+
         pageEl.style.display = 'flex';
         const recipe = recipes[index];
-        pageEl.querySelector('.meal-status').innerText = `Meals: ${acceptedCount} / ${config.days}`;
-        pageEl.querySelector('.recipe-image').src = recipe.image;
-        pageEl.querySelector('.recipe-title').innerText = recipe.title;
-        pageEl.querySelector('.meal-tag').innerText = recipe.type;
-        pageEl.querySelector('.recipe-time').innerText = `Time: ${recipe.time} mins`;
+
+        const imgEl = pageEl.querySelector('.recipe-image');
+        if (imgEl) imgEl.src = recipe.image || '';
+
+        const thumbEl = pageEl.querySelector('.recipe-image-thumb');
+        if (thumbEl) thumbEl.src = recipe.image || '';
+
+        const titleEl = pageEl.querySelector('.recipe-title');
+        if (titleEl) titleEl.innerText = recipe.title || 'Untitled Recipe';
+
+        const timeEl = pageEl.querySelector('.recipe-time');
+        if (timeEl) timeEl.innerText = `${recipe.time || '--'} mins`;
+
+        const tagEl = pageEl.querySelector('.meal-tag');
+        if (tagEl) tagEl.innerText = recipe.type || 'Meal';
+
+        const yieldEl = pageEl.querySelector('.recipe-yield');
+        if (yieldEl) {
+            const baseServings = recipe.servings || 2;
+            yieldEl.innerText = Math.round(baseServings * (config.multiplier || 1));
+        }
+
+        const subHeadline = pageEl.querySelector('.recipe-sub-headline');
+        if (subHeadline) subHeadline.innerText = recipe.title || 'View Ingredients & Steps';
     }
 
     function finalizePlan() {
@@ -1029,7 +1174,6 @@
             agendaContainer.appendChild(li);
         });
 
-        // Group shopping list by aisle
         const groupedContainer = document.getElementById('shopping-list-grouped');
         groupedContainer.innerHTML = '';
 
@@ -1184,7 +1328,6 @@
         }
     }
 
-    // Keyboard Navigation
     document.addEventListener('keydown', e => {
         const swipeActive = document.getElementById('swipe-screen').classList.contains('active');
         const modalOpen = document.getElementById('info-modal').style.display === 'block';
