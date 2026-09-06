@@ -756,6 +756,13 @@
             <option value="3">Scale 3.0x (Family / Batch Cook)</option>
         </select>
 
+        <label>Cook / Prep Time</label>
+        <div id="prep-time-filters" class="checkbox-group">
+            <label><input type="checkbox" value="quick" checked> 0–30 mins</label>
+            <label><input type="checkbox" value="medium" checked> 31–59 mins</label>
+            <label><input type="checkbox" value="long" checked> 60+ mins</label>
+        </div>
+
         <label>Meal Categories</label>
         <div id="meal-categories" class="checkbox-group">
             <label><input type="checkbox" value="Proper Good Dinners" checked> Proper Good Dinners</label>
@@ -960,7 +967,7 @@
 
     let cookbookDatabase = [];
     let recipes = [];
-    let config = { days: 0, categories: [], multiplier: 1 };
+    let config = { days: 0, categories: [], multiplier: 1, prepTimes: [] };
     let state = { 
         currentRecipeIndex: 0, 
         acceptedMeals: 0, 
@@ -1281,16 +1288,35 @@
         config.days = parseInt(document.getElementById('days').value);
         config.multiplier = parseFloat(document.getElementById('portion-multiplier').value) || 1;
         config.categories = Array.from(document.querySelectorAll('#meal-categories input:checked')).map(cb => cb.value);
+        config.prepTimes = Array.from(document.querySelectorAll('#prep-time-filters input:checked')).map(cb => cb.value);
         
         if (config.categories.length === 0) {
             alert("Select at least one meal category.");
             return;
         }
 
-        const filtered = cookbookDatabase.filter(r => config.categories.includes(r.type));
+        if (config.prepTimes.length === 0) {
+            alert("Select at least one prep time bracket.");
+            return;
+        }
+
+        const filtered = cookbookDatabase.filter(r => {
+            const matchesCategory = config.categories.includes(r.type);
+            
+            const time = parseInt(r.time, 10) || 0;
+            let bracket = 'quick';
+            if (time >= 60) {
+                bracket = 'long';
+            } else if (time >= 31) {
+                bracket = 'medium';
+            }
+
+            const matchesTime = config.prepTimes.includes(bracket);
+            return matchesCategory && matchesTime;
+        });
         
         if (filtered.length === 0) {
-            alert(`No recipes found matching the selected categories: ${config.categories.join(', ')}`);
+            alert("No recipes found matching the selected categories and prep times.");
             return;
         }
 
