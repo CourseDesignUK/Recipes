@@ -231,7 +231,7 @@
     }
     
     #page-current { z-index: 2; }
-    #page-next { z-index: 1; transform: scale(0.95); opacity: 0.8; }
+    #page-next { z-index: 1; transform: scale(1); opacity: 1; }
     
     .swipe-page.dragging { transition: none !important; }
     .swipe-page.swipe-left { transform: translate(-150%, 0) rotate(-15deg) !important; opacity: 0; }
@@ -731,26 +731,56 @@
     <div id="swipe-screen" class="screen">
         <!-- Next Card Layer -->
         <div id="page-next" class="swipe-page">
+            <div class="card-nav-bar">
+                <button class="circle-icon-btn" disabled title="Undo">&#8249;</button>
+                <button class="circle-icon-btn" disabled title="More details">&bull;&bull;&bull;</button>
+            </div>
+
             <div class="card">
                 <img class="card-hero-image recipe-image" src="" alt="Recipe Image">
                 <div class="card-content-pane">
                     <div class="recipe-header-block">
                         <h3 class="recipe-title">Loading...</h3>
-                        <p class="recipe-meta-author">Collection &bull; Card</p>
+                        <p class="recipe-meta-author">Curated Cookbook &bull; In House</p>
                     </div>
+
                     <div class="recipe-metrics-grid">
                         <div class="metric-col">
                             <span class="metric-label">Cook Time</span>
                             <span class="metric-val recipe-time">-- mins</span>
                         </div>
                         <div class="metric-col">
-                            <span class="metric-label">Yield</span>
-                            <span class="metric-val recipe-yield">2</span>
+                            <span class="metric-label">Selected</span>
+                            <span class="metric-val recipe-progress">0/5</span>
                         </div>
                         <div class="metric-col">
                             <span class="metric-label">Type</span>
-                            <span class="metric-val meal-tag">Dinner</span>
+                            <span class="metric-val meal-tag">--</span>
                         </div>
+                    </div>
+
+                    <div class="recipe-pill-actions">
+                        <button class="pill-btn" tabindex="-1">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <span>Cook</span>
+                        </button>
+                        <button class="pill-btn" tabindex="-1">
+                            <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+                            <span>Save</span>
+                        </button>
+                        <button class="pill-btn" tabindex="-1">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                            <span>Skip</span>
+                        </button>
+                    </div>
+
+                    <div class="story-card-link">
+                        <img class="story-thumb recipe-image-thumb" src="" alt="">
+                        <div class="story-text">
+                            <div class="story-kicker">View Instructions</div>
+                            <div class="story-headline recipe-sub-headline">Method &amp; Ingredients</div>
+                        </div>
+                        <div class="story-chevron">&rsaquo;</div>
                     </div>
                 </div>
             </div>
@@ -782,8 +812,8 @@
                             <span class="metric-val recipe-time">-- mins</span>
                         </div>
                         <div class="metric-col">
-                            <span class="metric-label">Yield</span>
-                            <span class="metric-val recipe-yield">2</span>
+                            <span class="metric-label">Selected</span>
+                            <span class="metric-val recipe-progress">0/5</span>
                         </div>
                         <div class="metric-col">
                             <span class="metric-label">Type</span>
@@ -1013,7 +1043,6 @@
         touchStartY = e.touches[0].clientY;
         pageCurrent.classList.add('dragging');
         pageCurrent.style.transition = 'none';
-        pageNext.style.transition = 'none';
     }, { passive: true });
 
     pageCurrent.addEventListener('touchmove', e => {
@@ -1025,12 +1054,6 @@
         
         const rotate = currentX * 0.05;
         pageCurrent.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotate}deg)`;
-        
-        const progress = Math.min(Math.abs(currentX) / 150, 1);
-        const scale = 0.95 + (0.05 * progress);
-        const opacity = 0.8 + (0.2 * progress);
-        pageNext.style.transform = `scale(${scale})`;
-        pageNext.style.opacity = opacity;
 
         updateStamps(currentX, currentY);
     }, { passive: true });
@@ -1041,7 +1064,6 @@
 
         pageCurrent.classList.remove('dragging');
         pageCurrent.style.transition = '';
-        pageNext.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease';
         resetStamps();
 
         if (currentX < -swipeThreshold) {
@@ -1052,8 +1074,6 @@
             triggerSwipe('favorite');
         } else {
             pageCurrent.style.transform = '';
-            pageNext.style.transform = 'scale(0.95)';
-            pageNext.style.opacity = '0.8';
         }
         currentX = 0;
         currentY = 0;
@@ -1065,10 +1085,6 @@
         setControlsState(true);
         resetStamps();
         pageCurrent.style.transform = '';
-        
-        pageNext.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease';
-        pageNext.style.transform = 'scale(1)';
-        pageNext.style.opacity = '1';
 
         if (action === 'reject') {
             pageCurrent.classList.add('swipe-left');
@@ -1081,10 +1097,6 @@
         setTimeout(() => {
             pageCurrent.classList.add('dragging');
             pageCurrent.classList.remove('swipe-left', 'swipe-right', 'swipe-up');
-            
-            pageNext.style.transition = 'none';
-            pageNext.style.transform = 'scale(0.95)';
-            pageNext.style.opacity = '0.8';
             
             processSwipeAction(action);
             
@@ -1261,10 +1273,9 @@
         const tagEl = pageEl.querySelector('.meal-tag');
         if (tagEl) tagEl.innerText = recipe.type || 'Meal';
 
-        const yieldEl = pageEl.querySelector('.recipe-yield');
-        if (yieldEl) {
-            const baseServings = recipe.servings || 2;
-            yieldEl.innerText = Math.round(baseServings * (config.multiplier || 1));
+        const progressEl = pageEl.querySelector('.recipe-progress');
+        if (progressEl) {
+            progressEl.innerText = `${acceptedCount}/${config.days}`;
         }
 
         const subHeadline = pageEl.querySelector('.recipe-sub-headline');
