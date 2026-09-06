@@ -3,7 +3,7 @@
   "title": "Maddie Pie",
   "type": "Proper Good Dinners",
   "time": "50",
-  "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=600&q=80",
+  "image": "./images/MaddiePie.jpeg",
   "rawIngredients": [
     "4 chicken breasts",
     "1 large onion",
