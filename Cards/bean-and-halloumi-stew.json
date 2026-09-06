@@ -1,0 +1,25 @@
+{
+  "id": "bean-and-halloumi-stew",
+  "title": "Bean & Halloumi Stew",
+  "type": "Main Meals",
+  "time": 25,
+  "image": "images/bean_and_halloumi_stew.jpg",
+  "rawIngredients": [
+    "3 tbsp olive oil (divided)",
+    "1 onion, thinly sliced",
+    "1 red pepper, thinly sliced",
+    "2 garlic cloves, crushed",
+    "3 tbsp red chilli pesto (or sundried tomato pesto)",
+    "1 heaped tsp ground coriander",
+    "400g can mixed beans, drained and rinsed",
+    "400g can chopped tomatoes",
+    "½ x 250g block halloumi, sliced",
+    "½ small bunch of coriander, finely chopped",
+    "Garlic bread, to serve (optional)"
+  ],
+  "method": [
+    "Heat 2 tbsp of oil in a frying pan over a medium heat. Add the onion and pepper, along with a pinch of salt and fry for 10 mins or until softened. Add the garlic, pesto and ground coriander, and cook for 1 min. Tip in the beans and tomatoes along with ½ can of water, then bring to a simmer and cook uncovered for 10 mins.",
+    "Add the remaining oil to a separate frying pan over a medium heat. Fry the halloumi for 2 mins on each side or until golden brown.",
+    "Taste the beans for seasoning, then spoon into deep bowls. Top with the halloumi and scatter over the chopped coriander. Serve with garlic bread, if you like."
+  ]
+}
