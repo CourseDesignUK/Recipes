@@ -537,7 +537,7 @@
         background: var(--mg-card-glass);
         border: 1px solid var(--mg-border);
         border-radius: 12px;
-        padding: 10px 14px;
+        padding: 10px 14px; 
         margin-bottom: 8px;
     }
     .favorite-item img { width: 44px; height: 44px; border-radius: 8px; margin-right: 12px; object-fit: cover; }
@@ -1026,6 +1026,62 @@
         return 'Pantry & Dry Goods';
     }
 
+    function parseIngredientString(rawStr) {
+        const fractionMap = { '½': 0.5, '⅓': 0.333, '⅔': 0.667, '¼': 0.25, '¾': 0.75, '⅛': 0.125 };
+        let str = rawStr.trim();
+
+        for (const [char, val] of Object.entries(fractionMap)) {
+            if (str.startsWith(char)) {
+                str = `${val} ${str.substring(char.length).trim()}`;
+                break;
+            }
+        }
+
+        const regex = /^((?:\d+\s+)?\d+\/\d+|\d*\.?\d+)?\s*(.*)$/;
+        const match = str.match(regex);
+
+        if (!match || !match[1]) {
+            return { qty: 0, unit: '', item: str.trim(), original: rawStr };
+        }
+
+        let qty = 0;
+        const rawQty = match[1].trim();
+        if (rawQty.includes('/')) {
+            const parts = rawQty.split(/\s+/);
+            if (parts.length === 2) {
+                const frac = parts[1].split('/');
+                qty = parseFloat(parts[0]) + (parseFloat(frac[0]) / parseFloat(frac[1]));
+            } else {
+                const frac = rawQty.split('/');
+                qty = parseFloat(frac[0]) / parseFloat(frac[1]);
+            }
+        } else {
+            qty = parseFloat(rawQty);
+        }
+
+        let remainder = match[2].trim();
+
+        const unitRegex = /^(g|kg|ml|l|tbsp|tsp|tablespoon|tablespoons|teaspoon|teaspoons|cup|cups|oz|lb|clove|cloves|pinch|can|tinned|pot|bunch|slices?)\b\s*(.*)/i;
+        const unitMatch = remainder.match(unitRegex);
+
+        let unit = '';
+        let item = remainder;
+
+        if (unitMatch) {
+            unit = unitMatch[1].toLowerCase();
+            item = unitMatch[2].trim();
+        }
+
+        const normalizedItem = item.toLowerCase()
+            .replace(/tomatoes$/, 'tomato')
+            .replace(/potatoes$/, 'potato')
+            .replace(/onions$/, 'onion')
+            .replace(/es$/, '')
+            .replace(/s$/, '');
+
+        return { qty, unit, item: normalizedItem, displayItem: item, original: rawStr };
+    }
+
     function scaleIngredientLine(line, factor) {
         if (factor === 1) return line;
 
@@ -1215,12 +1271,22 @@
             state.acceptedRecipes.push(recipe);
             
             recipe.rawIngredients.forEach(rawIng => {
-                const scaledLine = scaleIngredientLine(rawIng, config.multiplier);
-                const existing = state.rawIngredientsList.find(i => i.line === scaledLine);
+                const parsed = parseIngredientString(rawIng);
+                const scaledQty = parsed.qty * config.multiplier;
+                const key = `${parsed.item}|${parsed.unit}`;
+
+                const existing = state.rawIngredientsList.find(i => i.key === key);
                 if (existing) {
-                    existing.count += 1;
+                    existing.totalQty += scaledQty;
                 } else {
-                    state.rawIngredientsList.push({ line: scaledLine, count: 1 });
+                    state.rawIngredientsList.push({
+                        key: key,
+                        item: parsed.item,
+                        displayItem: parsed.displayItem,
+                        unit: parsed.unit,
+                        totalQty: scaledQty,
+                        rawFallback: rawIng
+                    });
                 }
             });
         }
@@ -1395,10 +1461,23 @@
         groupedContainer.innerHTML = '';
 
         const aisleBuckets = {};
-        state.rawIngredientsList.forEach(item => {
-            const department = classifyIngredient(item.line);
+
+        state.rawIngredientsList.forEach(entry => {
+            let label = entry.item;
+            if (entry.totalQty > 1 && !entry.unit) {
+                if (label.endsWith('tomato')) label += 'es';
+                else if (label.endsWith('potato')) label += 'es';
+                else if (label.endsWith('onion')) label += 's';
+                else if (!label.endsWith('s')) label += 's';
+            }
+
+            const lineText = entry.totalQty > 0 
+                ? `${Math.round(entry.totalQty * 100) / 100} ${entry.unit ? entry.unit + ' ' : ''}${label}`.trim()
+                : entry.rawFallback;
+
+            const department = classifyIngredient(entry.item || entry.rawFallback);
             if (!aisleBuckets[department]) aisleBuckets[department] = [];
-            aisleBuckets[department].push(item);
+            aisleBuckets[department].push(lineText);
         });
 
         const sortedAisles = Object.keys(aisleBuckets).sort();
@@ -1409,10 +1488,9 @@
             groupedContainer.appendChild(header);
 
             const ul = document.createElement('ul');
-            aisleBuckets[aisleName].sort((a, b) => a.line.localeCompare(b.line)).forEach(item => {
+            aisleBuckets[aisleName].sort((a, b) => a.localeCompare(b)).forEach(text => {
                 const li = document.createElement('li');
-                const multiplier = item.count > 1 ? ` <span style="color:var(--mg-highlight); font-weight:bold;">(${item.count} batches)</span>` : '';
-                li.innerHTML = `<span>${item.line}${multiplier}</span>`;
+                li.innerHTML = `<span>${text}</span>`;
                 ul.appendChild(li);
             });
             groupedContainer.appendChild(ul);
