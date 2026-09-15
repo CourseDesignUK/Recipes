@@ -275,12 +275,12 @@
     .swipe-page.swipe-up { transform: translate(0, -150%) scale(0.8) !important; opacity: 0; }
     
     .card { 
-        margin: 0;
-        border: none;
-        border-radius: 0;
-        width: 100%;
-        height: 100%;
-        background: transparent;
+        margin: 0; 
+        border: none; 
+        border-radius: 0; 
+        width: 100%; 
+        height: 100%; 
+        background: transparent; 
         flex: 1; 
         display: flex; 
         flex-direction: column; 
@@ -914,6 +914,7 @@
         </div>
         
         <button onclick="printPlan()">Print Plan (A4)</button>
+        <button class="action-btn" onclick="exportToCalendar()">Export to Calendar (.ics)</button>
         <button class="action-btn" onclick="savePlan()">Save Plan</button>
         <button class="secondary" onclick="resetApp()">Start Over</button>
     </div>
@@ -1501,6 +1502,83 @@
 
     function printPlan() {
         window.print();
+    }
+
+    function exportToCalendar() {
+        if (!state.acceptedRecipes || state.acceptedRecipes.length === 0) {
+            alert("No meals selected to export.");
+            return;
+        }
+
+        const pad = (n) => String(n).padStart(2, '0');
+        
+        const formatICSDate = (date) => {
+            return `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}T${pad(date.getHours())}${pad(date.getMinutes())}${pad(date.getSeconds())}`;
+        };
+
+        const escapeICS = (str) => {
+            return (str || '')
+                .replace(/\\/g, '\\\\')
+                .replace(/;/g, '\\;')
+                .replace(/,/g, '\\,')
+                .replace(/\r?\n/g, '\\n');
+        };
+
+        const now = new Date();
+        const dtstamp = `${now.getUTCFullYear()}${pad(now.getUTCMonth() + 1)}${pad(now.getUTCDate())}T${pad(now.getUTCHours())}${pad(now.getUTCMinutes())}${pad(now.getUTCSeconds())}Z`;
+
+        let icsContent = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Easy Meal Planner//EN',
+            'CALSCALE:GREGORIAN',
+            'METHOD:PUBLISH'
+        ];
+
+        const startDate = new Date();
+        startDate.setDate(startDate.getDate() + 1);
+
+        state.acceptedRecipes.forEach((recipe, index) => {
+            const eventDate = new Date(startDate);
+            eventDate.setDate(startDate.getDate() + index);
+            eventDate.setHours(18, 0, 0, 0);
+
+            const cookDurationMins = parseInt(recipe.time, 10) || 60;
+            const endDate = new Date(eventDate.getTime() + cookDurationMins * 60 * 1000);
+
+            const uid = `meal-${Date.now()}-${index}-${Math.random().toString(36).substr(2, 9)}@mealplanner.local`;
+
+            const ingredients = (recipe.rawIngredients || [])
+                .map(ing => `• ${scaleIngredientLine(ing, config.multiplier)}`)
+                .join('\n');
+
+            const method = (recipe.method || [])
+                .map((step, i) => `${i + 1}. ${step}`)
+                .join('\n');
+
+            const description = `COOK TIME: ${recipe.time || '--'} mins\nTYPE: ${recipe.type || 'Main'}\nPORTIONS: ${config.multiplier}x\n\nINGREDIENTS:\n${ingredients}\n\nMETHOD:\n${method}`;
+
+            icsContent.push('BEGIN:VEVENT');
+            icsContent.push(`UID:${uid}`);
+            icsContent.push(`DTSTAMP:${dtstamp}`);
+            icsContent.push(`DTSTART:${formatICSDate(eventDate)}`);
+            icsContent.push(`DTEND:${formatICSDate(endDate)}`);
+            icsContent.push(`SUMMARY:${escapeICS(`Dinner: ${recipe.title}`)}`);
+            icsContent.push(`DESCRIPTION:${escapeICS(description)}`);
+            icsContent.push('STATUS:CONFIRMED');
+            icsContent.push('END:VEVENT');
+        });
+
+        icsContent.push('END:VCALENDAR');
+
+        const blob = new Blob([icsContent.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `Meal_Plan_${new Date().toISOString().slice(0, 10)}.ics`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
     }
 
     function savePlan() {
