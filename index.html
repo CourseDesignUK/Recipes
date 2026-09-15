@@ -505,15 +505,15 @@
         background: rgba(0, 0, 0, 0.25);
         backdrop-filter: blur(2px);
     }
-    .stamp-like {
+    .stamp-dismiss {
         left: 24px;
-        border-color: var(--mg-accept);
+        border-color: var(--mg-reject);
         color: var(--mg-reject);
         transform: rotate(-15deg);
     }
-    .stamp-nope {
+    .stamp-save {
         right: 24px;
-        border-color: var(--mg-reject);
+        border-color: var(--mg-accept);
         color: var(--mg-accept);
         transform: rotate(15deg);
     }
@@ -810,16 +810,16 @@
 
                     <div class="recipe-pill-actions">
                         <button class="pill-btn" tabindex="-1">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            <span>Cook</span>
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                            <span>Dismiss</span>
                         </button>
                         <button class="pill-btn" tabindex="-1">
                             <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
-                            <span>Save</span>
+                            <span>Favorite</span>
                         </button>
                         <button class="pill-btn" tabindex="-1">
-                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-                            <span>Skip</span>
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <span>Save</span>
                         </button>
                     </div>
 
@@ -837,8 +837,8 @@
 
         <!-- Current Active Card Layer -->
         <div id="page-current" class="swipe-page">
-            <div class="swipe-stamp stamp-like" id="stamp-like">Nope</div>
-            <div class="swipe-stamp stamp-nope" id="stamp-nope">Hell Yes!</div>
+            <div class="swipe-stamp stamp-dismiss" id="stamp-dismiss">Dismiss</div>
+            <div class="swipe-stamp stamp-save" id="stamp-save">Save</div>
             <div class="swipe-stamp stamp-fav" id="stamp-fav">FAV</div>
 
             <div class="card-nav-bar">
@@ -871,17 +871,17 @@
                     </div>
 
                     <div class="recipe-pill-actions">
-                        <button class="pill-btn" onclick="triggerSwipe('accept')" title="Select recipe">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            <span>Cook</span>
+                        <button class="pill-btn" onclick="triggerSwipe('reject')" title="Dismiss recipe">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                            <span>Dismiss</span>
                         </button>
                         <button class="pill-btn" onclick="triggerSwipe('favorite')" title="Save to favorites">
                             <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
-                            <span>Save</span>
+                            <span>Favorite</span>
                         </button>
-                        <button class="pill-btn" onclick="triggerSwipe('reject')" title="Skip recipe">
-                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-                            <span>Skip</span>
+                        <button class="pill-btn" onclick="triggerSwipe('accept')" title="Save to menu">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <span>Save</span>
                         </button>
                     </div>
 
@@ -982,8 +982,8 @@
     
     const pageCurrent = document.getElementById('page-current');
     const pageNext = document.getElementById('page-next');
-    const stampLike = document.getElementById('stamp-like');
-    const stampNope = document.getElementById('stamp-nope');
+    const stampDismiss = document.getElementById('stamp-dismiss');
+    const stampSave = document.getElementById('stamp-save');
     const stampFav = document.getElementById('stamp-fav');
     const undoBtn = document.getElementById('undo-btn');
 
@@ -1150,8 +1150,8 @@
     });
 
     function resetStamps() {
-        stampLike.style.opacity = 0;
-        stampNope.style.opacity = 0;
+        stampDismiss.style.opacity = 0;
+        stampSave.style.opacity = 0;
         stampFav.style.opacity = 0;
     }
 
@@ -1159,15 +1159,15 @@
         const absX = Math.abs(x);
         if (y < -40 && absX < 50) {
             stampFav.style.opacity = Math.min(Math.abs(y) / swipeThreshold, 1);
-            stampLike.style.opacity = 0;
-            stampNope.style.opacity = 0;
+            stampDismiss.style.opacity = 0;
+            stampSave.style.opacity = 0;
         } else if (x > 0) {
-            stampNope.style.opacity = Math.min(x / swipeThreshold, 1);
-            stampLike.style.opacity = 0;
+            stampSave.style.opacity = Math.min(x / swipeThreshold, 1);
+            stampDismiss.style.opacity = 0;
             stampFav.style.opacity = 0;
         } else if (x < 0) {
-            stampLike.style.opacity = Math.min(absX / swipeThreshold, 1);
-            stampNope.style.opacity = 0;
+            stampDismiss.style.opacity = Math.min(absX / swipeThreshold, 1);
+            stampSave.style.opacity = 0;
             stampFav.style.opacity = 0;
         } else {
             resetStamps();
@@ -1203,9 +1203,9 @@
         pageCurrent.style.transition = '';
         resetStamps();
 
-        if (currentX < -swipeThreshold) {
+        if (currentX > swipeThreshold) {
             triggerSwipe('accept');
-        } else if (currentX > swipeThreshold) {
+        } else if (currentX < -swipeThreshold) {
             triggerSwipe('reject');
         } else if (currentY < -swipeThreshold) {
             triggerSwipe('favorite');
@@ -1224,9 +1224,9 @@
         pageCurrent.style.transform = '';
 
         if (action === 'accept') {
-            pageCurrent.classList.add('swipe-left');
-        } else if (action === 'reject') {
             pageCurrent.classList.add('swipe-right');
+        } else if (action === 'reject') {
+            pageCurrent.classList.add('swipe-left');
         } else if (action === 'favorite') {
             pageCurrent.classList.add('swipe-up');
         }
@@ -1721,10 +1721,10 @@
         }
 
         if (swipeActive && !modalOpen) {
-            if (e.key === 'ArrowLeft') {
+            if (e.key === 'ArrowRight') {
                 e.preventDefault();
                 triggerSwipe('accept');
-            } else if (e.key === 'ArrowRight') {
+            } else if (e.key === 'ArrowLeft') {
                 e.preventDefault();
                 triggerSwipe('reject');
             } else if (e.key === 'ArrowUp') {
