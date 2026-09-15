@@ -1,7 +1,7 @@
 {
   "id": "chicken-shawarma",
   "title": "Chicken Shawarma",
-  "type": "Proper Good Dinners",
+  "type": "Main Meal",
   "time": "45",
   "image": "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80",
   "rawIngredients": [
