@@ -1,7 +1,7 @@
 {
   "id": "molten-lava-soup",
   "title": "Molten Lava Soup",
-  "type": "Proper Good Dinners",
+  "type": "Main Meal",
   "time": "35",
   "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80",
   "rawIngredients": [
