@@ -508,13 +508,13 @@
     .stamp-like {
         left: 24px;
         border-color: var(--mg-accept);
-        color: var(--mg-accept);
+        color: var(--mg-reject);
         transform: rotate(-15deg);
     }
     .stamp-nope {
         right: 24px;
         border-color: var(--mg-reject);
-        color: var(--mg-reject);
+        color: var(--mg-accept);
         transform: rotate(15deg);
     }
     .stamp-fav {
@@ -837,8 +837,8 @@
 
         <!-- Current Active Card Layer -->
         <div id="page-current" class="swipe-page">
-            <div class="swipe-stamp stamp-like" id="stamp-like">Hell Yes!</div>
-            <div class="swipe-stamp stamp-nope" id="stamp-nope">NOPE</div>
+            <div class="swipe-stamp stamp-like" id="stamp-like">Nope</div>
+            <div class="swipe-stamp stamp-nope" id="stamp-nope">Hell Yes!</div>
             <div class="swipe-stamp stamp-fav" id="stamp-fav">FAV</div>
 
             <div class="card-nav-bar">
