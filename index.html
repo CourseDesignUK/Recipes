@@ -154,10 +154,10 @@
     h2 { 
         margin-top: 0; 
         color: #ffffff; 
-        font-size: 24px;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        margin-bottom: 20px;
+        font-size: 24px; 
+        font-weight: 700; 
+        letter-spacing: -0.5px; 
+        margin-bottom: 20px; 
     }
 
     h3 { 
@@ -165,17 +165,17 @@
         margin-bottom: 10px; 
         color: #ffffff; 
         font-size: 15px; 
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        font-weight: 600; 
+        text-transform: uppercase; 
+        letter-spacing: 0.5px; 
         border-bottom: 1px solid var(--mg-border); 
         padding-bottom: 6px; 
     }
 
     label { 
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        font-size: 12px; 
+        text-transform: uppercase; 
+        letter-spacing: 0.5px; 
         font-weight: 600; 
         display: block; 
         margin-top: 18px; 
@@ -190,17 +190,17 @@
         border: 1px solid var(--mg-border); 
         border-radius: 12px; 
         font-size: 15px; 
-        font-weight: 500;
+        font-weight: 500; 
         background: var(--mg-card-glass); 
         color: #ffffff; 
         appearance: none; 
         -webkit-appearance: none; 
     }
 
-    input[type="number"]:focus, select:focus {
-        outline: none;
-        border-color: var(--mg-primary);
-        background: rgba(0, 0, 0, 0.6);
+    input[type="number"]:focus, select:focus { 
+        outline: none; 
+        border-color: var(--mg-primary); 
+        background: rgba(0, 0, 0, 0.6); 
     }
     
     .checkbox-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
@@ -211,7 +211,7 @@
         font-weight: 500; 
         font-size: 13px; 
         text-transform: none; 
-        letter-spacing: normal;
+        letter-spacing: normal; 
         background: var(--mg-card-glass); 
         color: var(--mg-text); 
         padding: 10px 14px; 
@@ -246,7 +246,7 @@
     }
     button:active { 
         background: var(--mg-primary-active); 
-        transform: scale(0.99);
+        transform: scale(0.99); 
     }
     button:disabled { opacity: 0.4; pointer-events: none; }
     button.secondary { background: var(--mg-card-glass); margin-top: 10px; }
@@ -299,7 +299,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 10;
+        z-index: 20;
         pointer-events: none;
     }
     .circle-icon-btn {
@@ -488,35 +488,37 @@
 
     .swipe-stamp {
         position: absolute;
-        top: 70px;
-        padding: 6px 14px;
+        top: 90px;
+        padding: 8px 18px;
         border: 4px solid;
-        border-radius: 8px;
-        font-size: 26px;
-        font-weight: 800;
+        border-radius: 10px;
+        font-size: 32px;
+        font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 2px;
         pointer-events: none;
         opacity: 0;
-        z-index: 10;
-        transform: rotate(0deg);
+        z-index: 30;
         transition: opacity 0.1s linear;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(2px);
     }
     .stamp-like {
-        right: 20px;
+        right: 24px;
         border-color: var(--mg-accept);
         color: var(--mg-accept);
         transform: rotate(15deg);
     }
     .stamp-nope {
-        left: 20px;
+        left: 24px;
         border-color: var(--mg-reject);
         color: var(--mg-reject);
         transform: rotate(-15deg);
     }
     .stamp-fav {
-        top: 70px;
+        top: 90px;
         left: 50%;
         transform: translateX(-50%) rotate(0deg);
         border-color: var(--mg-accent);
@@ -534,11 +536,11 @@
     }
     .favorite-item { 
         align-items: center; 
-        background: var(--mg-card-glass);
-        border: 1px solid var(--mg-border);
-        border-radius: 12px;
+        background: var(--mg-card-glass); 
+        border: 1px solid var(--mg-border); 
+        border-radius: 12px; 
         padding: 10px 14px; 
-        margin-bottom: 8px;
+        margin-bottom: 8px; 
     }
     .favorite-item img { width: 44px; height: 44px; border-radius: 8px; margin-right: 12px; object-fit: cover; }
     .favorite-item div { display: flex; align-items: center; }
@@ -568,7 +570,7 @@
     }
     .modal-content { 
         background-color: #1a1e1b; 
-        color: var(--mg-text);
+        color: var(--mg-text); 
         margin: 15% auto; 
         padding: 24px; 
         border-radius: 16px; 
@@ -582,7 +584,7 @@
         overscroll-behavior: contain; 
         display: flex; 
         flex-direction: column; 
-        border: 1px solid var(--mg-border);
+        border: 1px solid var(--mg-border); 
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); 
     }
     .close-modal { 
@@ -607,9 +609,9 @@
         margin-top: 16px; 
         margin-bottom: 6px; 
         color: var(--mg-accent); 
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        font-size: 13px; 
+        text-transform: uppercase; 
+        letter-spacing: 0.5px; 
     }
     .modal-content ul, .modal-content ol { padding-left: 20px; margin-bottom: 15px; }
     .modal-content li { display: list-item; border-bottom: none; padding: 4px 0; justify-content: flex-start; text-align: left; }
@@ -765,10 +767,8 @@
 
         <label>Meal Categories</label>
         <div id="meal-categories" class="checkbox-group">
-        
             <label><input type="checkbox" value="Main Meal" checked> Main Meal</label>
             <label><input type="checkbox" value="Fish & Seafood" checked> Fish &amp; Seafood</label>
-            
             <label><input type="checkbox" value="Puddings"> Puddings</label>
             <label><input type="checkbox" value="Cakes and treats"> Cakes &amp; Treats</label>
         </div>
@@ -837,16 +837,16 @@
 
         <!-- Current Active Card Layer -->
         <div id="page-current" class="swipe-page">
+            <div class="swipe-stamp stamp-like" id="stamp-like">LIKE</div>
+            <div class="swipe-stamp stamp-nope" id="stamp-nope">NOPE</div>
+            <div class="swipe-stamp stamp-fav" id="stamp-fav">FAV</div>
+
             <div class="card-nav-bar">
                 <button id="undo-btn" class="circle-icon-btn" onclick="undoLastAction()" disabled title="Undo">&#8249;</button>
                 <button class="circle-icon-btn" onclick="showRecipeInfo()" title="More details">&bull;&bull;&bull;</button>
             </div>
 
             <div class="card">
-                <div class="swipe-stamp stamp-like" id="stamp-like">LIKE</div>
-                <div class="swipe-stamp stamp-nope" id="stamp-nope">NOPE</div>
-                <div class="swipe-stamp stamp-fav" id="stamp-fav">FAV</div>
-
                 <img class="card-hero-image recipe-image" src="" alt="Recipe Image">
 
                 <div class="card-content-pane">
