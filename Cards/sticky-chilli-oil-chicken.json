@@ -1,7 +1,7 @@
 {
   "id": "sticky-chilli-oil-chicken",
   "title": "Sticky Chilli Oil Chicken",
-  "type": "Main Meals",
+  "type": "Main Meal",
   "time": 60,
   "image": "./images/sticky_chilli_oil_chicken.jpg",
   "rawIngredients": [
