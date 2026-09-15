@@ -1,7 +1,7 @@
 {
   "id": "fajita-style-pasta",
   "title": "Fajita-style Pasta",
-  "type": "Main Meals",
+  "type": "Main Meal",
   "time": 35,
   "image": "./images/fajita_pasta.jpg",
   "rawIngredients": [
