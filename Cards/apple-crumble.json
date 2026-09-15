@@ -1,0 +1,27 @@
+{
+  "id": "apple-crumble",
+  "title": "Apple Crumble",
+  "type": "Puddings",
+  "time": 45,
+  "image": "Cards/Images/apple-crumble.jpg",
+  "rawIngredients": [
+    "500g eating apples",
+    "6 tbsp water",
+    "1 pinch ground cinnamon",
+    "1 tbsp caster sugar",
+    "200g plain flour",
+    "100g butter",
+    "75g light soft brown sugar"
+  ],
+  "method": [
+    "Preheat oven to 180°C (350°F / Gas Mark 4).",
+    "Cut apples into quarters, peel, core, and chop into chunks. Transfer into a pie dish.",
+    "Add 6 tablespoons of water, a large pinch of ground cinnamon, and 1 tablespoon of caster sugar over the apples.",
+    "Add the flour to a mixing bowl. Cut the butter into small cubes and add to the bowl.",
+    "Stir and cut the butter into the flour using a blunt knife until each piece is coated.",
+    "Rub the butter into the flour using your fingertips until the mixture resembles coarse breadcrumbs.",
+    "Mix in the light soft brown sugar using your fingers.",
+    "Spread the crumble topping evenly over the fruit in the pie dish.",
+    "Bake in the oven for 25 to 30 minutes until the crumble topping is golden brown and the fruit is bubbling."
+  ]
+}
