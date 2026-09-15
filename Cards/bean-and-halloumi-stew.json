@@ -1,7 +1,7 @@
 {
   "id": "bean-and-halloumi-stew",
   "title": "Bean & Halloumi Stew",
-  "type": "Main Meals",
+  "type": "Main Meal",
   "time": 25,
   "image": "./images/bhs.jpeg",
   "rawIngredients": [
