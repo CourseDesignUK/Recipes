@@ -506,16 +506,16 @@
         backdrop-filter: blur(2px);
     }
     .stamp-like {
-        right: 24px;
+        left: 24px;
         border-color: var(--mg-accept);
         color: var(--mg-accept);
-        transform: rotate(15deg);
+        transform: rotate(-15deg);
     }
     .stamp-nope {
-        left: 24px;
+        right: 24px;
         border-color: var(--mg-reject);
         color: var(--mg-reject);
-        transform: rotate(-15deg);
+        transform: rotate(15deg);
     }
     .stamp-fav {
         top: 90px;
@@ -837,7 +837,7 @@
 
         <!-- Current Active Card Layer -->
         <div id="page-current" class="swipe-page">
-            <div class="swipe-stamp stamp-like" id="stamp-like">LIKE</div>
+            <div class="swipe-stamp stamp-like" id="stamp-like">Hell Yes!</div>
             <div class="swipe-stamp stamp-nope" id="stamp-nope">NOPE</div>
             <div class="swipe-stamp stamp-fav" id="stamp-fav">FAV</div>
 
@@ -1161,12 +1161,12 @@
             stampLike.style.opacity = 0;
             stampNope.style.opacity = 0;
         } else if (x > 0) {
-            stampLike.style.opacity = Math.min(x / swipeThreshold, 1);
-            stampNope.style.opacity = 0;
+            stampNope.style.opacity = Math.min(x / swipeThreshold, 1);
+            stampLike.style.opacity = 0;
             stampFav.style.opacity = 0;
         } else if (x < 0) {
-            stampNope.style.opacity = Math.min(absX / swipeThreshold, 1);
-            stampLike.style.opacity = 0;
+            stampLike.style.opacity = Math.min(absX / swipeThreshold, 1);
+            stampNope.style.opacity = 0;
             stampFav.style.opacity = 0;
         } else {
             resetStamps();
@@ -1203,9 +1203,9 @@
         resetStamps();
 
         if (currentX < -swipeThreshold) {
-            triggerSwipe('reject');
-        } else if (currentX > swipeThreshold) {
             triggerSwipe('accept');
+        } else if (currentX > swipeThreshold) {
+            triggerSwipe('reject');
         } else if (currentY < -swipeThreshold) {
             triggerSwipe('favorite');
         } else {
@@ -1222,9 +1222,9 @@
         resetStamps();
         pageCurrent.style.transform = '';
 
-        if (action === 'reject') {
+        if (action === 'accept') {
             pageCurrent.classList.add('swipe-left');
-        } else if (action === 'accept') {
+        } else if (action === 'reject') {
             pageCurrent.classList.add('swipe-right');
         } else if (action === 'favorite') {
             pageCurrent.classList.add('swipe-up');
@@ -1645,10 +1645,10 @@
         if (swipeActive && !modalOpen) {
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
-                triggerSwipe('reject');
+                triggerSwipe('accept');
             } else if (e.key === 'ArrowRight') {
                 e.preventDefault();
-                triggerSwipe('accept');
+                triggerSwipe('reject');
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
                 triggerSwipe('favorite');
