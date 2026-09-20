@@ -72,7 +72,35 @@
         object-fit: cover;
     }
 
-  
+    #skip-intro-btn {
+        position: absolute;
+        bottom: max(32px, env(safe-area-inset-bottom));
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        min-width: 120px;
+        padding: 10px 24px;
+        margin: 0;
+        z-index: 100000;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 9999px;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        pointer-events: auto;
+    }
+
+    #skip-intro-btn:active {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(-50%) scale(0.96);
+    }
 
     #portrait-warning {
         display: none;
@@ -719,8 +747,8 @@
 <body>
 
 <div id="intro-overlay">
-    <button id="skip-intro-btn" onclick="dismissIntro()">Skip</button>
     <video id="intro-video" src="intro.mp4" playsinline muted autoplay preload="auto"></video>
+    <button id="skip-intro-btn" onclick="dismissIntro()">Skip</button>
 </div>
 
 <div id="portrait-warning">
@@ -1128,9 +1156,7 @@
             
             const playPromise = introVideo.play();
             if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    // Autoplay blocked by browser policy
-                });
+                playPromise.catch(() => {});
             }
         }
     });
