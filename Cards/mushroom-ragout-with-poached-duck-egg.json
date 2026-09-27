@@ -28,41 +28,4 @@
     "To make the croutons, cut the bread into 2.5cm cubes. Toss them with 2 tablespoons of the oil, the garlic and salt. Spread out on a baking sheet and toast in the oven for 15 minutes, or until brown.",
     "Next, pour a tablespoon of oil into a medium-sized heavy pan and heat well. Add some of the fresh mushrooms and leave for 1-2 minutes, without stirring. Don't crowd the mushrooms in the pan. Once lightly browned, turn them over to cook for another minute. Remove from the pan and continue with more batches, adding oil as needed. Once all the mushrooms have been removed from the pan, add another tablespoon of oil and throw in the onion, carrot and celery. Sauté on medium heat for 5 minutes, without browning. Add the wine and let it bubble away for a minute.",
     "Lift the porcini out of the soaking liquid, squeezing out the excess liquid. Add the soaking liquid to the pan, leaving behind any grit in the bowl. Add the remaining 400ml of water, the thyme and a little salt, then simmer gently for about 20 minutes, or until you are left with about 200ml of liquid. Strain this stock and discard the vegetables; return the stock to the pan and set it aside.",
-    "To poach the eggs, fill a shallow saucepan with enough water for a whole egg to cook in. Add a splash of vinegar and bring to a rapid boil. Carefully break an egg into a small cup and gently pour it into the boiling water. Immediately remove the pan from the heat and set it aside. After 6 minutes the egg should be poached to perfection. Lift it out of the pan and into```json
-{
-  "id": "mushroom-ragout-poached-duck-egg",
-  "title": "Mushroom ragout with poached duck egg",
-  "type": "Main Meal",
-  "time": 45,
-  "image": "",
-  "rawIngredients": [
-    "15g dried porcini mushrooms",
-    "600ml water",
-    "600g mixed fresh mushrooms (wild or cultivated)",
-    "350g sourdough bread, crusts removed",
-    "100ml olive oil",
-    "2 garlic cloves, crushed",
-    "1 medium onion, sliced",
-    "1 medium carrot, peeled and sliced",
-    "3 celery sticks, sliced",
-    "120ml white wine",
-    "3 thyme sprigs",
-    "4 duck's eggs",
-    "vinegar for poaching",
-    "100g soured cream",
-    "4 tbsp mixed chopped tarragon and parsley",
-    "truffle oil (or olive oil if you prefer)",
-    "salt and black pepper"
-  ],
-  "method": [
-    "Preheat the oven to 200°C/Gas Mark 6. Rehydrate the dried porcini in 200ml of boiling water for 30 minutes. Clean the fresh mushrooms and trim or tear into mixed clusters and bite-sized pieces.",
-    "Cut the crustless sourdough into 2.5cm cubes. Toss with 2 tablespoons of olive oil, crushed garlic, and a pinch of salt. Spread on a baking sheet and bake for roughly 15 minutes until golden brown.",
-    "Heat 1 tablespoon of olive oil in a wide frying pan over medium-high heat. Brown the fresh mushrooms in small batches for 1–2 minutes per side without crowding, transferring each batch to a plate.",
-    "In the same pan, add another tablespoon of olive oil and sauté the onion, carrot, and celery over medium heat for 5 minutes until softened. Pour in the white wine and simmer until reduced by half.",
-    "Remove porcini from the soaking liquid, squeeze dry, and roughly chop. Strain the soaking liquid into the pan, leaving any grit behind. Add the remaining 400ml water, thyme, and porcini, then simmer gently for 20 minutes until reduced to approximately 200ml.",
-    "Strain the reduced vegetable stock, discarding the aromatics, and return the liquid to the pan.",
-    "Bring a shallow pan of water with a dash of vinegar to a rolling boil. Crack each duck egg into a ramekin, drop gently into the boiling water, remove from the heat immediately, cover, and let stand for 6 minutes until softly poached. Drain on kitchen paper.",
-    "Warm the mushroom stock back up and stir in the sautéed mushrooms, soured cream, most of the fresh herbs, salt, and pepper. Simmer briefly until piping hot.",
-    "Distribute the croutons among four bowls, spoon over the hot mushroom ragout, nestle a poached egg onto each serving, and garnish with remaining herbs, a drizzle of truffle oil, and cracked black pepper."
-  ]
-}
+    
