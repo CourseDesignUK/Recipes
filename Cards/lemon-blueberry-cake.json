@@ -1,0 +1,47 @@
+{
+  "id": "lemon-blueberry-cake",
+  "title": "Lemon & blueberry cake",
+  "type": "Cakes and treats",
+  "time": 60,
+  "image": "./images/lemon-blueberry-cake.jpg",
+  "rawIngredients": [
+    "175g Essential Unsalted Butter, plus extra for greasing",
+    "175g golden caster sugar, plus 2 tbsp",
+    "3 Essential Free Range Eggs",
+    "1½ tsp vanilla bean paste",
+    "1 unwaxed lemon, zest and juice",
+    "175g Essential Self Raising Flour",
+    "½ tsp salt",
+    "150g pack Essential Blueberries, rinsed and dried"
+  ],
+  "method": [
+    "Preheat the oven to 180°C, gas mark 4[cite: 6]. Grease a 20cm round, deep, loose-bottomed cake tin and line with baking parchment[cite: 6].",
+    "Using an electric mixer, cream together the butter and sugar for 2-3 minutes until pale and light[cite: 6]. One at a time, beat in the eggs until fully incorporated, then beat in the vanilla and lemon zest[cite: 6].",
+    "Fold in the flour and salt until just combined, then pour the batter into the cake tin[cite: 6]. Scatter the### `Cards/lemon-blueberry-cake.json`
+
+```json
+{
+  "id": "lemon-blueberry-cake",
+  "title": "Lemon & Blueberry Cake",
+  "type": "Cakes and treats",
+  "time": 60,
+  "image": "./images/lemon-blueberry-cake.jpg",
+  "rawIngredients": [
+    "175g unsalted butter, softened, plus extra for tin",
+    "175g golden caster sugar, plus 2 tbsp for syrup",
+    "3 eggs",
+    "1½ tsp vanilla bean paste",
+    "1 unwaxed lemon, zested and juiced",
+    "175g self raising flour",
+    "½ tsp salt",
+    "150g blueberries, rinsed and dried"
+  ],
+  "method": [
+    "Set the oven to 180°C (gas mark 4) and line a greased 20cm deep, loose-bottomed cake tin with baking parchment.",
+    "Beat the softened butter and 175g sugar with an electric mixer until pale and fluffy, then mix in the eggs one by one.",
+    "Incorporate the vanilla bean paste and lemon zest.",
+    "Gently fold in the flour and salt until just combined, transfer to the tin, and scatter blueberries across the surface.",
+    "Bake for 35–40 minutes until golden and an inserted skewer emerges clean.",
+    "Simmer the lemon juice with 2 tbsp sugar for 2 minutes to create a light syrup, spoon over the warm cake, and let cool entirely in the tin."
+  ]
+}

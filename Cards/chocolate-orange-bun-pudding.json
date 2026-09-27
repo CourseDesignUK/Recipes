@@ -1,0 +1,26 @@
+{
+  "id": "chocolate-orange-bun-pudding",
+  "title": "Chocolate and Orange Bun Pudding",
+  "type": "Puddings",
+  "time": 75,
+  "image": "./images/chocolate-orange-bun-pudding.jpg",
+  "rawIngredients": [
+    "6 hot cross buns",
+    "250ml semi-skimmed milk",
+    "250ml single cream",
+    "1 orange, zested",
+    "1 tsp vanilla bean paste (or vanilla extract)",
+    "1 tbsp Cointreau (optional)",
+    "3 eggs",
+    "4 tbsp caster sugar",
+    "75g dark chocolate (approx. 70%), roughly chopped"
+  ],
+  "method": [
+    "Heat the oven to 160°C / gas mark 3. Halve the hot cross buns horizontally and arrange the bottoms in a 1.5-litre baking dish.",
+    "Gently warm the milk, cream, orange zest, vanilla, and optional Cointreau in a small saucepan.",
+    "Whisk the eggs and sugar together in a mixing bowl, then gradually temper with the warm cream mixture.",
+    "Scatter two-thirds of the chopped chocolate over the bottom bun halves and pour half the custard over them.",
+    "Cover with the bun tops, press down gently, pour over the remaining custard, and let stand for 30 minutes to absorb.",
+    "Scatter the remaining chocolate on top and bake for 35–45 minutes until the custard has just set and the crust is golden."
+  ]
+}

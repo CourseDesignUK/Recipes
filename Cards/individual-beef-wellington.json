@@ -1,0 +1,21 @@
+{
+  "id": "individual-beef-wellington",
+  "title": "Individual Beef Wellington",
+  "type": "Main Meal",
+  "time": 25,
+  "image": "./images/individual-beef-wellington.jpg",
+  "rawIngredients": [
+    "250g ready-rolled puff pastry",
+    "1 egg, beaten",
+    "2 fillet steaks (approx. 170g / 6oz each)",
+    "113g coarse mushroom pâté",
+    "salt and black pepper"
+  ],
+  "method": [
+    "Preheat the oven to 220°C / gas mark 7.",
+    "Halve the puff pastry on a floured surface and roll each into a thin 20cm x 15cm rectangle, brushing both with beaten egg.",
+    "Pat steaks dry with kitchen paper, season with salt and pepper, and center one on each pastry sheet.",
+    "Spread mushroom pâté across the top of the steaks, fold pastry securely around the meat, crimp the edges, and trim away excess dough.",
+    "Transfer parcels to a lightly greased baking sheet, brush tops thoroughly with beaten egg, and bake at the top of the oven for 20–25 minutes until puffed and golden."
+  ]
+}

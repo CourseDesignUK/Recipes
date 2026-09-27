@@ -1,0 +1,25 @@
+{
+  "id": "classic-tiramisu",
+  "title": "Classic Make-Ahead Tiramisu",
+  "type": "Puddings",
+  "time": 20,
+  "image": "./images/classic-tiramisu.jpg",
+  "rawIngredients": [
+    "250g mascarpone cheese",
+    "300ml double cream",
+    "2 tbsp caster sugar",
+    "1 tsp vanilla extract",
+    "200ml strong coffee, cooled",
+    "100g savoiardi biscuits (ladyfingers)",
+    "2 tbsp coffee liqueur (optional)",
+    "1 tbsp cocoa powder"
+  ],
+  "method": [
+    "Whip the double cream and sugar together until soft peaks form.",
+    "Gently fold the mascarpone and vanilla into the whipped cream until smooth and combined.",
+    "Combine the cooled brewed coffee and optional coffee liqueur in a shallow dish.",
+    "Briefly dip ladyfingers into the coffee liquid and arrange a single layer across the base of your serving dish.",
+    "Spread half of the mascarpone cream over the biscuits, then repeat with a second dipped biscuit layer and the remaining cream.",
+    "Dust cocoa powder evenly over the top layer and chill for at least 4 hours (ideally overnight) before serving."
+  ]
+}

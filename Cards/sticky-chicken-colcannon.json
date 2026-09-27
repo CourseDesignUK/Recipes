@@ -1,0 +1,27 @@
+{
+  "id": "sticky-chicken-colcannon",
+  "title": "Sticky Chicken with Colcannon",
+  "type": "Main Meal",
+  "time": 30,
+  "image": "./images/sticky-chicken-colcannon.jpg",
+  "rawIngredients": [
+    "800g potatoes, cut into 2cm cubes",
+    "½ Savoy cabbage, cored and shredded",
+    "2 spring onions, finely sliced",
+    "50g unsalted butter",
+    "50ml whole milk",
+    "3 tbsp Dijon mustard",
+    "3 tbsp wholegrain mustard",
+    "2 tbsp clear honey",
+    "600g chicken breast fillets",
+    "salt and black pepper"
+  ],
+  "method": [
+    "Preheat the grill to medium-high with an upper oven rack positioned near the element.",
+    "Place potatoes in salted cold water, bring to a boil, and simmer for 8 minutes. Add shredded cabbage and cook for 4 more minutes, then drain and steam dry.",
+    "Return the potato mixture to the pot and mash with spring onions, butter, milk, salt, and pepper.",
+    "Whisk Dijon mustard, wholegrain mustard, and honey in a shallow bowl. Season chicken breasts and coat thoroughly in the honey-mustard glaze.",
+    "Place glazed chicken on a lined baking tray and grill for 4–5 minutes per side until cooked through and caramelised.",
+    "Rest chicken briefly, slice into strips, and serve over warm colcannon."
+  ]
+}
