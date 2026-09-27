@@ -1,0 +1,37 @@
+{
+  "id": "shepherds-potato",
+  "title": "Shepherd's Potato",
+  "type": "Main Meal",
+  "time": 75,
+  "image": "./images/shepherds-potato.jpg",
+  "rawIngredients": [
+    "6 large baking potatoes",
+    "2 tbsp olive oil, plus a little bit extra",
+    "1 white onion",
+    "1 celery stick",
+    "1 medium carrot",
+    "2 garlic cloves",
+    "3 sprigs fresh rosemary, plus extra to serve",
+    "3 sprigs fresh thyme",
+    "2 tsp wholegrain mustard",
+    "3 tbsp tomato purée",
+    "1 tbsp soy sauce",
+    "150g chestnut mushrooms",
+    "120g cooked puy lentils (home-made or from a packet)",
+    "250ml vegetable stock",
+    "1½ tbsp dairy-free butter",
+    "2 tbsp nutritional yeast",
+    "1 tsp chilli flakes, to serve",
+    "salt and black pepper"
+  ],
+  "method": [
+    "Preheat the oven to 200°C[cite: 2]. Prick the baking potatoes with a fork, rub with 2 tablespoons olive oil, salt, and pepper, and bake on a tray for 45–60 minutes until soft[cite: 2].",
+    "Finely chop the white onion, celery, and carrot[cite: 2]. Finely chop the chestnut mushrooms[cite: 2].",
+    "Heat a splash of oil in a deep frying pan over medium heat; sauté the chopped onions, celery, and carrots for 5–10 minutes until starting to soften[cite: 2].",
+    "Crush the garlic into the pan[cite: 2]. Strip the leaves from the rosemary and thyme stems, finely chop them, and add to the pan[cite: 2]. Season and cook for 2–3 minutes[cite: 2].",
+    "Add wholegrain mustard, tomato purée, and soy sauce, then reduce heat to a light simmer[cite: 2]. Stir in the finely chopped mushrooms and cooked lentils; cook for 5–7 minutes[cite: 2]. Pour in the vegetable stock and mix[cite: 2].",
+    "Remove potatoes from the oven and let cool slightly[cite: 2]. Cut a round lid off the top of each potato, scoop out the fluffy centers leaving at least a 1cm lining, and mash in a bowl with dairy-free butter, nutritional yeast, salt, and pepper[cite: 2].",
+    "Fill potato skins to the brim with mushroom mince and top with a dollop of mashed potato[cite: 2]. Bake in the oven for 10–15 minutes until crispy[cite: 2].",
+    "Sprinkle each potato with chilli flakes, remaining chopped rosemary, and black pepper before serving[cite: 2]."
+  ]
+}

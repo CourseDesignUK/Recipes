@@ -1,0 +1,24 @@
+{
+  "id": "big-bad-nachos",
+  "title": "Big Bad Nachos",
+  "type": "Main Meal",
+  "time": 25,
+  "image": "./images/big-bad-nachos.jpg",
+  "rawIngredients": [
+    "2 x 200g bags tortilla chips",
+    "1 x 200g jar jalapeño chillies",
+    "50g dairy-free cheese such as Garlic & Herb Cashew Cheese (optional)",
+    "1 x portion Ultimate Chilli (or leftovers from a previous meal)",
+    "1 x portion Guacamole (shop-bought or homemade)",
+    "1 x portion Salsa (shop-bought or homemade)",
+    "handful fresh coriander leaves"
+  ],
+  "method": [
+    "Preheat oven to 200°C[cite: 5].",
+    "Tip tortilla chips into a large ovenproof dish (about 30 x 23cm) to cover the bottom[cite: 5].",
+    "Slice jalapeños and scatter over the nachos[cite: 5]. Add the dairy-free cheese[cite: 5].",
+    "Cover with warm Ultimate Chilli[cite: 5].",
+    "Bake in the oven for 10–15 minutes until tortilla chips begin to brown and chilli is heated through[cite: 5].",
+    "Dot spoonfuls of guacamole and salsa over the top, scatter with chopped coriander leaves, and serve[cite: 5]."
+  ]
+}
