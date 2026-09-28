@@ -1,0 +1,31 @@
+{
+  "id": "mushroom-risotto",
+  "title": "Mushroom risotto",
+  "type": "Main Meal",
+  "time": 30,
+  "image": "./images/mushroom-risotto.jpg",
+  "rawIngredients": [
+    "50g dried porcini mushrooms",
+    "1 vegetable stock cube",
+    "2 tbsp olive oil",
+    "1 onion, finely chopped",
+    "2 garlic cloves, finely chopped",
+    "250g chestnut mushrooms, chopped",
+    "300g risotto rice",
+    "175ml white wine",
+    "25g butter",
+    "handful parsley leaves, chopped",
+    "50g parmesan or Grana Padano, freshly grated"
+  ],
+  "method": [
+    "Put 50g dried porcini mushrooms into a large bowl and pour over 1 litre boiling water[cite: 15]. Soak for 20 mins, then drain into a bowl, discarding the last few tbsp of liquid left in the bowl[cite: 15].",
+    "Crumble 1 vegetable stock cube into the mushroom liquid, then squeeze the mushrooms gently to remove any liquid[cite: 15].",
+    "Heat 2 tbsp olive oil in a shallow saucepan or deep frying pan over a medium flame[cite: 15]. Add 1 finely chopped onion and 2 finely chopped garlic cloves, then fry for about 5 mins until soft[cite: 15].",
+    "Stir in 250g chopped chestnut mushrooms and the dried mushrooms, season with salt and pepper and continue to cook for 8 mins until the fresh mushrooms have softened[cite: 15].",
+    "Tip 300g risotto rice into the pan and cook for 1 min[cite: 15]. Pour over a 175ml glass of white wine and let it bubble to nothing so the alcohol evaporates[cite: 15].",
+    "Keep the pan over a medium heat and pour in a quarter of the mushroom stock[cite: 15]. Simmer the rice, stirring often, until the rice has absorbed all the liquid[cite: 15].",
+    "Add about the same amount of stock again and continue to simmer and stir until creamy and tender, adding the remaining stock in increments[cite: 15]. If still undercooked when the stock is finished, add a splash of water[cite: 15].",
+    "Take the pan off the heat, stir in 25g butter, 25g grated parmesan, and half the chopped parsley[cite: 15].",
+    "Cover and leave for a few minutes, then spoon into bowls and top with the remaining 25g parmesan and chopped parsley[cite: 15]."
+  ]
+}
